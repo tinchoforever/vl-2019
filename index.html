@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#historiascondatos - BA Centro Cultural </title>      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<!--     <script src="//d3js.org/d3.v3.min.js"></script>
+ -->    <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/s>
+    <link rel="stylesheet" href="BAstrap/bastrap.css" />
+    <!-- Load c3.css -->
+    <link href="styles/c3.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+
+<section id='scroll'>
+  <div class='scroll__graphic sticky'>
+    <div class='chart plus'>
+        <svg id="svg-map"></svg>
+        <div id="tooltip">
+          <h3 ><span id="title"></span></h3>
+          <h4 id="actividades"></h4><br>
+          <h4 id="tipo"></h4><br>
+          <h4 id="barrio"></h4>
+        </div> 
+      </div>
+    </div>
+  <div class='scroll__text'>
+    <div class='step' data-step='stepMap0'>
+     <div class="container intro">
+        <div class="pulso-intro">
+          <h1>BA Centro Cultural </h1>
+          <h3> Estamos haciendo de Buenos Aires el centro cultural de Latinoamérica.</h3>
+        </div>
+        <div class="pulso-footer">
+            <div class="row">
+              <div class="col-xs-5">
+                <p> <a href="https://twitter.com/bagobabierto" target="_blank">@BAGobAbierto</a> </p>
+              </div>
+              <div class="col-xs-7">
+                <p> <a href="https://data.buenosaires.gob.ar/" target="_blank">data.buenosaires.gob.ar</a> </p>
+              </div>
+            </div>
+          </div>
+        <div class="start-button">
+          <a class="cargando"><strong> Cargando... </strong>.</a>
+          <a class="start" href="#start"> Scroleá para Comenzar.</a>
+        </div>
+      </div>
+    </div>
+    <div class='step' id="start" data-step='stepMap1'>
+      <div class="container">
+          <div class="step-text">
+            <h2> Cultura en toda la Ciudad</h2>
+            <p> Durante 2018 generamos 12 mil propuestas culturales a lo largo y ancho de la Ciudad. En Buenos Aires la cultura no está en un solo lugar, sino que nos sorprende en cada barrio y en las plazas, los parques y las calles.</p>
+            <h5> Cantidad de Actividades</h5>
+            <p><div id="map-reference-size"> </div></p>
+          </div>
+      </div>
+    </div> 
+            
+    <div class='step' data-step='stepMap2'>
+     <div class="container">
+          <div class="step-text">
+            <h2>Cultura al aire libre</h2>
+            <p> Además de tener propuestas en los espacios propios, se programaron más de 600 actividades en las plazas, los parques y las calles, para promover el acceso a la cultura en todos los barrios de la Ciudad.</p>
+            <h5> Actividades al Aire Libre </h5>
+            <p><div id="mapa-referencias"> </div></p>
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='stepMap3'>
+      <div class="container">
+          <div class="step-text">
+            <h2>Formación cultural para todos </h2>
+            <p> De las más de mil actividades y cursos de formación que se programaron, 165 fueron destinados a vecinos de los barrios emergentes.</p>
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='stepMap4'>
+     <div class="container">
+          <div class="step-text">
+            <h3>El Taller de Tango en el Barrio 31,</h3>
+            <img class="pic" src="images/tango.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='stepMap5'>
+      <div class="container">
+          <div class="step-text">
+            <h3>El Taller de Lenguaje Musical en el Barrio 21.24,</h3>
+            <img class="pic" src="images/lenguaje.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='stepMap6'>
+      <div class="container">
+          <div class="step-text">
+            <h3>Y el Taller de Danzas Urbanas en Fátima.</h3>
+            <img class="pic" src="images/danzas.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='stepMap7'>
+      <p> _ </p>
+    </div>
+  </div>
+
+</section>
+
+<section id='disciplinasScroll'>
+  <div class='scroll__graphic sticky'>
+     <div class='chart'>
+        <svg id="disciplinas">
+           <g></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class='scroll__text'>
+    <div class='step' data-step='stepBubbles1'>
+      <div class="container">
+          <div class="step-text">
+            <h2>Diversidad cultural</h2>
+            <p>Promovimos todos los intereses artísticos y culturales, potenciando una sinergia entre disciplinas tradicionales y otras emergentes, además de generar las herramientas para los creadores de la cultura.</p>
+          </div>
+      </div>
+    </div> 
+     <div class='step' data-step='stepBubbles0'>
+      <div class="container">
+          <div class="step-text">
+            <h2> Impulsamos la creatividad </h2>
+            <p>Programamos funciones de teatro, cine, conciertos, recitales, visitas y recorridas por la Ciudad, pero también un gran porcentaje fueron talleres, seminarios, charlas e instancias de formación para los nuevos creadores.</p>
+          </div>
+      </div>
+    </div> 
+    <div class='step' data-step='stepBubbles2'>
+      <div class="container">
+          <div class="step-text">
+            <h2> Todas las disciplinas </h2>
+            <p> Realizamos actividades en toda la Ciudad, trazamos circuitos culturales y generamos sinergia entre las disciplinas para que Buenos Aires siga siendo un centro cultural al aire libre donde todos puedan transformarse en protagonistas de la cultura. </p>
+          </div>
+      </div>
+    </div> 
+    <div class='step' data-step='stepBubbles2'>
+     <div class="container bubbles">
+          <div class="step-text">
+            <p><div id="bubbles-references">
+              
+            </div>
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<section id='timelineScroll'>
+  <div class='scroll__graphic sticky'>
+    <div class="chart">
+      <svg id="fechas" >
+          <g></g>
+      </svg>
+    </div>
+  </div>
+  <div class='scroll__text'>
+    <div class='step' data-step='1'>
+      <div class="container">
+          <div class="step-text">
+            <h2> Cultura activa todo el año</h2>
+            <p> En los 12 meses del 2018 disfrutamos de festivales, talleres, cursos, recitales al aire libre y en los espacios de la Ciudad, ciclos de cine, exposiciones en los museos.  Una gran diversidad de propuestas distribuida durante todo el año.</p>
+          </div>
+      </div>
+    </div> 
+    <div class='step' data-step='2'>
+     <div class="container">
+          <div class="step-text">
+            <h3> Febrero: Ciclo Amor de Verano</h3>
+            <p> En el Centro Cultural Recoleta y en Plaza Francia se pudo disfrutar durante enero y febrero de un programa especial de verano para jóvenes y adolescentes, con el amor como eje central de las actividades.</p>
+            <img class="pic" src="images/amor.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='2'>
+     <div class="container">
+          <div class="step-text">
+            <h3> Abril: Bafici 20 años </h3>
+            <p> El Bafici celebró en 2018 su 20 aniversario. Con 107 premieres internacionales y otras 99 americanas y latinoamericanas, el Festival fue el espacio para un cine innovador y de vanguardia. Se apostó por la expansión territorial, con la cifra récord de 36 sedes, distribuidas en más de 15 barrios porteños. </p>
+            <img class="pic" src="images/bafici.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='2'>
+     <div class="container">
+          <div class="step-text">
+            <h3> Julio: Vacaciones de invierno </h3>
+            <p> La Ciudad ofreció una programación especial en el invierno para todas las edades. Con más de 350 actividades a lo largo de las vacaciones, en su mayoría gratuitas, la oferta porteña incluyó espectáculos, talleres, shows musicales, muestras, cine y mucho más. </p>
+            <img class="pic" src="images/invierno.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='2'>
+     <div class="container">
+          <div class="step-text">
+            <h3> Septiembre: Art Basel Cities</h3>
+            <p> Del 6 al 12 de septiembre se llevó a cabo la Semana Art Basel Cities: Buenos Aires. Un proyecto que fomentó la visibilidad del arte contemporáneo con una gran exhibición de arte, eventos, charlas, clases magistrales, actividades públicas y 18 intervenciones de reconocidos artistas distribuidos en 5 barrios de la Ciudad. </p>
+            <img class="pic" src="images/art.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='2'>
+     <div class="container">
+          <div class="step-text">
+            <h3>Noviembre: Festival Clave 13/17</h3>
+            <p> Booktubers, raperos, cosplayers, gamers, fandancers del k-pop, freestylers, fans de Harry Potter y más referentes de las nuevas escenas, se dieron cita en el Recoleta para el primer festival centennial organizado por adolescentes en el que más de 200 chicas y chicos, entre 13 y 17 años, compartieron qué piensan y sienten. </p>
+            <img class="pic" src="images/clave.jpg">
+          </div>
+      </div>
+    </div>
+    <div class='step' data-step='2'>
+     <div class="container">
+          <div class="step-text">
+            <h3>Diciembre: Complejo Teatral de Buenos Aires</h3>
+            <p> Luego de la reapertura del Teatro San Martín en 2017, durante el 2018 el Complejo Teatral consolidó un año increíble con una programación de lujo que incluyó  Piel de Lava, Campo Minado, Hipervínculo, entre muchos otras obras. </p>
+            <img class="pic" src="images/teatro.jpg">
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id='Final'>
+  <div class='scroll__text'>
+    <div class='step' data-step='1'>
+     <div class="container intro">
+        <div class="row">
+          <div class="col-xs-0 col-md-4">
+            <p> </p>
+          </div>
+          <div class="col-xs-12 col-md-4">
+          <div class="pulso-intro">
+            <h1> BA Centro Cultural  </h1>
+            <h2> </h2>
+            <p>  Si querés conocer más información sobre la cultura en la Ciudad entrá en 
+              <a href="https://buenosaires.gob.ar/cultura" target="_blank">buenosaires.gob.ar/cultura</a>  o seguinos por nuestras redes sociales <a href="https://twitter.com/datacultura" target="_blank">@datacultura</a> </p>
+          </div>
+          <div class="pulso-footer">
+            <div class="row">
+              <div class="col-xs-12">
+                  <p class="no-bold"> Este proyecto se realizó utilizando datos abiertos de la Ciudad que están disponibles en <a href="https://data.buenosaires.gob.ar/" target="_blank">data.buenosaires.gob.ar</a> </p>
+              </div>
+              <div class="col-xs-5">
+                <p> <a href="https://twitter.com/bagobabierto" target="_blank">@BAGobAbierto</a> </p>
+              </div>
+              <div class="col-xs-7">
+                <p> <a href="https://data.buenosaires.gob.ar/" target="_blank">data.buenosaires.gob.ar</a> </p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+   </div>
+
+</section>
+
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.3.1/d3-annotation.min.js"></script>
+
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src='https://cdn.rawgit.com/russellgoldenberg/scrollama/master/docs/stickyfill.min.js'></script><script src='https://unpkg.com/scrollama@0.6.1/build/scrollama.js'></script>
+
+    
+    <script src="scripts/c3.min.js"></script>
+
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src='https://unpkg.com/intersection-observer@0.5.0/intersection-observer.js'></script>
+    <script src='scripts/scrollama.min.js'></script>
+    <script type="text/javascript" src="scripts/ba-svg-map.js"></script>
+    <script type="text/javascript" src="scripts/ba-fechas.js"></script>
+    <script type="text/javascript" src="scripts/ba-bubbles.js"></script>
+    <script type="text/javascript" src="scripts/ba-barchart.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
