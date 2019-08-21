@@ -5,6 +5,13 @@ html{
   width:100%;
   overflow-x:hidden;
 }
+
+h1, .h1, h2, .h2, h3, .h3 {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    letter-spacing: inherit;
+    font-weight: 800
+}
+
 a{
   color:#000000;
 }
@@ -189,18 +196,22 @@ a:visited, .btn-link:visited {
     }
 
     .step .pulso-intro{
-        background: #FFD200;
+        background: #7cbb42;
         padding: 2em;
         /* margin-left: 1em; */
         margin-bottom: 10px;
         text-align: left;
+        color:white;
 
     }
     .step .pulso-intro h1{
-      font-size:4em;
-      text-align: left;
-      text-align: left;
-      border-bottom: solid 2px;
+      font-family: BrandonGrotesqueBlack,sans-serif;
+      padding: 0;
+      margin: 0 auto;
+      font-size: 54px;
+      font-weight: 400;
+      text-transform: uppercase;
+    
 
     }
     .step .pulso-intro p{
@@ -304,10 +315,10 @@ a:visited, .btn-link:visited {
 
 
 text{
-  font-family: "OpenSans", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 svg text {
-    font-family: "OpenSans", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 12px;
     font-weight: 400;
 
@@ -337,7 +348,7 @@ svg .tick text {
 
 .label{
   fill:gray;
-  font-family: "OpenSans", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 10px;
 }
 
@@ -363,7 +374,7 @@ svg .tick text {
 
 @media only screen and (min-width: 820px) {
   svg text {
-    font-family: "OpenSans", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
 

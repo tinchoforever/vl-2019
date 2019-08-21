@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <title>#historiascondatos - Pulso Cultural - Disciplinas</title> 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<style>
+    circle {
+        stroke: none;
+        /* fill: #17b7bd; */
+        opacity: 1;
+        stroke-width: 0px;
+    }
+
+    
+svg text {
+    font-family: "Roboto";
+
+}
+
+</style>
+<svg id="disciplinas">
+    <g></g>
+</svg>
+
+<script>
+    var vWidth = 1000;
+    var vHeight = 900; 
+    
+    var rowLength =4;
+
+
+     var radiusScale = d3.scaleSqrt()
+            .range([3, 15]);
+
+    var colorScale = d3.scaleOrdinal().range(["#8dd3c7",
+            "#e9df30",
+            "#bebada",
+            "#ff6250",
+            "#5fb3dd",
+            "#fda362",
+            "#b3de69",
+            "#f9aad7",
+            "#ffdb92"]);
+
+    
+        
+
+    // Prepare our physical space
+    var g = d3.select('#disciplinas').attr('width', vWidth).attr('height', vHeight)
+    .style("display","block")
+    .style("margin", "auto")
+    .select('g') ;
+
+       d3.queue()
+            .defer(d3.csv, "disciplinas.csv")
+            .awaitAll(ready);
+
+
+        function ready(error, eventos) {
+
+            radiusScale.domain([0, d3.max(eventos[0], function (d) {
+
+                return d.cantidad;
+            })]);
+            // --------- BUBBLES
+
+
+            var nodes = eventos[0].map(function (d, i) {
+                return {
+                    name: d.establecimiento,
+                    barrio: d.barrio,
+                    value: +d.cantidad,
+                    comuna: d.comuna,
+                    id: i,
+                    tipo: d.disciplinaResumen
+
+                }
+            });
+
+
+            
+            drawViz(prepareData(nodes, "tipo"));
+
+             setTimeout(function () { // apaga la leyenda de tamaño
+               update(prepareData(nodes, "comuna"))
+                 }, 2700)
+
+
+       } // END READY
+
+    function drawViz(vData) {
+        // Declare d3 layout
+        var vLayout = d3.pack().size([vWidth, vHeight])
+        .radius(d => radiusScale(d.value))
+        .padding(2);
+
+        // Layout + Data
+        var vRoot = d3.hierarchy(vData).sum(function (d) { return d.value; });
+        var vNodes = vRoot.descendants();
+        vLayout(vRoot);
+
+        //colorScale.domain(vRoot.children.map((d)=>d.data.name));
+        
+        vNodes.filter((d) => d.depth == 1).sort(function (x, y) {
+            return d3.descending(x.value, y.value);
+        }).forEach((d,i)=>{
+            d.newX = (150 + 200 * (i % rowLength));
+            d.newY = (150 + 250 * (Math.floor(i / rowLength)));
+        })
+
+        var categoriasGroups = g.selectAll('g').data(vNodes.filter((d)=>d.depth>0))
+            .enter().append('g')
+            .attr("id", (d)=>d.data.name)
+            .attr("transform", function (d,i) {
+                if(d.depth==2) return "translate(" + (d.x-d.parent.x+d.parent.newX) + "," + (d.y-d.parent.y + d.parent.newY) + ")"
+                return "translate(" + d.newX + "," + d.newY + ")"
+            });
+
+        categoriasGroups.filter((d) => d.depth == 1)
+            .attr("class", "padres");
+
+        categoriasGroups.filter((d) => d.depth == 2)
+            .attr("class", "hijes");
+
+
+            categoriasGroups.filter((d) => d.depth == 2)
+                    .append("circle")
+                    .style("fill", function (d, i) { 
+                        return colorScale(d.data.tipo); })
+                    .attr("id", (d)=>d.data.id)
+                    .attr('r', function (d) { return d.r; });
+            
+
+    categoriasGroups.filter((d)=>d.depth==1)
+            .append("text")
+            .text((d) => d.data.name.toProperCase())
+            .style("text-anchor", "middle")
+            .attr("y",(d)=>d.r+20)
+            .call(wrap, 150);
+       
+    }
+
+    function prepareData(datos,state) { // Aca preparo la data y la nesteo con respecto al "state" (tipo, comuna, etc)
+        
+    if (state != "comuna") {
+        var nestedNodes = d3.nest()
+            .key(function (d) {
+                return d[state];
+            })
+           .rollup(function (leaves) {
+                return {
+                    lugares: leaves.length,
+                    actividades: d3.sum(leaves, function (d) { return (+d.value) }),
+                    todas: leaves
+                };
+            })
+            .entries(datos)
+             var childrens = nestedNodes.map(function (p) {
+            return {
+                "name": p.key, "children": p.value.todas.sort(function (x, y) {
+                    return d3.descending(x.value, y.value);
+                })
+            }
+        })
+
+
+    }else{
+        var nestedNodes = d3.nest()
+            .key(function (d) {
+                return d[state];
+            })
+            .key(function (d) {
+                return d.tipo;
+            })
+            .rollup(function (leaves) {
+                return {
+                    lugares: leaves.length,
+                    actividades: d3.sum(leaves, function (d) { return (+d.value) }),
+                    todas: leaves
+                };
+            })
+            .entries(datos)
+
+             var childrens = nestedNodes.map(function (e) {
+                  return {
+                     "name": e.key, "children": e.values.map(function (p) {
+                          return {
+                              "name": p.key, "children": p.value.todas.sort(function (x, y) {
+                                  return d3.descending(x.value, y.value);
+                              })
+                          }
+                      })
+                 }
+                 
+                 
+             })
+
+    }
+
+       
+        var data = {
+            "name": "A1",
+            "children": childrens
+        }
+        return data;
+    }
+
+
+    function update(datos) {
+
+                    // Declare d3 layout
+                var vLayout = d3.pack().size([vWidth, vHeight])
+                    .radius(d => radiusScale(d.value))
+                    .padding(1);
+
+                rowLength = rowLength -1;
+                // Layout + Data
+                var vRoot = d3.hierarchy(datos)
+                            .sum(function (d) { return d.value; })
+                            //.sort(function (x, y) {return d3.descending(x.data.tipo, y.data.tipo) || d3.descending(x.value, y.value)}) 
+                            
+                    ;
+
+
+                var vNodes = vRoot.descendants();
+
+                vLayout(vRoot);
+
+
+                var temp=[0,0,0];
+                // tomo los padres los ordeno por tamaño y les cambio la ubicación para que esten ordenaditos en fila
+                vNodes.filter((d) => d.depth == 1).sort(function (x, y) {
+                    return d3.descending(x.value, y.value);
+                }).forEach((d, i) => {
+                    if(i % rowLength == 0){
+                        d.newX = d.r + 20;
+                        }
+                    else {
+                        d.newX = temp[0] + d.r +20;
+                        }
+
+                    temp[0] = d.newX + d.r;
+      
+                    d.newY = (150 + 340 * (Math.floor(i / rowLength)));
+                   
+                })
+
+            var categoriasGroups = g.selectAll('.padres')
+                    .data(vNodes.filter((d)=>d.depth>0)) // toda la data menos el root
+                    .attr("id", (d) => d.data.name) // fin data;
+            
+            categoriasGroups.enter().filter((d) => d.depth == 1).append("g")
+                        .attr("id", (d) => d.data.name)
+                        .attr("class", "padres")
+                      ;
+
+            var bubbles= d3.selectAll(".hijes");
+
+                bubbles.data().forEach(element => {
+                var newData = vNodes.filter((e)=>e.data.id==element.data.id)[0];
+                    element.x = (newData.x - newData.parent.parent.x + newData.parent.parent.newX);
+                    element.y = (newData.y - newData.parent.parent.y + newData.parent.parent.newY);
+                    element.joinAround= [newData.parent.parent.newX, newData.parent.parent.newY];
+                });
+
+
+            
+                var dataSim = bubbles.data();
+             
+                var simulation = d3.forceSimulation(dataSim)
+                    .force('charge', d3.forceManyBody().strength(function (d) { return -d.r }))
+                    .force('x', d3.forceX().x(function (d, i) {
+                       return d.joinAround[0]
+                    }).strength(0.1))
+                    .force('y', d3.forceY().y(function (d) {
+                        return d.joinAround[1];
+                    }).strength(0.1))
+                    .force('collision', d3.forceCollide().radius(function (d) { return d.r + 1; }).strength(1))
+                    .alphaDecay(0.2)
+
+                   .on('tick', ticked)
+                   .on('end', actualiza)
+                   ;
+                   // .stop();
+
+                    
+                    
+                    function actualiza() {
+                        console.log("hola");
+                            bubbles
+                                .transition().duration(1000)
+                                .attr("transform", function (d, i) {
+                                    return "translate(" + d.x + "," + d.y + ")"
+                                });
+                            
+                    }
+                    
+                    
+
+                     function ticked() {
+                        // bubbles.attr("transform", function (d) {
+                        //     return "translate(" + d.x + "," + d.y + ")"
+                        // });
+                    }           
+
+                // cambio la ubicación de los padres y elimino los textos
+            g.selectAll('.padres')
+              .attr("transform", function (d, i) {
+                    return "translate(" + d.newX + "," + d.newY + ")"
+                });
+
+            g.selectAll("text").remove();
+
+            g.selectAll('.padres').filter((d) => d.depth == 1).append("text")
+                .text(function (d, i) {
+                    return d.data.name;
+                })
+                .style("text-anchor", "middle")
+                .attr("y", (d) => d.r + 20)
+                .call(wrap, 150);
+
+        
+        
+    }
+
+
+    
+
+// funciones extra
+
+   async function loops(sim) {
+            for (var i = 0; i < 170; ++i) {
+                sim.tick(); // evalua la simulacion
+            }
+        }
+
+
+    function wrap(text, width) {
+            text.each(function () {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 15, // ems
+                    y = text.attr("y"),
+                    dy = 1,
+                    tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy )
+                while (word = words.pop()) {
+                    line.push(word)
+                    tspan.text(line.join(" "))
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop()
+                        tspan.text(line.join(" "))
+                        line = [word]
+                        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", `${++lineNumber * lineHeight + dy}`).text(word)
+                    }
+                }
+            })
+        }
+
+    String.prototype.toProperCase = function () {
+            return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+        };
+</script>

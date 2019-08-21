@@ -1,0 +1,786 @@
+disciplinaResumen,barrio,comuna,establecimiento,cantidad
+ARTES ESCENICAS,Agronomia,Comuna 15,Milonga Del Moran,1
+ARTES ESCENICAS,Almagro,Comuna 05,,1
+ARTES ESCENICAS,Almagro,Comuna 05,Bar El Simbolo,4
+ARTES ESCENICAS,Almagro,Comuna 05,El Porton De Sanchez,1
+ARTES ESCENICAS,Almagro,Comuna 05,Universidad Tecnologica Nacional,3
+ARTES ESCENICAS,Balvanera,Comuna 03,,6
+ARTES ESCENICAS,Balvanera,Comuna 03,Centro Cultural Alfonsina Storni,5
+ARTES ESCENICAS,Balvanera,Comuna 03,Centro Cultural Ricardo Rojas,3
+ARTES ESCENICAS,Balvanera,Comuna 03,Ciudad Cultural Konex,1
+ARTES ESCENICAS,Balvanera,Comuna 03,La Academia,1
+ARTES ESCENICAS,Balvanera,Comuna 03,Museo Casa Carlos Gardel,3
+ARTES ESCENICAS,Barracas,Comuna 04,,2
+ARTES ESCENICAS,Barracas,Comuna 04,Centro Cultural La Usina,1
+ARTES ESCENICAS,Barracas,Comuna 04,Espacio Cultural Del Sur,133
+ARTES ESCENICAS,Barracas,Comuna 04,Hospital General De Niños Pedro De Elizalde,2
+ARTES ESCENICAS,Barracas,Comuna 04,Hospital Infanto Juvenil Tobar Garcia,1
+ARTES ESCENICAS,Barracas,Comuna 04,La Flor De Barracas,2
+ARTES ESCENICAS,Belgrano,Comuna 13,Auditorio Belgrano,2
+ARTES ESCENICAS,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,2
+ARTES ESCENICAS,Boca,Comuna 04,,39
+ARTES ESCENICAS,Boca,Comuna 04,Barrio Rodrigo Bueno,3
+ARTES ESCENICAS,Boca,Comuna 04,Teatro De La Ribera,54
+ARTES ESCENICAS,Boca,Comuna 04,Teatro Rivera,7
+ARTES ESCENICAS,Boca,Comuna 04,Universidad Nacional De Las Artes,1
+ARTES ESCENICAS,Boca,Comuna 04,Usina Del Arte,134
+ARTES ESCENICAS,Boedo,Comuna 05,Bar,1
+ARTES ESCENICAS,Boedo,Comuna 05,Milonga De Querusa,1
+ARTES ESCENICAS,Caballito,Comuna 06,,3
+ARTES ESCENICAS,Caballito,Comuna 06,Anfiteatro Parque Centenario,11
+ARTES ESCENICAS,Caballito,Comuna 06,Bar,4
+ARTES ESCENICAS,Caballito,Comuna 06,Centro Cultural Alberto Olmedo,1
+ARTES ESCENICAS,Caballito,Comuna 06,Centro Cultural El Eternauta,4
+ARTES ESCENICAS,Caballito,Comuna 06,Centro Cultural Lola Mora,4
+ARTES ESCENICAS,Caballito,Comuna 06,Centro Cultural Sebastian Piana,11
+ARTES ESCENICAS,Chacarita,Comuna 15,,5
+ARTES ESCENICAS,Chacarita,Comuna 15,Barrio Playon De Chacarita,1
+ARTES ESCENICAS,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,97
+ARTES ESCENICAS,Chacarita,Comuna 15,Galpón De Guevara,1
+ARTES ESCENICAS,Chacarita,Comuna 15,Teatro Regio,176
+ARTES ESCENICAS,Colegiales,Comuna 13,Centro Cultural Colegiales,2
+ARTES ESCENICAS,Constitucion,Comuna 01,,1
+ARTES ESCENICAS,Flores,Comuna 07,,1
+ARTES ESCENICAS,Flores,Comuna 07,Barrio Juan Xxiii,1
+ARTES ESCENICAS,Flores,Comuna 07,Centro Cultural Roberto Arlt,5
+ARTES ESCENICAS,Flores,Comuna 07,Espacio Cultural Marco Del Pont,103
+ARTES ESCENICAS,Flores,Comuna 07,Milonga La Baldosa,1
+ARTES ESCENICAS,Floresta,Comuna 10,Biblioteca Hilario Ascasubi,1
+ARTES ESCENICAS,Floresta,Comuna 10,Centro Cultural Baldomero Fernandez Moreno,2
+ARTES ESCENICAS,Liniers,Comuna 09,Centro Cultural Elias Castelnuovo,1
+ARTES ESCENICAS,Liniers,Comuna 09,Hospital Santojanni,1
+ARTES ESCENICAS,Monserrat,Comuna 01,,1
+ARTES ESCENICAS,Monserrat,Comuna 01,Academia Nacional Del Tango,1
+ARTES ESCENICAS,Monserrat,Comuna 01,Bar,9
+ARTES ESCENICAS,Monserrat,Comuna 01,Bar 36 Billares,1
+ARTES ESCENICAS,Monserrat,Comuna 01,Cafe Tortori,2
+ARTES ESCENICAS,Monserrat,Comuna 01,Casa De La Cultura,1
+ARTES ESCENICAS,Monserrat,Comuna 01,Casa Museo Fernandez Blanco,15
+ARTES ESCENICAS,Monserrat,Comuna 01,Espacio Virrey Liniers,3
+ARTES ESCENICAS,Monserrat,Comuna 01,Legislatura Porteña,1
+ARTES ESCENICAS,Monserrat,Comuna 01,Manzana De Las Luces,2
+ARTES ESCENICAS,Monserrat,Comuna 01,Museo Del Traje,3
+ARTES ESCENICAS,Monte castro,Comuna 10,Hospital De Rehabilitacion Manuel Roca,1
+ARTES ESCENICAS,Nueva pompeya,Comuna 04,Centro Cultural Homero Manzi,1
+ARTES ESCENICAS,Nueva pompeya,Comuna 04,Club Juventud Y Armonia,1
+ARTES ESCENICAS,Nueva pompeya,Comuna 04,Escuela Dean Diego Estanislao De Zavaleta,1
+ARTES ESCENICAS,Nueva pompeya,Comuna 04,Polo Bandoneon,2
+ARTES ESCENICAS,Nuñez,Comuna 13,Centro Cultural Julio Cortazar,2
+ARTES ESCENICAS,Palermo,Comuna 14,Centro Cultural Tato Bores,1
+ARTES ESCENICAS,Palermo,Comuna 14,Milonga La Viruta,1
+ARTES ESCENICAS,Palermo,Comuna 14,Milonga Parakultural,1
+ARTES ESCENICAS,Palermo,Comuna 14,Museo Jose Hernandez,2
+ARTES ESCENICAS,Palermo,Comuna 14,Museo Sivori,6
+ARTES ESCENICAS,Palermo,Comuna 14,Teatro Sarmiento,147
+ARTES ESCENICAS,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,157
+ARTES ESCENICAS,Parque chacabuco,Comuna 07,,1
+ARTES ESCENICAS,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,184
+ARTES ESCENICAS,Parque chas,Comuna 15,Bar,2
+ARTES ESCENICAS,Parque patricios,Comuna 04,,1
+ARTES ESCENICAS,Parque patricios,Comuna 04,Hospital De Pediatria Garrahan,4
+ARTES ESCENICAS,Parque patricios,Comuna 04,Hospital Muñez,1
+ARTES ESCENICAS,Puerto madero,Comuna 01,Anfiteatro Nini Marshall,2
+ARTES ESCENICAS,Recoleta,Comuna 02,Bar,6
+ARTES ESCENICAS,Recoleta,Comuna 02,Centro Cultural Recoleta,66
+ARTES ESCENICAS,Recoleta,Comuna 02,Hospital De Niños Ricardo Gutierrez,3
+ARTES ESCENICAS,Recoleta,Comuna 02,Hospital General De Agudos Bernardino Rivadavia,2
+ARTES ESCENICAS,Recoleta,Comuna 02,Plaza Francia,2
+ARTES ESCENICAS,Retiro,Comuna 01,,2
+ARTES ESCENICAS,Retiro,Comuna 01,Bar,2
+ARTES ESCENICAS,Retiro,Comuna 01,Barrio 31,5
+ARTES ESCENICAS,Retiro,Comuna 01,Colegio Domingo Faustino Sarmiento,2
+ARTES ESCENICAS,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,2
+ARTES ESCENICAS,Retiro,Comuna 01,Teatro Coliseo,2
+ARTES ESCENICAS,Retiro,Comuna 01,Teatro Nacional Cervantes,1
+ARTES ESCENICAS,Saavedra,Comuna 12,Centro Cultural Lino E. Spilimbergo,1
+ARTES ESCENICAS,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,17
+ARTES ESCENICAS,San cristobal,Comuna 03,,59
+ARTES ESCENICAS,San cristobal,Comuna 03,Espacio Cultural Julian Centeya,26
+ARTES ESCENICAS,San cristobal,Comuna 03,Milonga Derecho Viejo,1
+ARTES ESCENICAS,San cristobal,Comuna 03,Polo Circo,25
+ARTES ESCENICAS,San nicolas,Comuna 01,,1
+ARTES ESCENICAS,San nicolas,Comuna 01,Bar,7
+ARTES ESCENICAS,San nicolas,Comuna 01,Bolsa De Comercio,2
+ARTES ESCENICAS,San nicolas,Comuna 01,Cck,1
+ARTES ESCENICAS,San nicolas,Comuna 01,Centro Cultural De La Cooperacion,5
+ARTES ESCENICAS,San nicolas,Comuna 01,Centro Cultural San Martin,440
+ARTES ESCENICAS,San nicolas,Comuna 01,El Gato Negro,3
+ARTES ESCENICAS,San nicolas,Comuna 01,Luna Park,1
+ARTES ESCENICAS,San nicolas,Comuna 01,Opera,2
+ARTES ESCENICAS,San nicolas,Comuna 01,Teatro Colon,85
+ARTES ESCENICAS,San nicolas,Comuna 01,Teatro San Martin,487
+ARTES ESCENICAS,San telmo,Comuna 01,Atrio,2
+ARTES ESCENICAS,San telmo,Comuna 01,Auditorio Uocra,2
+ARTES ESCENICAS,San telmo,Comuna 01,Escuela Bernardino Rivadavia,1
+ARTES ESCENICAS,San telmo,Comuna 01,Mamba,2
+ARTES ESCENICAS,San telmo,Comuna 01,Teatro Margarita,1
+ARTES ESCENICAS,Velez sarsfield,Comuna 10,,6
+ARTES ESCENICAS,Velez sarsfield,Comuna 10,Teatro Gran Rivadavia,1
+ARTES ESCENICAS,Versalles,Comuna 10,Centro Cultural Versalles,2
+ARTES ESCENICAS,Villa crespo,Comuna 15,,5
+ARTES ESCENICAS,Villa crespo,Comuna 15,Bar,2
+ARTES ESCENICAS,Villa crespo,Comuna 15,Sede Central De La Emad,21
+ARTES ESCENICAS,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,82
+ARTES ESCENICAS,Villa devoto,Comuna 11,Cafe Garcia,1
+ARTES ESCENICAS,Villa lugano,Comuna 08,Centro Cultural Saladiyo,1
+ARTES ESCENICAS,Villa ortuzar,Comuna 15,Centro Cultural Roberto Santoro,2
+ARTES ESCENICAS,Villa soldati,Comuna 08,,3
+ARTES ESCENICAS,Villa soldati,Comuna 08,Villa 20,1
+ARTES ESCENICAS,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,409
+ARTES VISUALES,Balvanera,Comuna 03,,1
+ARTES VISUALES,Balvanera,Comuna 03,Museo Casa Carlos Gardel,15
+ARTES VISUALES,Barracas,Comuna 04,Espacio Cultural Del Sur,4
+ARTES VISUALES,Belgrano,Comuna 13,Facultad Torcuato Ditella,1
+ARTES VISUALES,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,40
+ARTES VISUALES,Belgrano,Comuna 13,Polideportivo Los Piletones,2
+ARTES VISUALES,Boca,Comuna 04,,17
+ARTES VISUALES,Boca,Comuna 04,Arte Urbano,24
+ARTES VISUALES,Boca,Comuna 04,Barrio Rodrigo Bueno,1
+ARTES VISUALES,Boca,Comuna 04,Distintos Puntos De La Ciudad,1
+ARTES VISUALES,Boca,Comuna 04,Fundacion Proa,26
+ARTES VISUALES,Boca,Comuna 04,Galeria Barro,1
+ARTES VISUALES,Boca,Comuna 04,Museo Del Cine,5
+ARTES VISUALES,Boca,Comuna 04,Usina Del Arte,214
+ARTES VISUALES,Caballito,Comuna 06,,2
+ARTES VISUALES,Caballito,Comuna 06,Anfiteatro Parque Centenario,1
+ARTES VISUALES,Caballito,Comuna 06,Centro Cultural El Eternauta,1
+ARTES VISUALES,Caballito,Comuna 06,Museo De Ciencias Naturales,1
+ARTES VISUALES,Caballito,Comuna 06,Museo Escultores L. Perlotti,49
+ARTES VISUALES,Chacarita,Comuna 15,,1
+ARTES VISUALES,Chacarita,Comuna 15,Barrio Playon De Chacarita,1
+ARTES VISUALES,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,17
+ARTES VISUALES,Chacarita,Comuna 15,Galeria Mariacasado,1
+ARTES VISUALES,Flores,Comuna 07,Espacio Cultural Marco Del Pont,18
+ARTES VISUALES,Liniers,Comuna 09,Biblioteca Jose Hernandez,1
+ARTES VISUALES,Liniers,Comuna 09,Centro Cultural Elias Castelnuovo,2
+ARTES VISUALES,Monserrat,Comuna 01,,1
+ARTES VISUALES,Monserrat,Comuna 01,Casa Museo Fernandez Blanco,50
+ARTES VISUALES,Monserrat,Comuna 01,Museo De La Ciudad,18
+ARTES VISUALES,Monserrat,Comuna 01,Museo Del Bicentenario,2
+ARTES VISUALES,Monserrat,Comuna 01,Museo Del Traje,1
+ARTES VISUALES,Monserrat,Comuna 01,Querubines,1
+ARTES VISUALES,Nueva pompeya,Comuna 04,Centro Cultural Homero Manzi,1
+ARTES VISUALES,Nueva pompeya,Comuna 04,Polo Bandoneon,5
+ARTES VISUALES,Nuñez,Comuna 13,Museo Malvinas E Islas Atlantico Sur,4
+ARTES VISUALES,Palermo,Comuna 14,,4
+ARTES VISUALES,Palermo,Comuna 14,Contemporary Latin America Art,1
+ARTES VISUALES,Palermo,Comuna 14,Fola,1
+ARTES VISUALES,Palermo,Comuna 14,Galeria Acefala,1
+ARTES VISUALES,Palermo,Comuna 14,Galeria Espacio Pla,1
+ARTES VISUALES,Palermo,Comuna 14,Galeria Hilo,1
+ARTES VISUALES,Palermo,Comuna 14,Galeria Maman Art,1
+ARTES VISUALES,Palermo,Comuna 14,Galeria Pasto,1
+ARTES VISUALES,Palermo,Comuna 14,Hipodromo De Palermo,4
+ARTES VISUALES,Palermo,Comuna 14,Jardin Botanico,4
+ARTES VISUALES,Palermo,Comuna 14,La Rural,6
+ARTES VISUALES,Palermo,Comuna 14,Malba,13
+ARTES VISUALES,Palermo,Comuna 14,Museo Jose Hernandez,51
+ARTES VISUALES,Palermo,Comuna 14,Museo Sivori,95
+ARTES VISUALES,Parque avellaneda,Comuna 09,Barrio Cildañez,1
+ARTES VISUALES,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,58
+ARTES VISUALES,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,37
+ARTES VISUALES,Paternal,Comuna 15,Galeria Isla Flotante,1
+ARTES VISUALES,Puerto madero,Comuna 01,Ex-cerveceria Munich,13
+ARTES VISUALES,Puerto madero,Comuna 01,"Museo De Calcos Y Escultura Comparada ""ernesto De La Carcova""",3
+ARTES VISUALES,Recoleta,Comuna 02,Bliblioteca Nacional,3
+ARTES VISUALES,Recoleta,Comuna 02,Centro Cultural Recoleta,73
+ARTES VISUALES,Recoleta,Comuna 02,Galeria Cosmocosa,1
+ARTES VISUALES,Recoleta,Comuna 02,Galeria Mite,1
+ARTES VISUALES,Recoleta,Comuna 02,Galeria Otto,1
+ARTES VISUALES,Recoleta,Comuna 02,Galeria Rubbers Internacional,1
+ARTES VISUALES,Recoleta,Comuna 02,Museo Nacional Bellas Artes,14
+ARTES VISUALES,Recoleta,Comuna 02,Plaza De La Republica Oriental Del Uruguay,1
+ARTES VISUALES,Retiro,Comuna 01,,3
+ARTES VISUALES,Retiro,Comuna 01,Auditorio Doctorado Untref,1
+ARTES VISUALES,Retiro,Comuna 01,Barrio 31,2
+ARTES VISUALES,Retiro,Comuna 01,Biblioteca Ricardo Guiraldes,1
+ARTES VISUALES,Retiro,Comuna 01,Galeria Aldo De Sousa,1
+ARTES VISUALES,Retiro,Comuna 01,Galeria Henrique Faria,1
+ARTES VISUALES,Retiro,Comuna 01,Galeria Miranda Bosch,1
+ARTES VISUALES,Retiro,Comuna 01,Galeria Roldan Moderno,1
+ARTES VISUALES,Retiro,Comuna 01,Galeria Rolf Art,1
+ARTES VISUALES,Retiro,Comuna 01,Galeria Van Riel,1
+ARTES VISUALES,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,56
+ARTES VISUALES,Saavedra,Comuna 12,Centro Cultural Lino E. Spilimbergo,1
+ARTES VISUALES,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,15
+ARTES VISUALES,San cristobal,Comuna 03,,2
+ARTES VISUALES,San cristobal,Comuna 03,Espacio Cultural Julian Centeya,3
+ARTES VISUALES,San nicolas,Comuna 01,Centro Cultural San Martin,118
+ARTES VISUALES,San nicolas,Comuna 01,Fundacion Osde,3
+ARTES VISUALES,San nicolas,Comuna 01,Teatro Colon,1
+ARTES VISUALES,San nicolas,Comuna 01,Teatro San Martin,3
+ARTES VISUALES,San telmo,Comuna 01,,2
+ARTES VISUALES,San telmo,Comuna 01,Mamba,24
+ARTES VISUALES,Villa crespo,Comuna 15,Biblioteca Casa De La Lectura,5
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Atocha,1
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Hache,1
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Nora Fisch,1
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Pabellon 4,1
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Revolver,1
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Ruth Benzacar,1
+ARTES VISUALES,Villa crespo,Comuna 15,Galeria Uv,1
+ARTES VISUALES,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,10
+ARTES VISUALES,Villa devoto,Comuna 11,Centro Cultural Devoto,3
+ARTES VISUALES,Villa lugano,Comuna 08,Centro Cultural Barrio Copello,1
+ARTES VISUALES,Villa lugano,Comuna 08,Centro Cultural Saladiyo,1
+ARTES VISUALES,Villa lugano,Comuna 08,Tunel De Los Artistas,1
+ARTES VISUALES,Villa lugano,Comuna 08,Villa 20,1
+ARTES VISUALES,Villa soldati,Comuna 08,Escuela Especial 7 De 9,1
+ARTES VISUALES,Villa soldati,Comuna 08,Jardin Ramon Carrillo,6
+ARTES VISUALES,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,20
+CINE Y AUDIOVISUAL,Balvanera,Comuna 03,Centro Cultural Alfonsina Storni,3
+CINE Y AUDIOVISUAL,Balvanera,Comuna 03,Museo Casa Carlos Gardel,5
+CINE Y AUDIOVISUAL,Barracas,Comuna 04,Centro Cultural La Usina,1
+CINE Y AUDIOVISUAL,Barracas,Comuna 04,Escuela Horacio Quiroga,1
+CINE Y AUDIOVISUAL,Belgrano,Comuna 13,Polideportivo Los Piletones,3
+CINE Y AUDIOVISUAL,Boca,Comuna 04,,2
+CINE Y AUDIOVISUAL,Boca,Comuna 04,Barrio Lamadrid,1
+CINE Y AUDIOVISUAL,Boca,Comuna 04,Barrio Rodrigo Bueno,1
+CINE Y AUDIOVISUAL,Boca,Comuna 04,Museo Del Cine,173
+CINE Y AUDIOVISUAL,Boca,Comuna 04,Usina Del Arte,47
+CINE Y AUDIOVISUAL,Caballito,Comuna 06,Anfiteatro Parque Centenario,3
+CINE Y AUDIOVISUAL,Caballito,Comuna 06,Centro Cultural Lola Mora,6
+CINE Y AUDIOVISUAL,Chacarita,Comuna 15,Barrio Playon De Chacarita,4
+CINE Y AUDIOVISUAL,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,11
+CINE Y AUDIOVISUAL,Flores,Comuna 07,,1
+CINE Y AUDIOVISUAL,Flores,Comuna 07,Barrio Juan Xxiii,3
+CINE Y AUDIOVISUAL,Flores,Comuna 07,Espacio Cultural Marco Del Pont,29
+CINE Y AUDIOVISUAL,Mataderos,Comuna 09,,1
+CINE Y AUDIOVISUAL,Mataderos,Comuna 09,Plaza Los Perales,2
+CINE Y AUDIOVISUAL,Monte castro,Comuna 10,Centro Cultural El Taller,2
+CINE Y AUDIOVISUAL,Nueva pompeya,Comuna 04,,1
+CINE Y AUDIOVISUAL,Nueva pompeya,Comuna 04,Centro Cultural Homero Manzi,1
+CINE Y AUDIOVISUAL,Nuñez,Comuna 13,Centro Cultural Julio Cortazar,3
+CINE Y AUDIOVISUAL,Palermo,Comuna 14,Museo Jose Hernandez,3
+CINE Y AUDIOVISUAL,Parque avellaneda,Comuna 09,Barrio Cildañez,2
+CINE Y AUDIOVISUAL,Parque avellaneda,Comuna 09,Escuela Reino De Thailandia,2
+CINE Y AUDIOVISUAL,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,21
+CINE Y AUDIOVISUAL,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,2
+CINE Y AUDIOVISUAL,Recoleta,Comuna 02,Barrio Saldias,2
+CINE Y AUDIOVISUAL,Recoleta,Comuna 02,Centro Cultural Recoleta,104
+CINE Y AUDIOVISUAL,Recoleta,Comuna 02,Plaza Francia,1
+CINE Y AUDIOVISUAL,Retiro,Comuna 01,,1
+CINE Y AUDIOVISUAL,Retiro,Comuna 01,Barrio 31,3
+CINE Y AUDIOVISUAL,Retiro,Comuna 01,Cancha 9,1
+CINE Y AUDIOVISUAL,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,5
+CINE Y AUDIOVISUAL,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,7
+CINE Y AUDIOVISUAL,San cristobal,Comuna 03,,2
+CINE Y AUDIOVISUAL,San cristobal,Comuna 03,Casa Trans,1
+CINE Y AUDIOVISUAL,San nicolas,Comuna 01,,1
+CINE Y AUDIOVISUAL,San nicolas,Comuna 01,Centro Cultural San Martin,454
+CINE Y AUDIOVISUAL,San nicolas,Comuna 01,Espacio Incaa Km 0 - Gaumont,5
+CINE Y AUDIOVISUAL,San nicolas,Comuna 01,Sede Colegio Publico De Abogados,8
+CINE Y AUDIOVISUAL,San nicolas,Comuna 01,Teatro San Martin,773
+CINE Y AUDIOVISUAL,San telmo,Comuna 01,Escuela Bernardino Rivadavia,1
+CINE Y AUDIOVISUAL,San telmo,Comuna 01,Mamba,6
+CINE Y AUDIOVISUAL,Versalles,Comuna 10,Centro Cultural Versalles,3
+CINE Y AUDIOVISUAL,Villa crespo,Comuna 15,Biblioteca Casa De La Lectura,11
+CINE Y AUDIOVISUAL,Villa crespo,Comuna 15,Escuela 17 De 7 Francisco De Vitoria,1
+CINE Y AUDIOVISUAL,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,2
+CINE Y AUDIOVISUAL,Villa lugano,Comuna 08,,4
+CINE Y AUDIOVISUAL,Villa lugano,Comuna 08,Centro Cultural Barrio Copello,4
+CINE Y AUDIOVISUAL,Villa lugano,Comuna 08,Complejo Padre Mugica,1
+CINE Y AUDIOVISUAL,Villa lugano,Comuna 08,Galpon Piedrabuenarte,1
+CINE Y AUDIOVISUAL,Villa lugano,Comuna 08,Villa 20,1
+CINE Y AUDIOVISUAL,Villa soldati,Comuna 08,,1
+CINE Y AUDIOVISUAL,Villa soldati,Comuna 08,Barrio Fatima,1
+CINE Y AUDIOVISUAL,Villa soldati,Comuna 08,Escuela Maestro Carranza,2
+CINE Y AUDIOVISUAL,Villa soldati,Comuna 08,Plaza Carrillo,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Almagro,Comuna 05,Bar El Simbolo,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Balvanera,Comuna 03,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Balvanera,Comuna 03,Centro Cultural Alfonsina Storni,9
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Balvanera,Comuna 03,Museo Casa Carlos Gardel,10
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Barracas,Comuna 04,Bar,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Barracas,Comuna 04,Escuela Horacio Quiroga,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Barracas,Comuna 04,Espacio Cultural Del Sur,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Barracas,Comuna 04,Hospital Borda,7
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Barracas,Comuna 04,Hospital Infanto Juvenil Tobar Garcia,8
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Belgrano,Comuna 13,,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Boca,Comuna 04,,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Boca,Comuna 04,Usina Del Arte,30
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Boca,Comuna 04,Vuelta De Rocha,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Boedo,Comuna 05,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Boedo,Comuna 05,Museo Historico Monte Piedad,6
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Caballito,Comuna 06,,3
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Caballito,Comuna 06,Bar,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Caballito,Comuna 06,Centro Cultural Lola Mora,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Caballito,Comuna 06,Centro Cultural Sebastian Piana,4
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,26
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Colegiales,Comuna 13,Centro Cultural Colegiales,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Flores,Comuna 07,Atrio,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Flores,Comuna 07,Madre Del Pueblo,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Floresta,Comuna 10,Plaza Velez Sarfield,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Liniers,Comuna 09,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Mataderos,Comuna 09,Centro Cultural Macedonio Fernandez,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Mataderos,Comuna 09,Feria De Mataderos,24
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Academia Nacional Del Tango,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Bar,5
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Bar 36 Billares,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Casa De La Cultura,3
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Espacio Virrey Liniers,63
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,La Vidriera,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Museo Argentino De Magia,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Museo Calbildo Buenos Aires,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monserrat,Comuna 01,Museo Del Bicentenario,8
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Monte castro,Comuna 10,Centro Cultural El Taller,3
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Nueva pompeya,Comuna 04,Centro Cultural Homero Manzi,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Nuñez,Comuna 13,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Nuñez,Comuna 13,Centro Cultural Julio Cortazar,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Nuñez,Comuna 13,Esc. Tecnicas Raggio,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Nuñez,Comuna 13,Museo Malvinas E Islas Atlantico Sur,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Nuñez,Comuna 13,Museo Quinquela Martin,4
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Biblioteca Carlos Guido Y Spano,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Centro Cultural Tato Bores,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Jardin Botanico,4
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Museo Jose Hernandez,35
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Museo Sivori,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Parque Tres De Febrero,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Palermo,Comuna 14,Regimiento De Granaderos A Caballo Gral. San Martin,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Parque avellaneda,Comuna 09,Escuela Reino De Thailandia,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,30
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Parque chacabuco,Comuna 07,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,21
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Parque patricios,Comuna 04,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Recoleta,Comuna 02,,3
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Recoleta,Comuna 02,Hospital General De Agudos Bernardino Rivadavia,3
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Retiro,Comuna 01,Bar,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Retiro,Comuna 01,Colegio Domingo Faustino Sarmiento,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,4
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Retiro,Comuna 01,Plazoleta Carlos Pellegrini,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Retiro,Comuna 01,Teatro Nacional Cervantes,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Saavedra,Comuna 12,Biblioteca Popular Cornelio Saavedra,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Saavedra,Comuna 12,Centro Cultural Lino E. Spilimbergo,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San cristobal,Comuna 03,,4
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San cristobal,Comuna 03,Espacio Cultural Julian Centeya,5
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San cristobal,Comuna 03,Plaza Martin Fierro,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Archivo General De La Nacion,5
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Bar,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Bolsa De Comercio,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Centro Cultural San Martin,9
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Hotel Panamericano,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Museo De La Mujer Argentina,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Restaurante Zirkel. Club Aleman,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San nicolas,Comuna 01,Teatro Colon,63
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San telmo,Comuna 01,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San telmo,Comuna 01,Atrio,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San telmo,Comuna 01,Bar,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San telmo,Comuna 01,Casal Catalunya,3
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San telmo,Comuna 01,Centro Cultural Fortunato Lacamera,5
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,San telmo,Comuna 01,Distintos Puntos De La Ciudad,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Versalles,Comuna 10,Centro Cultural Versalles,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa crespo,Comuna 15,Centro Cultural Osvaldo Pugliese,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa del parque,Comuna 11,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,7
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa devoto,Comuna 11,Biblioteca Antonio Devoto,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa devoto,Comuna 11,Cafe Garcia,2
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa gral. Mitre,Comuna 11,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa lugano,Comuna 08,Centro Cultural Barrio Copello,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa lugano,Comuna 08,Centro Cultural Saladiyo,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa ortuzar,Comuna 15,Centro Cultural Roberto Santoro,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa soldati,Comuna 08,,1
+CULTURA TRADICIONAL POPULAR Y PATRIMONIO INMATERIAL,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,43
+LIBRO Y LECTURA,Barracas,Comuna 04,Museo Historico Nacional,1
+LIBRO Y LECTURA,Belgrano,Comuna 13,Biblioteca La Reina Batata,6
+LIBRO Y LECTURA,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,2
+LIBRO Y LECTURA,Boca,Comuna 04,Biblioteca Joaquin V Gonzalez,32
+LIBRO Y LECTURA,Boca,Comuna 04,Club Del Slack,20
+LIBRO Y LECTURA,Boca,Comuna 04,Usina Del Arte,21
+LIBRO Y LECTURA,Boedo,Comuna 05,Biblioteca Miguel Cane,2
+LIBRO Y LECTURA,Caballito,Comuna 06,Cooperativa La Cacerola,3
+LIBRO Y LECTURA,Caballito,Comuna 06,Museo Escultores L. Perlotti,1
+LIBRO Y LECTURA,Chacarita,Comuna 15,Biblioteca Baldomero Fernandez Moreno,9
+LIBRO Y LECTURA,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,3
+LIBRO Y LECTURA,Flores,Comuna 07,Biblioteca Javier Villafañe,17
+LIBRO Y LECTURA,Flores,Comuna 07,Centro Cultural Roberto Arlt,1
+LIBRO Y LECTURA,Flores,Comuna 07,Espacio Cultural Marco Del Pont,5
+LIBRO Y LECTURA,Floresta,Comuna 10,Biblioteca Hilario Ascasubi,38
+LIBRO Y LECTURA,Monserrat,Comuna 01,Bar,1
+LIBRO Y LECTURA,Monserrat,Comuna 01,Biblioteca Martin Del Barco Centenera,32
+LIBRO Y LECTURA,Monserrat,Comuna 01,Casa Museo Fernandez Blanco,2
+LIBRO Y LECTURA,Monserrat,Comuna 01,Espacio Virrey Liniers,1
+LIBRO Y LECTURA,Palermo,Comuna 14,,1
+LIBRO Y LECTURA,Palermo,Comuna 14,Biblioteca Carlos Guido Y Spano,35
+LIBRO Y LECTURA,Palermo,Comuna 14,Centro Cultural Tato Bores,1
+LIBRO Y LECTURA,Palermo,Comuna 14,La Rural,1
+LIBRO Y LECTURA,Palermo,Comuna 14,Museo Jose Hernandez,6
+LIBRO Y LECTURA,Palermo,Comuna 14,Museo Sivori,4
+LIBRO Y LECTURA,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,3
+LIBRO Y LECTURA,Parque chacabuco,Comuna 07,,1
+LIBRO Y LECTURA,Parque patricios,Comuna 04,Biblioteca Enrique Banchs,28
+LIBRO Y LECTURA,Recoleta,Comuna 02,Centro Cultural Recoleta,16
+LIBRO Y LECTURA,Retiro,Comuna 01,Biblioteca Ricardo Guiraldes,86
+LIBRO Y LECTURA,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,5
+LIBRO Y LECTURA,Saavedra,Comuna 12,,1
+LIBRO Y LECTURA,Saavedra,Comuna 12,Biblioteca Popular Cornelio Saavedra,2
+LIBRO Y LECTURA,Saavedra,Comuna 12,Centro Cultural Lino E. Spilimbergo,1
+LIBRO Y LECTURA,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,37
+LIBRO Y LECTURA,San nicolas,Comuna 01,Cck,2
+LIBRO Y LECTURA,San nicolas,Comuna 01,Centro Cultural San Martin,8
+LIBRO Y LECTURA,San telmo,Comuna 01,Mamba,2
+LIBRO Y LECTURA,Villa crespo,Comuna 15,Biblioteca Casa De La Lectura,273
+LIBRO Y LECTURA,Villa crespo,Comuna 15,Escuela 17 De 7 Francisco De Vitoria,1
+LIBRO Y LECTURA,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,1
+LIBRO Y LECTURA,Villa lugano,Comuna 08,Biblioteca Alvaro Yunque,6
+LIBRO Y LECTURA,Villa lugano,Comuna 08,Centro Cultural Barrio Copello,1
+LIBRO Y LECTURA,Villa ortuzar,Comuna 15,Centro Cultural Roberto Santoro,1
+LIBRO Y LECTURA,Villa santa rita,Comuna 11,Biblioteca Rafael Obligado,19
+LIBRO Y LECTURA,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,1
+MIXTO,Almagro,Comuna 05,Conservatorio Superior De Musica Manuel De Falla,1
+MIXTO,Barracas,Comuna 04,,1
+MIXTO,Barracas,Comuna 04,Espacio Cultural Del Sur,1
+MIXTO,Belgrano,Comuna 13,Biblioteca La Reina Batata,4
+MIXTO,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,1
+MIXTO,Boca,Comuna 04,,1
+MIXTO,Boca,Comuna 04,Barrio Lamadrid,1
+MIXTO,Boca,Comuna 04,Barrio Rodrigo Bueno,2
+MIXTO,Boca,Comuna 04,Biblioteca Joaquin V Gonzalez,3
+MIXTO,Boca,Comuna 04,Usina Del Arte,68
+MIXTO,Chacarita,Comuna 15,Barrio Playon De Chacarita,3
+MIXTO,Chacarita,Comuna 15,Biblioteca Baldomero Fernandez Moreno,1
+MIXTO,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,1
+MIXTO,Constitucion,Comuna 01,,1
+MIXTO,Flores,Comuna 07,,1
+MIXTO,Flores,Comuna 07,Espacio Cultural Marco Del Pont,2
+MIXTO,Mataderos,Comuna 09,Feria De Mataderos,1
+MIXTO,Mataderos,Comuna 09,Plaza Los Perales,1
+MIXTO,Monserrat,Comuna 01,,2
+MIXTO,Monserrat,Comuna 01,Biblioteca Martin Del Barco Centenera,12
+MIXTO,Monserrat,Comuna 01,Casa De La Cultura,1
+MIXTO,Monserrat,Comuna 01,La Vidriera,6
+MIXTO,Nueva pompeya,Comuna 04,Barrio Zavalela,1
+MIXTO,Nueva pompeya,Comuna 04,Escuela Dean Diego Estanislao De Zavaleta,1
+MIXTO,Nueva pompeya,Comuna 04,Plaza Kevin,1
+MIXTO,Nuñez,Comuna 13,Distintos Puntos De La Ciudad,1
+MIXTO,Nuñez,Comuna 13,Museo Malvinas E Islas Atlantico Sur,8
+MIXTO,Nuñez,Comuna 13,Museo Quinquela Martin,2
+MIXTO,Palermo,Comuna 14,,2
+MIXTO,Palermo,Comuna 14,Biblioteca Carlos Guido Y Spano,9
+MIXTO,Palermo,Comuna 14,Museo Jose Hernandez,4
+MIXTO,Parque avellaneda,Comuna 09,,1
+MIXTO,Parque avellaneda,Comuna 09,Barrio Cildañez,1
+MIXTO,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,2
+MIXTO,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,4
+MIXTO,Parque chas,Comuna 15,Hospital General De Agudos Enrique Tornu,1
+MIXTO,Parque patricios,Comuna 04,,1
+MIXTO,Parque patricios,Comuna 04,Biblioteca Enrique Banchs,3
+MIXTO,Parque patricios,Comuna 04,Hospital De Pediatria Garrahan,2
+MIXTO,Recoleta,Comuna 02,Cancha De Los Paraguayos,8
+MIXTO,Recoleta,Comuna 02,Centro Cultural Recoleta,120
+MIXTO,Retiro,Comuna 01,Barrio 31,2
+MIXTO,Retiro,Comuna 01,Biblioteca Ricardo Guiraldes,10
+MIXTO,Retiro,Comuna 01,Cedel,5
+MIXTO,Retiro,Comuna 01,Gendarmeria Nacional Y Rodolfo Walsh,1
+MIXTO,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,2
+MIXTO,Retiro,Comuna 01,Plaza Del Portal,1
+MIXTO,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,1
+MIXTO,San cristobal,Comuna 03,,2
+MIXTO,San cristobal,Comuna 03,Polo Circo,1
+MIXTO,San nicolas,Comuna 01,Centro Cultural San Martin,6
+MIXTO,San nicolas,Comuna 01,Teatro Colon,14
+MIXTO,San nicolas,Comuna 01,Teatro San Martin,15
+MIXTO,San telmo,Comuna 01,Escuela Bernardino Rivadavia,1
+MIXTO,Villa crespo,Comuna 15,Biblioteca Casa De La Lectura,7
+MIXTO,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,2
+MIXTO,Villa devoto,Comuna 11,Biblioteca Antonio Devoto,7
+MIXTO,Villa lugano,Comuna 08,,3
+MIXTO,Villa lugano,Comuna 08,Complejo Padre Mugica,1
+MIXTO,Villa lugano,Comuna 08,Villa 20,5
+MIXTO,Villa soldati,Comuna 08,,2
+MIXTO,Villa soldati,Comuna 08,Barrio Fatima,1
+MIXTO,Villa soldati,Comuna 08,Jardin Ramon Carrillo,1
+MIXTO,Villa soldati,Comuna 08,Plaza Carrillo,2
+MIXTO,Villa soldati,Comuna 08,Villa 20,1
+MIXTO,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,16
+MUSICA,Almagro,Comuna 05,,3
+MUSICA,Almagro,Comuna 05,Bar El Simbolo,1
+MUSICA,Almagro,Comuna 05,Conservatorio Superior De Musica De La Ciudad De Bs. As. Astor Piazzolla,2
+MUSICA,Almagro,Comuna 05,Conservatorio Superior De Musica Manuel De Falla,10
+MUSICA,Almagro,Comuna 05,Universidad Tecnologica Nacional,2
+MUSICA,Balvanera,Comuna 03,Centro Cultural Alfonsina Storni,2
+MUSICA,Balvanera,Comuna 03,Ciudad Cultural Konex,2
+MUSICA,Balvanera,Comuna 03,Congreso De La Nacion,3
+MUSICA,Balvanera,Comuna 03,El Emergente Abasto,1
+MUSICA,Balvanera,Comuna 03,La Academia,2
+MUSICA,Balvanera,Comuna 03,Museo Casa Carlos Gardel,6
+MUSICA,Balvanera,Comuna 03,Teatro Monte Viejo,6
+MUSICA,Barracas,Comuna 04,,1
+MUSICA,Barracas,Comuna 04,Espacio Cultural Del Sur,44
+MUSICA,Barracas,Comuna 04,La Flor De Barracas,1
+MUSICA,Barracas,Comuna 04,Museo Historico Nacional,5
+MUSICA,Belgrano,Comuna 13,,1
+MUSICA,Belgrano,Comuna 13,Auditorio Belgrano,1
+MUSICA,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,11
+MUSICA,Boca,Comuna 04,,1
+MUSICA,Boca,Comuna 04,Barrio Rodrigo Bueno,1
+MUSICA,Boca,Comuna 04,Biblioteca Joaquin V Gonzalez,1
+MUSICA,Boca,Comuna 04,Usina Del Arte,509
+MUSICA,Boedo,Comuna 05,,1
+MUSICA,Caballito,Comuna 06,Anfiteatro Eva Perón,1
+MUSICA,Caballito,Comuna 06,Anfiteatro Parque Centenario,2
+MUSICA,Caballito,Comuna 06,Bar,1
+MUSICA,Caballito,Comuna 06,Centro Cultural El Eternauta,1
+MUSICA,Caballito,Comuna 06,Centro Cultural Lola Mora,5
+MUSICA,Caballito,Comuna 06,Centro Cultural Sebastian Piana,5
+MUSICA,Caballito,Comuna 06,Iglesia Santa Julia,1
+MUSICA,Caballito,Comuna 06,Museo Escultores L. Perlotti,4
+MUSICA,Chacarita,Comuna 15,,1
+MUSICA,Chacarita,Comuna 15,Barrio Playon De Chacarita,1
+MUSICA,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,32
+MUSICA,Chacarita,Comuna 15,Teatro Regio,1
+MUSICA,Colegiales,Comuna 13,Centro Cultural Colegiales,2
+MUSICA,Flores,Comuna 07,,1
+MUSICA,Flores,Comuna 07,Espacio Cultural Marco Del Pont,25
+MUSICA,Flores,Comuna 07,Madre Del Pueblo,1
+MUSICA,Floresta,Comuna 10,Centro Cultural Baldomero Fernandez Moreno,1
+MUSICA,Mataderos,Comuna 09,,1
+MUSICA,Mataderos,Comuna 09,Plaza Los Perales,1
+MUSICA,Monserrat,Comuna 01,,5
+MUSICA,Monserrat,Comuna 01,Academia Nacional Del Tango,2
+MUSICA,Monserrat,Comuna 01,Bar,8
+MUSICA,Monserrat,Comuna 01,Bar 36 Billares,2
+MUSICA,Monserrat,Comuna 01,Casa De La Cultura,9
+MUSICA,Monserrat,Comuna 01,Casa Museo Fernandez Blanco,10
+MUSICA,Monserrat,Comuna 01,Espacio Virrey Liniers,5
+MUSICA,Monserrat,Comuna 01,La Vidriera,37
+MUSICA,Monserrat,Comuna 01,Legislatura Porteña,5
+MUSICA,Monserrat,Comuna 01,Museo De La Ciudad,5
+MUSICA,Monte castro,Comuna 10,Centro Cultural El Taller,1
+MUSICA,Nueva pompeya,Comuna 04,Plaza Kevin,2
+MUSICA,Nueva pompeya,Comuna 04,Polo Bandoneon,10
+MUSICA,Palermo,Comuna 14,,4
+MUSICA,Palermo,Comuna 14,Museo Jose Hernandez,22
+MUSICA,Palermo,Comuna 14,Museo Sivori,1
+MUSICA,Parque avellaneda,Comuna 09,,1
+MUSICA,Parque avellaneda,Comuna 09,Barrio Cildañez,1
+MUSICA,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,58
+MUSICA,Parque chacabuco,Comuna 07,,4
+MUSICA,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,21
+MUSICA,Parque patricios,Comuna 04,Biblioteca Enrique Banchs,1
+MUSICA,Puerto madero,Comuna 01,Ex-cerveceria Munich,1
+MUSICA,Recoleta,Comuna 02,Bar,5
+MUSICA,Recoleta,Comuna 02,Bliblioteca Nacional,3
+MUSICA,Recoleta,Comuna 02,Cancha De Los Paraguayos,2
+MUSICA,Recoleta,Comuna 02,Centro Cultural Recoleta,80
+MUSICA,Recoleta,Comuna 02,Plaza Francia,1
+MUSICA,Recoleta,Comuna 02,Uba,2
+MUSICA,Retiro,Comuna 01,,1
+MUSICA,Retiro,Comuna 01,Bar,3
+MUSICA,Retiro,Comuna 01,Barrio 31,6
+MUSICA,Retiro,Comuna 01,Biblioteca Ricardo Guiraldes,1
+MUSICA,Retiro,Comuna 01,Colegio Domingo Faustino Sarmiento,1
+MUSICA,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,37
+MUSICA,Saavedra,Comuna 12,Biblioteca Popular Cornelio Saavedra,1
+MUSICA,Saavedra,Comuna 12,Centro Cultural Lino E. Spilimbergo,1
+MUSICA,Saavedra,Comuna 12,Escuela Superior De Educacion Artistica En Musica Juan Pedro Esnaola,1
+MUSICA,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,13
+MUSICA,San cristobal,Comuna 03,,18
+MUSICA,San cristobal,Comuna 03,Espacio Cultural Julian Centeya,15
+MUSICA,San nicolas,Comuna 01,,3
+MUSICA,San nicolas,Comuna 01,Asociacion Dante Alighieri,1
+MUSICA,San nicolas,Comuna 01,Auditorio Umsa,1
+MUSICA,San nicolas,Comuna 01,Bar,1
+MUSICA,San nicolas,Comuna 01,Bar Celta,1
+MUSICA,San nicolas,Comuna 01,Bolsa De Comercio,5
+MUSICA,San nicolas,Comuna 01,Cck,9
+MUSICA,San nicolas,Comuna 01,Centro Cultural San Martin,57
+MUSICA,San nicolas,Comuna 01,El Gato Negro,1
+MUSICA,San nicolas,Comuna 01,Luna Park,1
+MUSICA,San nicolas,Comuna 01,Teatro Colon,181
+MUSICA,San nicolas,Comuna 01,Teatro San Martin,27
+MUSICA,San nicolas,Comuna 01,Universidad Del Museo Social Argentino,1
+MUSICA,San telmo,Comuna 01,Atrio,1
+MUSICA,San telmo,Comuna 01,Centro Cultural Fortunato Lacamera,1
+MUSICA,San telmo,Comuna 01,Mamba,1
+MUSICA,San telmo,Comuna 01,Museo Historico Nacional,1
+MUSICA,San telmo,Comuna 01,Pista Urbana,4
+MUSICA,San telmo,Comuna 01,Plaza Dorrego,1
+MUSICA,Versalles,Comuna 10,Centro Cultural Versalles,4
+MUSICA,Villa crespo,Comuna 15,Biblioteca Casa De La Lectura,2
+MUSICA,Villa del parque,Comuna 11,,1
+MUSICA,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,28
+MUSICA,Villa devoto,Comuna 11,Biblioteca Antonio Devoto,1
+MUSICA,Villa devoto,Comuna 11,Cafe Garcia,1
+MUSICA,Villa lugano,Comuna 08,,3
+MUSICA,Villa lugano,Comuna 08,Centro Cultural Barrio Copello,2
+MUSICA,Villa lugano,Comuna 08,Villa 20,2
+MUSICA,Villa ortuzar,Comuna 15,Centro Cultural Roberto Santoro,2
+MUSICA,Villa soldati,Comuna 08,,2
+MUSICA,Villa soldati,Comuna 08,Barrio Fatima,1
+MUSICA,Villa soldati,Comuna 08,Instituto Nuestra Señora De Fátima,1
+MUSICA,Villa soldati,Comuna 08,Nido,1
+MUSICA,Villa soldati,Comuna 08,Plaza Carrillo,4
+MUSICA,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,39
+OTROS,Almagro,Comuna 05,Conservatorio Superior De Musica Manuel De Falla,1
+OTROS,Balvanera,Comuna 03,Centro Cultural Alfonsina Storni,10
+OTROS,Barracas,Comuna 04,Centro Cultural La Usina,1
+OTROS,Barracas,Comuna 04,Espacio Cultural Del Sur,9
+OTROS,Barracas,Comuna 04,Hospital Borda,1
+OTROS,Barracas,Comuna 04,Hospital General De Niños Pedro De Elizalde,2
+OTROS,Barracas,Comuna 04,Hospital Infanto Juvenil Tobar Garcia,1
+OTROS,Belgrano,Comuna 13,Auditorio Belgrano,1
+OTROS,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,49
+OTROS,Boca,Comuna 04,,65
+OTROS,Boca,Comuna 04,Barrio Lamadrid,1
+OTROS,Boca,Comuna 04,Barrio Rodrigo Bueno,1
+OTROS,Boca,Comuna 04,Biblioteca Joaquin V Gonzalez,3
+OTROS,Boca,Comuna 04,Club Del Slack,47
+OTROS,Boca,Comuna 04,Espacio Arte Al Paso,12
+OTROS,Boca,Comuna 04,Fundacion Proa,1
+OTROS,Boca,Comuna 04,Museo Del Cine,1
+OTROS,Boca,Comuna 04,Pelookeria,4
+OTROS,Boca,Comuna 04,Skate Park,8
+OTROS,Boca,Comuna 04,Usina Del Arte,490
+OTROS,Caballito,Comuna 06,Anfiteatro Parque Centenario,7
+OTROS,Caballito,Comuna 06,Centro Cultural Alberto Olmedo,6
+OTROS,Caballito,Comuna 06,Centro Cultural El Eternauta,1
+OTROS,Caballito,Comuna 06,Centro Cultural Lola Mora,5
+OTROS,Caballito,Comuna 06,Centro Cultural Sebastian Piana,3
+OTROS,Caballito,Comuna 06,Museo Escultores L. Perlotti,6
+OTROS,Chacarita,Comuna 15,Barrio Playon De Chacarita,1
+OTROS,Chacarita,Comuna 15,Espacio Cultural Carlos Gardel,33
+OTROS,Colegiales,Comuna 13,Centro Cultural Colegiales,1
+OTROS,Colegiales,Comuna 13,Predio El Dorrego,1
+OTROS,Constitucion,Comuna 01,Academia Porteña Del Lunfardo,2
+OTROS,Flores,Comuna 07,Centro Cultural Barrio Rivadavia,3
+OTROS,Flores,Comuna 07,Centro Cultural Roberto Arlt,2
+OTROS,Flores,Comuna 07,Espacio Cultural Marco Del Pont,18
+OTROS,Flores,Comuna 07,Madre Del Pueblo,1
+OTROS,Flores,Comuna 07,Plaza De Los Niños Barrio Rivadavia,1
+OTROS,Floresta,Comuna 10,Centro Cultural Baldomero Fernandez Moreno,7
+OTROS,Liniers,Comuna 09,Biblioteca Jose Hernandez,3
+OTROS,Liniers,Comuna 09,Centro Cultural Elias Castelnuovo,2
+OTROS,Liniers,Comuna 09,Hospital Santojanni,1
+OTROS,Mataderos,Comuna 09,Centro Cultural Macedonio Fernandez,2
+OTROS,Mataderos,Comuna 09,Feria De Mataderos,3
+OTROS,Monserrat,Comuna 01,,1
+OTROS,Monserrat,Comuna 01,Academia Nacional Del Tango,1
+OTROS,Monserrat,Comuna 01,Biblioteca Martin Del Barco Centenera,1
+OTROS,Monserrat,Comuna 01,Casa De La Cultura,5
+OTROS,Monserrat,Comuna 01,Casa Museo Fernandez Blanco,3
+OTROS,Monserrat,Comuna 01,Espacio Virrey Liniers,3
+OTROS,Monserrat,Comuna 01,Legislatura Porteña,2
+OTROS,Monserrat,Comuna 01,Museo De La Ciudad,1
+OTROS,Monserrat,Comuna 01,Museo Del Traje,14
+OTROS,Monte castro,Comuna 10,Centro Cultural El Taller,1
+OTROS,Monte castro,Comuna 10,Hospital De Rehabilitacion Manuel Roca,1
+OTROS,Nueva pompeya,Comuna 04,Centro Cultural Del Bajo Flores,2
+OTROS,Nueva pompeya,Comuna 04,Centro Cultural Homero Manzi,1
+OTROS,Nueva pompeya,Comuna 04,Club Juventud Y Armonia,1
+OTROS,Nueva pompeya,Comuna 04,Polo Bandoneon,1
+OTROS,Nuñez,Comuna 13,Museo Malvinas E Islas Atlantico Sur,6
+OTROS,Palermo,Comuna 14,,1
+OTROS,Palermo,Comuna 14,Galeria Espacio Pla,1
+OTROS,Palermo,Comuna 14,Museo Jose Hernandez,19
+OTROS,Palermo,Comuna 14,Museo Sivori,7
+OTROS,Parque avellaneda,Comuna 09,Barrio Cildañez,1
+OTROS,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,14
+OTROS,Parque chacabuco,Comuna 07,Espacio Cultural Adan Buenosayres,21
+OTROS,Parque patricios,Comuna 04,Biblioteca Enrique Banchs,1
+OTROS,Parque patricios,Comuna 04,Hospital De Pediatria Garrahan,3
+OTROS,Paternal,Comuna 15,,1
+OTROS,Paternal,Comuna 15,La Becciu: Biblioteca Popular,1
+OTROS,Puerto madero,Comuna 01,Ex-cerveceria Munich,5
+OTROS,Recoleta,Comuna 02,Barrio Saldias,1
+OTROS,Recoleta,Comuna 02,Centro Costa Salguero,1
+OTROS,Recoleta,Comuna 02,Centro Cultural Recoleta,35
+OTROS,Recoleta,Comuna 02,Hospital De Niños Ricardo Gutierrez,3
+OTROS,Recoleta,Comuna 02,Hospital General De Agudos Bernardino Rivadavia,2
+OTROS,Recoleta,Comuna 02,Plaza Francia,4
+OTROS,Retiro,Comuna 01,Barrio 31,2
+OTROS,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,4
+OTROS,Saavedra,Comuna 12,Centro Cultural Lino E. Spilimbergo,1
+OTROS,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,64
+OTROS,San cristobal,Comuna 03,,10
+OTROS,San cristobal,Comuna 03,Distintos Puntos De La Ciudad,1
+OTROS,San cristobal,Comuna 03,Espacio Cultural Julian Centeya,18
+OTROS,San nicolas,Comuna 01,,1
+OTROS,San nicolas,Comuna 01,Cck,3
+OTROS,San nicolas,Comuna 01,Centro Cultural San Martin,252
+OTROS,San nicolas,Comuna 01,Teatro Colon,16
+OTROS,San nicolas,Comuna 01,Teatro San Martin,2
+OTROS,San telmo,Comuna 01,Centro Cultural Fortunato Lacamera,1
+OTROS,San telmo,Comuna 01,Mamba,19
+OTROS,Versalles,Comuna 10,Centro Cultural Versalles,8
+OTROS,Villa crespo,Comuna 15,,1
+OTROS,Villa crespo,Comuna 15,Biblioteca Casa De La Lectura,14
+OTROS,Villa crespo,Comuna 15,Centro Cultural Osvaldo Pugliese,1
+OTROS,Villa crespo,Comuna 15,Escuela 17 De 7 Francisco De Vitoria,1
+OTROS,Villa crespo,Comuna 15,Pastrami Don Elios,1
+OTROS,Villa del parque,Comuna 11,Espacio Cultural Resurgimiento,27
+OTROS,Villa devoto,Comuna 11,Centro Cultural Devoto,8
+OTROS,Villa lugano,Comuna 08,Centro Cultural Barrio Copello,6
+OTROS,Villa lugano,Comuna 08,Villa 20,2
+OTROS,Villa ortuzar,Comuna 15,Centro Cultural Roberto Santoro,2
+OTROS,Villa santa rita,Comuna 11,,1
+OTROS,Villa soldati,Comuna 08,,1
+OTROS,Villa soldati,Comuna 08,Nido,1
+OTROS,Villa urquiza,Comuna 12,Centro Cultural 25 De Mayo,55
+OTROS,Villa urquiza,Comuna 12,Centro Cultural Belgrano,6
+PATRIMONIO MATERIAL,Balvanera,Comuna 03,Atrio,4
+PATRIMONIO MATERIAL,Balvanera,Comuna 03,Museo Casa Carlos Gardel,9
+PATRIMONIO MATERIAL,Barracas,Comuna 04,,1
+PATRIMONIO MATERIAL,Barracas,Comuna 04,Museo Historico Nacional,8
+PATRIMONIO MATERIAL,Belgrano,Comuna 13,Museo De Arte Español Enrique Larreta,2
+PATRIMONIO MATERIAL,Boca,Comuna 04,Puerta Del Bar La Perla,1
+PATRIMONIO MATERIAL,Boedo,Comuna 05,Museo Historico Monte Piedad,3
+PATRIMONIO MATERIAL,Caballito,Comuna 06,Museo Escultores L. Perlotti,3
+PATRIMONIO MATERIAL,Constitucion,Comuna 01,,1
+PATRIMONIO MATERIAL,Constitucion,Comuna 01,Santa Casa Servicios Espirituales,1
+PATRIMONIO MATERIAL,Flores,Comuna 07,Atrio,4
+PATRIMONIO MATERIAL,Liniers,Comuna 09,Biblioteca Jose Hernandez,3
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,,14
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Antiguo Congreso,12
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Atrio,17
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Cafe Tortori,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Casa Altos De Elorriaga,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Casa De La Cultura,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Casa Museo Fernandez Blanco,40
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Centro Austariano,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Edificio Libertador General San Martin,6
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Espacio Virrey Liniers,13
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Fundacion Cassara,5
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Legislatura Porteña,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Manzana De Las Luces,22
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Museo Calbildo Buenos Aires,33
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Museo Casa Rosada,42
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Museo De La Ciudad,2
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Museo De Minerales-munin,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Museo Del Traje,17
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Museo Etnografico,1
+PATRIMONIO MATERIAL,Monserrat,Comuna 01,Pasaje Belgrano,1
+PATRIMONIO MATERIAL,Palermo,Comuna 14,Automovil Club Argentino,8
+PATRIMONIO MATERIAL,Palermo,Comuna 14,Museo Jose Hernandez,4
+PATRIMONIO MATERIAL,Palermo,Comuna 14,Museo Sivori,1
+PATRIMONIO MATERIAL,Parque avellaneda,Comuna 09,Espacio Cultural Chacra De Los Remedios,60
+PATRIMONIO MATERIAL,Parque chacabuco,Comuna 07,Biblioteca Estanislao Del Campo,1
+PATRIMONIO MATERIAL,Parque patricios,Comuna 04,,1
+PATRIMONIO MATERIAL,Puerto madero,Comuna 01,Buque Museo Ara Corbeta Uruguay,3
+PATRIMONIO MATERIAL,Puerto madero,Comuna 01,Buque Museo Fragata Ara Presidente Sarmiento,23
+PATRIMONIO MATERIAL,Puerto madero,Comuna 01,Ex-cerveceria Munich,2
+PATRIMONIO MATERIAL,Recoleta,Comuna 02,Plaza Vicente Lopez,1
+PATRIMONIO MATERIAL,Retiro,Comuna 01,Museo De Arte Hispanoamericano Isaac Fernandez Blanco,37
+PATRIMONIO MATERIAL,Saavedra,Comuna 12,Museo Historico Cornelio Saavedra,1
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,,5
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Bolsa De Comercio,1
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Catedral Metropolitana,2
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Galeria Guemes,15
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Hotel Panamericano,8
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Museo Mitre,1
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Palacio San Miguel,1
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Restaurante Zirkel. Club Aleman,8
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Teatro Colon,117
+PATRIMONIO MATERIAL,San nicolas,Comuna 01,Teatro San Martin,1
+PATRIMONIO MATERIAL,San telmo,Comuna 01,,4
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Asociacion Japonesa Buenos Aires,1
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Atrio,1
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Casal Catalunya,9
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Distintos Puntos De La Ciudad,1
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Mamba,5
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Museo Antartico,1
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Plaza Dorrego,3
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Pulperia Quilapan,1
+PATRIMONIO MATERIAL,San telmo,Comuna 01,Zanjon De Grandos,5

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <title>#historiascondatos - Pulso Cultural - Disciplinas</title> 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<style>
+    circle {
+        stroke: none;
+        opacity: 1;
+        stroke-width: 0px;
+    }
+
+    
+svg text {
+    font-family: "Roboto";
+
+}
+
+</style>
+<svg id="disciplinas">
+    <g></g>
+</svg>
+
+<script>
+    var vWidth = 1000, anchoMaximo =vWidth*0.9; // defino el ancho maximo que puede tener la dataviz
+    var vHeight = 900; 
+    var isSmallDevice = window.innerWidth < 840 ? true : false;
+
+    
+    var rowLength =4;
+
+
+     var radiusScale = d3.scaleSqrt()
+            .range([3, 15]);
+
+            if(isSmallDevice) radiusScale.range([2,9]);
+
+    var colorScale = d3.scaleOrdinal().range(["#8dd3c7",
+            "#e9df30",
+            "#bebada",
+            "#ff6250",
+            "#5fb3dd",
+            "#fda362",
+            "#b3de69",
+            "#f9aad7",
+            "#ffdb92"]);
+
+    
+        
+
+    // Prepare our physical space
+    var g = d3.select('#disciplinas').attr('width', vWidth).attr('height', vHeight)
+    .style("display","block")
+    .style("margin", "auto")
+    .select('g') ;
+
+       d3.queue()
+            .defer(d3.csv, "disciplinas.csv")
+            .awaitAll(ready);
+
+
+    function ready(error, eventos) {
+
+            // arma la escala de radios
+            radiusScale.domain([0, d3.max(eventos[0], function (d) {return d.cantidad;})]);
+            
+            
+            // carga la data en "nodes"
+            var nodes = eventos[0].map(function (d, i) {
+                return {
+                    name: d.establecimiento,
+                    barrio: d.barrio,
+                    value: +d.cantidad,
+                    comuna: d.comuna,
+                    id: i,
+                    tipo: d.disciplinaResumen
+
+                }
+            });
+
+           
+            var vLayout = d3.pack().size([vWidth, vHeight])
+                    .radius(d => radiusScale(d.value))
+                    .padding(2);
+
+
+            // hago el primer circle pack
+
+            var vRoot = d3.hierarchy(prepareData(nodes, "tipo")).sum(function (d) { return d.value; });
+
+            vLayout(vRoot); 
+    
+            var padding = 10, rows = [0,0,0,0], row; // x, y, ytemp, temporal para altura de titulos;
+
+            // tomo los padres los ordeno por tamaño y les cambio la ubicación para que esten ordenaditos en fila
+
+            var ordenantes = vRoot.descendants().filter((d) => d.depth == 1).sort(function (x, y) {
+                                                return d3.descending(x.r, y.r);});
+
+            // aca genera los renglones y columnas basandose en el ancho. para TIPOS
+            
+            var ancho =  window.innerWidth>anchoMaximo? anchoMaximo: window.innerWidth;
+
+             ordenantes.forEach((d, i) => {
+                    switch (i) {
+                        case 0: //es el primer grupo
+                            d.tipoPosX = d.tipoPosY = d.r + padding;
+                            rows = [d.tipoPosX, d.tipoPosY, d.tipoPosY + d.r +padding];
+                            d.row = row = 1;
+                            d.rowValue = rows[3] = d.r + padding;
+                            break;
+                        default: //el resto de los grupos
+                            if (rows[0] + ordenantes[i-1].r + padding + d.r*2 <  ancho){ //entra dentro del ancho
+                                d.tipoPosX = rows[0] + ordenantes[i - 1].r + padding + d.r ;
+                                rows[0] = d.tipoPosX;
+                                d.tipoPosY = rows[1];
+                                d.row = row;
+                                d.rowValue = rows[3];
+                            }else{ //no entra en el ancho, hace un nuevo row.
+                                d.tipoPosX = d.r + padding;
+                                rows[0] = d.tipoPosX;
+                                d.tipoPosY = rows[1] = rows[2] + d.r + padding*6;
+                                rows[2]= rows[2]+ d.r*2 + padding*6;
+                                d.row = row++; // guardo el numero de linea
+                                d.rowValue = rows[3] = d.r + padding; // guardo la altura de la linea 
+                            }
+                        break;
+                    }
+               
+                });
+
+                // ajusta la altura del svg al máximo que va a tener el circle pack
+                vHeight = rows[2]+400;
+                d3.select('#disciplinas').attr("height", vHeight); 
+
+                
+                // actualizo las posiciones de las bubbles con las de sus parents
+            vRoot.descendants().filter((d) => d.depth == 2)
+                    .forEach((d, i) => {
+                            d.tipoPosX = d.x - d.parent.x + d.parent.tipoPosX;
+                            d.tipoPosY = d.y - d.parent.y + d.parent.tipoPosY;
+                            ;
+                        });
+
+            drawViz(vRoot);
+
+
+            // hago el segundo circle pack
+
+            var vRoot = d3.hierarchy(prepareData(nodes, "comuna")).sort(function (x, y) {
+                        return d3.ascending(x.r, y.r);
+                })
+                .sum(function (d) { return d.value; });
+            vLayout(vRoot); 
+
+
+            // tomo los padres los ordeno por tamaño y les cambio la ubicación para que esten ordenaditos en fila
+            var ordenantes = vRoot.descendants().filter((d) => d.depth == 1).sort(function (x, y) {
+                return d3.descending(x.r, y.r);
+            });
+
+                // aca genera los renglones y columnas basandose en el ancho. para COMUNAS
+            rows = [0, 0, 0,0], row;
+            ordenantes.forEach((d, i) => {
+                switch (i) {
+                    case 0:
+                        d.comunaPosX = d.comunaPosY = d.r*0.8 + padding;
+                        rows = [d.comunaPosX, d.comunaPosY, d.comunaPosY + d.r*0.8 + padding];
+                        d.row = row = 1;
+                        d.rowValue =  rows[3] = d.r * 0.8 + padding;
+                        break;
+                    default:
+                        if (rows[0] + ordenantes[i - 1].r*0.8 + padding + d.r*0.8 * 2 < ancho) {
+                            d.comunaPosX = rows[0] + ordenantes[i - 1].r*0.8 + padding + d.r*0.8;
+                            rows[0] = d.comunaPosX;
+                            d.comunaPosY = rows[1];
+                            d.row = row;
+                            d.rowValue = rows[3];
+                        } else {
+                            d.comunaPosX = d.r*0.8 + padding;
+                            rows[0] = d.comunaPosX;
+                            d.comunaPosY = rows[1] = rows[2] + d.r*0.8 + padding * 4;
+                            rows[2] = rows[2] + d.r*0.8 * 2 + padding * 2;
+                            d.row = row++; // guardo el numero de linea
+                            d.rowValue = rows[3] = d.r * 0.8 + padding; // guardo la altura de la linea 
+                        }
+                        break;
+
+                }
+
+            });
+
+            
+                // actualizo las posiciones de las bubbles con las de sus parents
+
+         var bubbles = d3.selectAll(".hijes");
+
+             bubbles.data().forEach(element => {
+                var newData = vRoot.descendants().filter((e) => e.data.id == element.data.id)[0];
+                element.x = (newData.x - newData.parent.parent.x + newData.parent.parent.comunaPosX);
+                element.y = (newData.y - newData.parent.parent.y + newData.parent.parent.comunaPosY);
+                element.joinAround = [newData.parent.parent.comunaPosX, newData.parent.parent.comunaPosY];
+            });
+
+
+                    // aqui hace la simulacion para agrupar los circle packs de Comunas entre si.
+
+            var dataSim = bubbles.data();
+
+            var simulation = d3.forceSimulation(dataSim)
+                .force('charge', d3.forceManyBody().strength(function (d) { return -d.r }).distanceMax(150))
+                .force('x', d3.forceX().x(function (d, i) {
+                    return d.joinAround[0]
+                }).strength(0.1))
+                .force('y', d3.forceY().y(function (d) {
+                    return d.joinAround[1];
+                }).strength(0.1))
+                .force('collision', d3.forceCollide().radius(function (d) { return d.r + 1; }).strength(1))
+                .alphaDecay(0.07)
+                .on('end', actualiza)
+                ;
+
+                function actualiza() {
+                    bubbles.data().forEach(element => {
+                            element.comunaPosX = element.x;
+                            element.comunaPosY = element.y;
+                        });
+    
+                }
+              
+                
+                //**************** BETA TESTING AREA
+             setTimeout(function () {
+               update(vRoot,"comuna")
+                 }, 2700)
+
+              setTimeout(function () {
+                    update(vRoot, "tipo")
+                }, 5600)
+
+               setTimeout(function () {
+                    update(vRoot, "comuna")
+                }, 7700)
+
+       } // END READY
+
+    function drawViz(vRoot) {
+               
+        // genera los groups con la posicion
+       var categoriasGroups = g.selectAll('g')
+            .data(vRoot.descendants().filter((d)=>d.depth == 2))
+            .enter().append('g')
+            .attr("class", "hijes")
+            .attr("transform", function (d, i) {
+                return "translate(" + d.tipoPosX + "," + d.tipoPosY + ")"
+            });
+     
+            // dibuja los bubles
+           categoriasGroups
+                    .append("circle")
+                    .style("fill", function (d, i) { 
+                        return colorScale(d.data.tipo); })
+                    .attr('r', function (d) { return d.r; });
+
+                        // dibuja los titulos de Tipo
+           g.append("g").attr("id", "titulostipo").selectAll('g')
+            .data(vRoot.descendants().filter((d) => d.depth == 1))
+            .enter().append('g')
+            .attr("id", (d) => d.data.name)
+            .attr("transform", function (d, i) {
+                return "translate(" + d.tipoPosX + "," + d.tipoPosY + ")"
+            })
+             .append("text")
+               .text(function (d, i) {
+                   return d.data.name.toProperCase();
+               })
+               .style("text-anchor", "middle")
+               .attr("y", (d) => d.rowValue)
+               .call(wrap, isSmallDevice ? 100 : 150);
+
+            ;
+            
+    }
+
+  
+
+    function update(datos, state) {
+
+
+
+           if(state=="comuna"){
+              // transiciona los bubbles
+              d3.selectAll(".hijes")
+                   .transition().duration(1000)
+                   .attr("transform", function (d, i) {
+                       return "translate(" + d.comunaPosX + "," + d.comunaPosY + ")"
+                   });
+
+               d3.select("#titulostipo").transition().duration(100) // oculta los otros titulos
+                   .style("opacity", 0);
+            
+
+            }else{
+                 // transiciona los bubbles
+                d3.selectAll(".hijes")
+                   .transition().duration(1000)
+                   .attr("transform", function (d, i) {
+                       return "translate(" + d.tipoPosX + "," + d.tipoPosY + ")"
+                   });
+                d3.select("#tituloscomuna").transition().duration(100)  // oculta los otros titulos
+                   .style("opacity", 0);
+
+            }
+        
+            // fabrica los titulos de comuna solo si no existen
+        if(!d3.select("#tituloscomuna")._groups[0][0]){
+        g.append("g").attr("id", "tituloscomuna").selectAll('g')
+            .data(datos.descendants().filter((d) => d.depth == 1))
+            .enter().append('g')
+            .attr("id", (d) => d.data.name)
+            .attr("transform", function (d, i) {
+                return "translate(" + d.comunaPosX + "," + d.comunaPosY + ")"
+            })
+            .append("text")
+            .text(function (d, i) {
+                return d.data.name;
+            })
+            .style("text-anchor", "middle")
+            .style("opacity", 0)
+            .attr("y",(d)=>d.rowValue)
+            .call(wrap, isSmallDevice?60:150)
+            .transition().duration(500).delay(500)
+            .style("opacity", 1);
+        };
+          
+        d3.select("#titulos"+state).transition().duration(400).delay(500) // prende los titulos correctos
+            .style("opacity", 1);
+    }
+
+
+      function prepareData(datos, state) { // Aca preparo la data y la nesteo con respecto al "state" (tipo, comuna, etc)
+
+            if (state != "comuna") {
+                var nestedNodes = d3.nest()
+                    .key(function (d) {
+                        return d[state];
+                    })
+                    .rollup(function (leaves) {
+                        return {
+                            lugares: leaves.length,
+                            actividades: d3.sum(leaves, function (d) { return (+d.value) }),
+                            todas: leaves
+                        };
+                    })
+                    .entries(datos)
+                var childrens = nestedNodes.map(function (p) {
+                    return {
+                        "name": p.key, "children": p.value.todas.sort(function (x, y) {
+                            return d3.descending(x.value, y.value);
+                        })
+                    }
+                })
+
+
+            } else {
+                var nestedNodes = d3.nest()
+                    .key(function (d) {
+                        return d[state];
+                    })
+                    .key(function (d) {
+                        return d.tipo;
+                    })
+                    .rollup(function (leaves) {
+                        return {
+                            lugares: leaves.length,
+                            actividades: d3.sum(leaves, function (d) { return (+d.value) }),
+                            todas: leaves
+                        };
+                    })
+                    .entries(datos)
+
+                var childrens = nestedNodes.map(function (e) {
+                    return {
+                        "name": e.key, "children": e.values.map(function (p) {
+                            return {
+                                "name": p.key, "children": p.value.todas.sort(function (x, y) {
+                                    return d3.descending(x.value, y.value);
+                                })
+                            }
+                        })
+                    }
+
+
+                })
+
+            }
+
+
+            var data = {
+                "name": "A1",
+                "children": childrens
+            }
+            return data;
+        }
+
+
+// funciones extra
+
+
+    function wrap(text, width) {
+            text.each(function () {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 15, // ems
+                    y = text.attr("y"),
+                    dy = 1,
+                    tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy )
+                while (word = words.pop()) {
+                    line.push(word)
+                    tspan.text(line.join(" "))
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop()
+                        tspan.text(line.join(" "))
+                        line = [word]
+                        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", `${++lineNumber * lineHeight + dy}`).text(word)
+                    }
+                }
+            })
+        }
+
+    String.prototype.toProperCase = function () {
+            return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+        };
+</script>
