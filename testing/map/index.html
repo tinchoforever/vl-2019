@@ -254,6 +254,8 @@ function ready (error, results){
 
     var nodes = respuestas.map(function(d, i) {
 
+        if(!d.latlong) d.latlong="-34.554032,-58.481300"; // para los que tienen latlong vacios
+
         return {
           nombre: d.titulo,
           pais: d.barrio,
