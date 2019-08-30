@@ -13,7 +13,7 @@
   #tooltip { 
     position: absolute;     
     text-align: center;     
-    width: 350px;          
+    width: 250px;          
     padding: 8px 6px;
     min-height: 130px;       
     font: 12px sans-serif;    
@@ -36,7 +36,7 @@
 }
 
 .circulos{
-    cursor: pointer; 
+    
     stroke-width:0px;
  -webkit-transition: stroke-width 0.2s; /* Safari */
     transition: stroke-width 0.2s;
@@ -120,18 +120,18 @@ line-height: 18px;
 }
 
 div#tooltip h4 {
-    margin: 5px 0px;
+    margin: 5px 8px;
     display: inline-flex;
      font-size: 12px;
     font-weight: 500;
 }
 
-div#tooltip #presencia {
+div#tooltip #descripcion {
     font-weight: 500;
 }
 
 
-div#tooltip #tamanio,  div#tooltip #link{
+div#tooltip #info{
     margin: 2px 0px;
     font-weight: 500;
     font-size: 12px;
@@ -142,9 +142,8 @@ div#tooltip #tamanio,  div#tooltip #link{
 <svg ></svg>
 <div id="tooltip">
   <h3 ><span id="title"></span></h3>
-  <h4 id="pais"></h4>
-  <h4 id="presencia"></h4>
-  <h5 id="link"></h5>
+  <h5 id="info"></h5>
+  <h4 id="descripcion"></h4>
 
 </div> 
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -161,7 +160,7 @@ var path = d3.geoPath();
 
 var padding = 1;
 
-var height = 900, width=1000;
+var height = 700, width=900;
 var distanceLimit = 70;
   
   var tipos = [
@@ -191,24 +190,28 @@ var radiusScale = d3.scalePow()
 
 var projection = d3.geoMercator();
     
-var zoom = d3.zoom()
-    .scaleExtent([1, 8])
-    .on("zoom", zoomed);
+  // custom localization options
+  
 
-    
-function zoomed() {
-  // g.style("stroke-width", 1.5 / d3.event.transform.k + "px");
-  svg.attr("transform", d3.event.transform); // updated for d3 v4
-}
+  // create custom locale formatter from the given locale options
+  var localeFormatter = d3.formatLocale({
+    "decimal": ",",
+    "thousands": ".",
+    "grouping": [3],
+    "currency": ["$", ""],
+  });
+
+  var numberFormat = localeFormatter.format("$,.0f");
+
 
 
 
 
 // Define the div for the tooltip
-let div = d3.select("#tooltip")
+let tooltip = d3.select("#tooltip")
 .style("opacity",0)
-.style("left", width*0.6 + "px")
-.style("top", height * 0.6 + "px")
+.style("left", width*0.75 + "px")
+.style("top", height * 0.75 + "px")
 ;
 
 var svg = d3.select("svg")
@@ -232,13 +235,18 @@ function ready (error, results){
   // --------- MAPA
 
     var mapa = topojson.feature(mapTopoJson, mapTopoJson.objects.collection);  
+  var projection = d3.geoTransverseMercator()
+    .rotate([74 + 30 / 60, -38 - 50 / 60])
+    .fitExtent([[20, 20], [width-200, height-50]], mapa)
+//    .translate([0,0]);
 
-      projection.fitHeight(height * 0.8, mapa);
+      //projection.fitWidth(width * 0.7, mapa);
 
       path.projection(projection);
 
         svg.append("g")
             .attr("class", "states")
+            .attr("id", "states")
           .selectAll("path")
           .data(mapa.features)
           .enter().append("path")
@@ -254,38 +262,40 @@ function ready (error, results){
 
     var nodes = respuestas.map(function(d, i) {
 
-        if(!d.latlong) d.latlong="-34.554032,-58.481300"; // para los que tienen latlong vacios
+        if(!d.longlat) d.longlat="-34.554032,-58.481300"; // para los que tienen longlat vacios
 
         return {
           nombre: d.titulo,
-          pais: d.barrio,
+          barrio: d.barrio,
+          presupuesto: numberFormat(+d.presupuesto),
           radius: radiusScale(+d.presupuesto),
-          tamanio: +d.presupuesto,
+          descripcion: d.descripcion,
           categoria: d.temaResumen,
-          latlong: projection([Number(d.latlong.split(",")[1]),Number(d.latlong.split(",")[0])])
+          id: d.id,
+          longlat: projection([Number(d.longlat.split(",")[1]),Number(d.longlat.split(",")[0])])
         }
       });
 
 
       
-        var nodos = svg.append('g').attr("id","bubbles")
-              .datum(nodes)
-            .selectAll('.nodes')
-              .data(d => d)
-            .enter().append('g')
-            .attr('id',(d) =>d.id)
-          .attr("transform",function(d){ 
-            return "translate("+ d.latlong[0] + ","+ d.latlong[1] +")"})
-            ;
+        var nodos = svg.append('g')
+                      .attr("id","bubbles")
+                      .datum(nodes)
+                      .selectAll('.nodes')
+                      .data(d => d)
+                      .enter().append('g')
+                      .attr("transform",function(d){ 
+                      return "translate("+ d.longlat[0] + ","+ d.longlat[1] +")"})
+                      ;
 
 
       var simulation = d3.forceSimulation(nodes)
         .force('charge', d3.forceManyBody().strength(1))
          .force('x', d3.forceX().x(function(d) {
-            return d.latlong[0]
+            return d.longlat[0]
            }).strength(1))
         .force('y', d3.forceY().y(function(d) {
-           return d.latlong[1];}).strength(0.5))
+           return d.longlat[1];}).strength(0.5))
         .force('collision', d3.forceCollide().radius(function(d) {
                     return d.radius+padding;   }))
       // .on('tick', ticked);
@@ -299,78 +309,57 @@ function ready (error, results){
      let circles = nodos.append('circle')
         .attr('r', (d) => d.radius)
         .attr('class','circulos')
+        .attr('id', (d) => d.id)
         .attr('fill', (d) => colorScale(d.categoria))
-        .append('title')
-        .append("svg:title")
-       .text(function (d, i) { return "Proyecto: " + d.nombre + "/ barrio:" + d.pais; });
+        //.append("svg:title").text(function (d, i) { return "Proyecto: " + d.nombre + "/ barrio:" + d.pais; });
         ;
 
-  // --------- voronoi zone
+  
+  // ----------------------------------------------------
+  // Add in Voronoi interaction
+  // ----------------------------------------------------
 
-  /* var cell = svg.append("g")
-      .attr("class", "cells")
-    .selectAll("g").data(d3.voronoi()
-        .extent([[0, 0], [width, height]])
-        .x(function(d) { return d.latlong[0]; })
-        .y(function(d) { return d.latlong[1]; })
-      .polygons(nodes)).enter().append("g")
-     // add tooltips to each circle
-         .on("click", function(d) {
-           d3.selectAll(".circulos")
-                          .classed("unselected", false)
-                          .classed("selected", false);  
+  // add in interaction via voronoi
 
-            d3.selectAll(".paisVector")
-                .transition()    
-                 .duration(200)    
-                 .style("fill", "rgba(0,0,0,0.1")
+  // create a voronoi diagram based on the *ALREADY SIMULATED* data
+  const voronoiDiagram = d3.voronoi()
+    .x(d => d.x)
+    .y(d => d.y)
+    .size([width, height])(nodes);
+
+  // limit how far away the mouse can be from finding a voronoi site
+  const voronoiRadius = width / 10;
+
+svg.on('mousemove', mouseMoveHandler);
+
+  // callback for when the mouse moves across the overlay
+  function mouseMoveHandler() {
+    // get the current mouse position
+    const [mx, my] = d3.mouse(this);
+
+    // use the new diagram.find() function to find the voronoi site closest to
+    // the mouse, limited by max distance defined by voronoiRadius
+    const site = voronoiDiagram.find(mx, my, voronoiRadius);
+    if(site) highlight(site)
+  }
+
+ 
+  // callback to highlight a point
+  function highlight(d) {
+    // no point to highlight - hide the circle and clear the text
+          d3.selectAll('.circulos').classed('hovered', false);
+          d3.select('[id="'+d.data.id+'"]').classed('hovered', true);
+      tooltip.transition()
+      .duration(200)
+      .style("opacity", .9);
+      tooltip.select("#title").html(d.data.nombre);
+      tooltip.select("#descripcion").html(d.data.descripcion);
+      tooltip.select("#info").html(d.data.presupuesto + '/ Barrio: ' + d.data.barrio);
+  }
 
 
-          if(getDistance(d3.mouse(this), [d.data.latlong[0], d.data.latlong[1]])<distanceLimit){
-            div.transition()    
-                 .duration(200)    
-                 .style("opacity", .9);    
+// ----------------------------------------------------
 
-                 div.select("#title").html(d.data.nombre);
-                 div.select("#pais").html("Secretaría:&nbsp;<b>"+d.data.pais+"</b>");
-                 d.data.presencia.length > 1 ? div.select("#presencia").html("(Presencia en "+ d.data.presencia.length+" países)") : div.select("#presencia").html("");
-                 div.select("#link").html('<a href="http://' + d.data.link + '" target="_blank">' + d.data.link + '</a>');
-
-            d3.selectAll(".circulos").filter(function(e){
-              return e.id != d.data.id})
-                          .classed("unselected", true); 
-
-            d3.selectAll(".circulos").filter(function(e){return e.id == d.data.id})
-                          .classed("selected", true); 
-
-            d3.selectAll(".paisVector").filter(function(e){
-              if(e.hasOwnProperty('properties')){
-                                if(d.data.presencia.indexOf(e.properties.iso_a2)>=0) return 1}
-                  })
-                .transition()    
-                 .duration(100)    
-                 .style("fill", "rgba(0,0,0,0.3")
-             }else{
-               div.transition()
-              .duration(200)
-              .style("opacity", 0);    
-
-             }
-           })          
-          .on("mousemove", function (d) {
-            d3.selectAll(".circulos")
-            .classed("hovered", false);
-            if (getDistance(d3.mouse(this), [d.data.latlong[0], d.data.latlong[1]]) < distanceLimit) {
-            d3.selectAll(".circulos").filter(function (e) { 
-              return e.id == d.data.id })
-                        .classed("hovered", true); 
-            }
-          })
-         
-         ;
-
- cell.append("path")
-      .attr("d", function(d) { return "M" + d.join("L") + "Z"; }); */
 
   function ticked() {
           nodos.attr("transform", function(d){ 
@@ -390,7 +379,7 @@ function ready (error, results){
   var leyenda = svg.append("g")
       .attr("class", "leyenda")
     
-    .attr("transform", "translate("+(width-320)+", 40)");
+    .attr("transform", "translate("+(width*0.75)+", 40)");
 
     leyenda.append("g").attr("class", "legendSize");
 
@@ -400,7 +389,7 @@ function ready (error, results){
     .shape('circle')
     .shapePadding(40)
     .labelOffset(10)
-    .title("Cantidad de Actividades")
+    .title("Presupuesto")
     .orient('horizontal');
 
   svg.select(".legendSize")
@@ -449,12 +438,6 @@ function ready (error, results){
 
 } // fin de Ready;
 
-
-  setTimeout(function () {
-     svg.transition()
-      .duration(750)
-      .call(zoom.transform, d3.zoomIdentity.translate([100,45], [300, 433]).scale(0.5)); // updated for d
-  }, 10000)
 
 
 </script>
