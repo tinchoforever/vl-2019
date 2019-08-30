@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple icon array example</title>
+    <script src="../../scripts/d3.v4.min.js"></script>
+	<script type="text/javascript" src="../../scripts/d3-iconarray.min.js"></script>
+	<style type="text/css">
+	*{
+		font-family: sans-serif;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+	</style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol id="participante"  viewBox="0 0 24 24">
+            <path
+                d="M5,1C5,3.7 6.56,6.16 9,7.32V22H11V15H13V22H15V7.31C17.44,6.16 19,3.7 19,1H17A5,5 0 0,1 12,6A5,5 0 0,1 7,1M12,1C10.89,1 10,1.89 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3C14,1.89 13.11,1 12,1Z" />
+        </symbol>
+        <symbol id="persona" viewBox="0 0 24 24">
+            <path
+                d="M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M10.5,7H13.5A2,2 0 0,1 15.5,9V14.5H14V22H10V14.5H8.5V9A2,2 0 0,1 10.5,7Z" />
+        </symbol>
+    </svg>
+
+<div id="simple-example">
+	
+</div>
+</body>
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+var layout = d3_iconarray.layout()
+                            .width(6);
+
+var data = d3.range(0,156);
+var cantidad = d3.range(0, 6);
+
+var selectos=[1,5,8,14,20,32,43];
+
+var grid = layout(data);
+var dotRadius = 8;
+var width = 540, 
+	height = 700, 
+	margin = {top:20, bottom:20, left:20, right:20 };
+
+console.log(layout.maxDimension(data.length));
+var arrayScalex = d3_iconarray.scale()
+	.domain([ 0, layout.maxDimension(data.length) ])
+	.range([0, 300])
+    ;
+
+    var arrayScaley = d3_iconarray.scale()
+        .domain([0, layout.maxDimension(data.length)])
+        .range([0, 550])
+        ;
+
+var svg = d3.select('#simple-example')
+		.append('svg')
+			.attr('width',width)
+			.attr('height',height)
+		.append('g')
+			.attr('transform','translate('+margin.left+','+margin.top+')');
+
+var columna = svg.selectAll('g')
+    .data(cantidad)
+    .enter()
+    .append('g').attr('transform', function (d,i) {
+        return 'translate(' + i*(width- margin.left- margin.right)/6 + ',0)'
+    })
+    ;
+
+    columna.selectAll('g')
+	.data(grid)
+		.enter()
+	.append('g')
+        .attr('transform', function(d){ 
+
+		        return 'translate('+arrayScalex(d.position.x)+','+ arrayScaley(d.position.y)+')' 
+	    })
+	.append("use")
+            .attr("href", function (d,i) {
+                if(i>=selectos[d3.select(this.parentNode.parentNode).datum()]){
+                    return "#persona";
+                }else{
+                    return "#participante";
+                };
+            })
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("stroke-width", "0px")
+            .attr("fill", function (d, i) {
+            if (i >= selectos[d3.select(this.parentNode.parentNode).datum()]) {
+                return "#aaa";
+            } else {
+                return "#000";
+            };
+        });
+	
+
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
+</html>
