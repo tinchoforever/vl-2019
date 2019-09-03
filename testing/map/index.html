@@ -1,144 +1,19 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="cache-control" content="no-cache" />
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <link href="styles.css" rel="stylesheet" type="text/css">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
-<style>
 
-  body{
-    overflow: hidden;
-  }
-
-  #tooltip { 
-    position: absolute;     
-    text-align: center;     
-    width: 250px;          
-    padding: 8px 6px;
-    min-height: 130px;       
-    font: 12px sans-serif;    
-    background: white; 
-    border: 1px solid black;    
-    border-radius: 0 8px 8px 8px;     
-  -webkit-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
-  -moz-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
-  box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
-  opacity: 0;
-  }
-
-.states {
-  stroke: #fff;
-  stroke-width: 2px;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  pointer-events: none;
-  
-}
-
-.circulos{
-    
-    stroke-width:0px;
- -webkit-transition: stroke-width 0.2s; /* Safari */
-    transition: stroke-width 0.2s;
-    transition: fill 0.2s;
-}
-
-.circulos.selected{
-    stroke: #fff;
-    stroke-width: 2px;
-}
-
-.circulos.unselected{
-    fill: none;
-    stroke: silver;
-    stroke-width: 1px;
-}
-
-.circulos.hovered{
-    stroke: #000;
-    stroke-width: 2px;
-}
-
-
-
-.cells path {
-  fill: none;
-  stroke: #000;
-    stroke-width:0px;
-  pointer-events: all;
-   cursor: pointer;
-}
-
-
-
-svg text {
-    font-family: "Roboto";
-
-}
-
-.legendSize{
-  fill:silver;
-}
-
-.legendTitle{
-  font-size: 12px;
-  fill:gray;
-
-}
-
-.label{
-  fill:gray;
-  font-family: "Roboto";
-  font-size: 10px;
-}
-
-div#tooltip {
-  font-family: "Roboto";
-    padding: 0px;
-}
-
-div#tooltip h3 {
-    margin-top: 0;
-    background-color: #c0c0c06b;
-    width: 100%;
-    border-radius: 0px 7px 0px 0px;
-    padding: 1px 0px;        margin-bottom: 2px;
-    height: 50px;
-      display: inline-block;
-        line-height: 50px;
-
-
-}
-
-div#tooltip #title {
-line-height: 18px;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0px 10px;
-
-
-}
-
-div#tooltip h4 {
-    margin: 5px 8px;
-    display: inline-flex;
-     font-size: 12px;
-    font-weight: 500;
-}
-
-div#tooltip #descripcion {
-    font-weight: 500;
-}
-
-
-div#tooltip #info{
-    margin: 2px 0px;
-    font-weight: 500;
-    font-size: 12px;
-}
-
-
-</style>
 <svg ></svg>
 <div id="tooltip">
   <h3 ><span id="title"></span></h3>
@@ -146,11 +21,6 @@ div#tooltip #info{
   <h4 id="descripcion"></h4>
 
 </div> 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
-
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script>
 
@@ -168,7 +38,7 @@ var distanceLimit = 70;
     "EDUCACIÓN",
     "INFRAESTRUCTURA COMUNITARIA",
     "INFRAESTRUCTURA URBANA",
-    "Otros",
+    "OTROS",
     "SEGURIDAD Y TRÁNSITO"]
 
     
@@ -251,9 +121,9 @@ function ready (error, results){
           .data(mapa.features)
           .enter().append("path")
           .attr("class","paisVector")
+          .attr("id", function (d) { return d.properties.name.toLowerCase().replace(/\s/g, '') })
           .attr("fill","rgba(0,0,0,0.1")
-            .attr("d", path)
-            .attr("id",function(d){ return d.properties.iso_a2})
+          .attr("d", path)
             ;
         
   // --------- BUBBLES
@@ -350,11 +220,19 @@ svg.on('mousemove', mouseMoveHandler);
           d3.selectAll('.circulos').classed('hovered', false);
           d3.select('[id="'+d.data.id+'"]').classed('hovered', true);
       tooltip.transition()
-      .duration(200)
+      .duration(50)
       .style("opacity", .9);
       tooltip.select("#title").html(d.data.nombre);
       tooltip.select("#descripcion").html(d.data.descripcion);
       tooltip.select("#info").html(d.data.presupuesto + '/ Barrio: ' + d.data.barrio);
+
+      // HIGHLIGTS barrio -- no estan bien los barrios!
+ /*      d3.selectAll('.paisVector').filter(function (e) {
+        return e.properties.name.toLowerCase().replace(/\s/g, '') == d.data.barrio.toLowerCase().replace(/\s/g, '')? 0:1;
+      }).transition()
+      .duration(50)
+      .style("opacity", .3);
+      d3.select('[id="' + d.data.barrio.toLowerCase().replace(/\s/g, '') + '"]').style("opacity", 1); */
   }
 
 

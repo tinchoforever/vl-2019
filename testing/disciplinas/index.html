@@ -24,18 +24,18 @@ svg text {
 </svg>
 
 <script>
-    var vWidth = 1000, anchoMaximo =vWidth*0.9; // defino el ancho maximo que puede tener la dataviz
-    var vHeight = 900; 
+    var vWidth = 1000, anchoMaximo = vWidth*0.9; // defino el ancho maximo que puede tener la dataviz
+    var vHeight = 700; 
     var isSmallDevice = window.innerWidth < 840 ? true : false;
 
     
     var rowLength =4;
 
 
-     var radiusScale = d3.scaleSqrt()
-            .range([3, 15]);
+     var radiusScale = d3.scalePow()
+            .range([3, 35]);
 
-            if(isSmallDevice) radiusScale.range([2,9]);
+            if(isSmallDevice) radiusScale.range([2,12]);
 
     var colorScale = d3.scaleOrdinal().range(["#8dd3c7",
             "#e9df30",
@@ -57,29 +57,27 @@ svg text {
     .select('g') ;
 
        d3.queue()
-            .defer(d3.csv, "base400.csv")
+            .defer(d3.csv, "lugaresVL.csv")
             .awaitAll(ready);
 
 
     function ready(error, eventos) {
 
             // arma la escala de radios
-            radiusScale.domain([0, d3.max(eventos[0], function (d) {return d.cantidad;})]);
-            
+            radiusScale.domain(d3.extent(eventos[0], function (d) { return +d.presupuesto; }))
             
             // carga la data en "nodes"
             var nodes = eventos[0].map(function (d, i) {
                 return {
-                    name: d.proyecto,
+                    name: d.titulo,
                     value: +d.presupuesto,
                     comuna: d.barrio,
                     id: i,
-                    tipo: d.TemaResumen
+                    tipo: d.temaResumen
 
                 }
             });
 
-           console.log(nodes);
 
 
             var vLayout = d3.pack().size([vWidth, vHeight])
@@ -89,7 +87,9 @@ svg text {
 
             // hago el primer circle pack
 
-            var vRoot = d3.hierarchy(prepareData(nodes, "tipo")).sum(function (d) { return d.value; });
+                console.log(prepareData(nodes, "comuna"));
+            var vRoot = d3.hierarchy(prepareData(nodes, "tipo"))
+            .sum(function (d) { return d.value; });
 
             vLayout(vRoot); 
     
@@ -154,7 +154,8 @@ svg text {
             var vRoot = d3.hierarchy(prepareData(nodes, "comuna")).sort(function (x, y) {
                         return d3.ascending(x.r, y.r);
                 })
-                .sum(function (d) { return d.value; });
+                .sum(function (d) { 
+                    return d.value; });
             vLayout(vRoot); 
 
 
@@ -210,7 +211,6 @@ svg text {
                             })
                             .entries(ordenantes);
 
-                            console.log(averiguaAltos)
         var temp = [0, 0, 0, 0, 0];
 
                 ordenantes.forEach((d,i) => {
@@ -315,7 +315,9 @@ svg text {
                     .append("circle")
                     .style("fill", function (d, i) { 
                         return colorScale(d.data.tipo); })
-                    .attr('r', function (d) { return d.r; });
+                    .attr('r', function (d) { return d.r; })
+                  .append("svg:title").text(function (d, i) { return "Proyecto: " + d.data.name + "/ barrio:" + d.data.comuna; });
+;
 
                         // dibuja los titulos de Tipo
            g.append("g").attr("id", "titulostipo").selectAll('g')
@@ -408,6 +410,7 @@ svg text {
                         };
                     })
                     .entries(datos)
+
                 var childrens = nestedNodes.map(function (p) {
                     return {
                         "name": p.key, "children": p.value.todas.sort(function (x, y) {
