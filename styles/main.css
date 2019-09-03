@@ -1,9 +1,13 @@
 /* scrollama */
 html{
   background: white;
+  font-family: 'Open Sans',sans-serif;
   max-width: 100%;
   width:100%;
   overflow-x:hidden;
+}
+body{
+  font-family: 'Open Sans',sans-serif;
 }
 a{
   color:#000000;
@@ -189,7 +193,7 @@ a:visited, .btn-link:visited {
     }
 
     .step .pulso-intro{
-        background: #FFD200;
+        background: #7cbb42;
         padding: 2em;
         /* margin-left: 1em; */
         margin-bottom: 10px;
@@ -304,10 +308,10 @@ a:visited, .btn-link:visited {
 
 
 text{
-  font-family: "OpenSans", Helvetica, Arial, sans-serif;
+  font-family: BrandonGrotesqueBlack, Helvetica, Arial, sans-serif;
 }
 svg text {
-    font-family: "OpenSans", Helvetica, Arial, sans-serif;
+    font-family: BrandonGrotesqueBlack, Helvetica, Arial, sans-serif;
     font-size: 12px;
     font-weight: 400;
 
@@ -337,7 +341,7 @@ svg .tick text {
 
 .label{
   fill:gray;
-  font-family: "OpenSans", Helvetica, Arial, sans-serif;
+  font-family: BrandonGrotesqueBlack, Helvetica, Arial, sans-serif;
   font-size: 10px;
 }
 
@@ -452,7 +456,7 @@ svg .tick text {
 
 text {
   font-size: 12px;
-  font-family: "CHANEWEI", Helvetica, Arial, sans-serif;
+  font-family: OpenSans, Helvetica, Arial, sans-serif;
   font-weight: 200;
 }
 
@@ -470,4 +474,29 @@ section#Final .container{
 
 .start{
   display: none;
+}
+
+
+.seccion-datos {margin-bottom: 160px !important}
+.card{    padding: 10px;
+    text-align: center;
+    min-width: 200px;
+    border: none;
+    background-color: #f1fee3;
+    border-radius: 5px;
+
+}
+.card p{
+  font-weight:400;
+  margin:0;
+}
+
+.card svg{
+  display:block;
+  width: 36px;
+  height:36px;
+  margin:auto;
+}
+.card svg path{
+  fill:dimgrey;
 }
