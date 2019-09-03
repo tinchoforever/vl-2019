@@ -8,6 +8,7 @@ html{
 }
 body{
   font-family: 'Open Sans',sans-serif;
+  
 }
 a{
   color:#000000;
@@ -190,10 +191,15 @@ a:visited, .btn-link:visited {
 
     .container.intro{
       position: absolute;
+      margin: 16% 30%;
+    }
+    .container.outro{
+      position: absolute;
+      margin: 0;
     }
 
     .step .pulso-intro{
-        background: #7cbb42;
+        
         padding: 2em;
         /* margin-left: 1em; */
         margin-bottom: 10px;
@@ -201,6 +207,8 @@ a:visited, .btn-link:visited {
 
     }
     .step .pulso-intro h1{
+      background: #7cbb42;
+      color:white;
       font-size:4em;
       text-align: left;
       text-align: left;

@@ -152,25 +152,13 @@ function init(selector) {
 var readyMap = function(){
   $('.cargando').hide();
   $('.start').show();
-  $('#disciplinasScroll').show();
   $('#timelineScroll').show();
-  $('#secondTimelineScroll').show();
-  $('#publicosScroll').show();
-
+  
 
 }
-  $('#disciplinasScroll').hide();
-  $('#timelineScroll').hide();
-  $('#secondTimelineScroll').hide();
-  $('#publicosScroll').hide();
 
 initSVGMAP(readyMap);
-initBubbles();
-initBarChartPublico();
-initBaFechas();
 init("#scroll");
-init("#disciplinasScroll");
-init("#timelineScroll");
 
 
 
