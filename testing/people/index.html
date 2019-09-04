@@ -4,13 +4,6 @@
 	<title>Simple icon array example</title>
     <script src="../../scripts/d3.v4.min.js"></script>
 	<script type="text/javascript" src="../../scripts/d3-iconarray.min.js"></script>
-	<style type="text/css">
-	*{
-		font-family: sans-serif;
-		font-weight: bold;
-		letter-spacing: 1px;
-	}
-	</style>
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
@@ -24,37 +17,36 @@
         </symbol>
     </svg>
 
-<div id="simple-example">
+<div id="personitas">
 	
 </div>
 </body>
 
-
-
-
-
-
 <script type="text/javascript">
 
-
-
-var layout = d3_iconarray.layout()
-                            .width(6);
+var layout = d3_iconarray
+                .layout()
+                .width(6);
 
 var data = d3.range(0,156);
-var cantidad = d3.range(0, 6);
+var cantidad = d3.range(0, 7);
 
 var selectos=[1,5,8,14,20,32,43];
+var years = d3.range(2012,2019);
+var cantidades=[156,31,20,11,8,5,3];
 
 var grid = layout(data);
 var dotRadius = 8;
-var width = 540, 
+var width = 600, 
 	height = 700, 
 	margin = {top:20, bottom:20, left:20, right:20 };
 
+var anchocolumna = (width - margin.left - margin.right)/7;
+
 console.log(layout.maxDimension(data.length));
+
 var arrayScalex = d3_iconarray.scale()
-	.domain([ 0, layout.maxDimension(data.length) ])
+	.domain([0, layout.maxDimension(data.length) ])
 	.range([0, 300])
     ;
 
@@ -63,51 +55,117 @@ var arrayScalex = d3_iconarray.scale()
         .range([0, 550])
         ;
 
-var svg = d3.select('#simple-example')
+var svg = d3.select('#personitas')
 		.append('svg')
 			.attr('width',width)
-			.attr('height',height)
+            .attr('height',height)
 		.append('g')
 			.attr('transform','translate('+margin.left+','+margin.top+')');
 
 var columna = svg.selectAll('g')
     .data(cantidad)
     .enter()
-    .append('g').attr('transform', function (d,i) {
-        return 'translate(' + i*(width- margin.left- margin.right)/6 + ',0)'
+    .append('g')
+    .attr('transform', function (d,i) {
+        return 'translate(' + i*anchocolumna + ',0)'
     })
     ;
+
+    var textos = columna.append("text")
+    .attr("text-anchor","middle")
+        textos.append("tspan")
+            .attr("class", "anios")
+            .text(d=>years[d]+"-"+(years[d]+1))
+            .attr("x",anchocolumna/2)
+            .attr("opacity",0);
+        
+        textos.append("tspan")
+            .attr("class", "cantidades")
+            .text(d => "1 de "+ cantidades[d])
+            .attr("x",anchocolumna / 2)
+            .attr("dy", 20)
+            .attr("opacity", 0);
 
     columna.selectAll('g')
 	.data(grid)
 		.enter()
-	.append('g')
+    .append('g')
+        .attr("class","personajeGroup")
         .attr('transform', function(d){ 
-
-		        return 'translate('+arrayScalex(d.position.x)+','+ arrayScaley(d.position.y)+')' 
+		        return 'translate('+arrayScalex(d.position.x)+','+ (30+arrayScaley(d.position.y))+')' 
 	    })
 	.append("use")
-            .attr("href", function (d,i) {
-                if(i>=selectos[d3.select(this.parentNode.parentNode).datum()]){
-                    return "#persona";
-                }else{
-                    return "#participante";
-                };
-            })
+
+            .attr("href", "#persona")
             .attr("width", 20)
             .attr("height", 20)
             .attr("stroke-width", "0px")
-            .attr("fill", function (d, i) {
-            if (i >= selectos[d3.select(this.parentNode.parentNode).datum()]) {
-                return "#aaa";
-            } else {
-                return "#000";
-            };
-        });
-	
+            .attr("opacity",0)
+            .attr("class", "personita")
+            .attr("fill", "#aaa");
+    
+           //**************** BETA TESTING AREA
+
+             setTimeout(function () {
+                 personitasStart();
+             }, 1000)
+
+   function personitasStart() {
+       
+   
+                d3.selectAll(".personita").transition() // transicion personitas grises
+                    .delay(function (d, i) { 
+                        return d3.select(this.parentNode.parentNode).datum()*50 + d.data*4})
+                    .duration(100)
+                    .attr("opacity",1)
+
+                d3.selectAll(".anios").transition() // transicion años
+                    .delay(function (d, i) {
+                        return i * 50
+                    })
+                    .duration(100)
+                    .attr("opacity", 1)
+
+                d3.selectAll(".cantidades").transition() // transicion años
+                    .delay(function (d, i) {
+                        return (i * 600)+500
+                    })
+                    .duration(300)
+                    .attr("opacity", 1)
 
 
-d3.select(self.frameElement).style("height", height + "px");
+                       setTimeout(function () {
+                                d3.selectAll(".personita").filter(function (e, r) {
+                                    if (e.data < selectos[d3.select(this.parentNode.parentNode).datum()]) {
+                                        return 1;
+                                    }
+                                    return 0;
+                                }).transition()
+                                    .delay(function (d, i) {
+                                        return d3.select(this.parentNode.parentNode).datum() * 600 + d.data * 20
+                                    })
+                                    .attr("href", "#participante")
+                                    .attr("fill", "#000");
+                            }, 500)
+                                            
+            }
+
+                setTimeout(function () {
+                        d3.selectAll(".personita").filter(function (e,r) {
+                            if (e.data < selectos[d3.select(this.parentNode.parentNode).datum()]) {
+                                return 1;
+                            }
+                            return 0;
+                        }).transition()
+                            .delay(function (d, i) {
+                                return d3.select(this.parentNode.parentNode).datum() * 200 + d.data *50
+                            })
+                            .attr("href", "#participante")
+                            .attr("fill", "#000");
+                    }, 4700)
+           
+
+
 
 </script>
 </html>
