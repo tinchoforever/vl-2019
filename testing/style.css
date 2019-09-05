@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  min-height: 1280px;
+
+}
+
+
+@font-face{font-family:BrandonGrotesqueLight;src:url(fonts/brandon_light.otf)}
+@font-face{font-family:BrandonGrotesqueBold;src:url(fonts/brandon_bld.otf)}
+@font-face{font-family:BrandonGrotesque;src:url(fonts/brandon_reg.otf)}
+@font-face{font-family:BrandonGrotesqueBlack;src:url(fonts/brandon_blk.otf)}
+
+
+
+#intro {
+  margin-bottom: 320px;
+}
+
+#outro {
+  height: 640px;
+}
+
+		.seccion-datos {margin-bottom: 160px !important}
+			.card{    padding: 10px;
+				text-align: center;
+				min-width: 200px;
+				border: none;
+				background-color: #f1fee3;
+				border-radius: 5px;
+
+			}
+			.card p{
+			font-weight:400;
+			margin:0;
+			}
+
+			.card svg{
+			display:block;
+			width: 36px;
+			height:36px;
+			margin:auto;
+			}
+			.card svg path{
+			fill:dimgrey;
+			}
+
+
+		#scrolly {
+			position: relative;
+			background-color: #fafafa;
+			padding: 1rem;
+		}
+
+		article {
+			position: relative;
+			/* padding: 0;
+			max-width: 20rem;
+			margin: 0 auto; */
+		}
+
+		figure {
+			position: -webkit-sticky;
+			position: sticky;
+			left: 0;
+			/* width: 100%; */
+			margin: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+
+		}
+
+		figure .sticked {
+			position: absolute;
+			width: 100%;
+    text-align: center;
+		}
+
+
+		.step {
+			margin: 0 auto 2rem auto;
+	
+		}
+
+		.step:last-child {
+			margin-bottom: 0;
+		}
+
+		.step.is-active .sticked {
+	
+		}
+
+		.step .sticked {
+			width: 70%;
+			min-width: 300px;
+			background-color: #ffffffde;
+			padding: 8px 50px;
+			margin: auto;
+			border-top: 1px solid;		
+			text-align: center;
+								}
