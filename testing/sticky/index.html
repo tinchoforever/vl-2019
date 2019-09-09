@@ -324,10 +324,15 @@
 		// generic window resize listener event
 		function handleResize() {
 			// 1. update height of step elements
-			var stepH = Math.floor(window.innerHeight * 0.75);
+			  var isSmallDevice =  window.innerWidth < 840 ? true : false;
+			var isSmallDevice =  window.innerWidth < 840 ? true : false;
+			var height = isSmallDevice ? 568 : 800;
+			var width= isSmallDevice ?  window.innerWidth * 1.25 : 800 ;
+
+			var stepH = Math.floor(height * 0.75);
 			step.style('height', stepH + 'px');
 
-			var figureHeight = window.innerHeight / 2
+			var figureHeight = window.innerHeight / 3
 			var figureMarginTop = (window.innerHeight - figureHeight) / 2  
 
 			figure
