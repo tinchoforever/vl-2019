@@ -1,11 +1,17 @@
 
 //********** DEFINICIONES *********************
+  var isSmallDevice =  window.innerWidth < 840 ? true : false;
 
+
+  
 var path = d3.geoPath();
 
 var padding = 1;
 var nodes, bubbles;
-var height = 700, width=900;
+var isSmallDevice =  window.innerWidth < 840 ? true : false;
+var height = isSmallDevice ? 568 : 800;
+var width= isSmallDevice ?  window.innerWidth * 1.25 : 800 ;
+
 var insideheight = height * 0.7; insidewidth = width * 0.7;
 var distanceLimit = 70;
 var estadoActivo;
