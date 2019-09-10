@@ -11,6 +11,7 @@
    
 	<meta name="description" content="Scrollama: Sticky Overlay Example">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="wow/animate.css">
 	<link rel="stylesheet" href="site.css">
 	<link rel='stylesheet' href='style.css'>
 	<link rel='stylesheet' href='map/mapStyles.css'>
@@ -46,7 +47,7 @@
 		</nav>
 
 	
-		<section class="banner-static">
+		<section class="banner-static wow fadeInUp">
 			<div class="banner"></div>
 			<div class="contenedor">
 				<div class="fondo-titulo">
@@ -55,11 +56,11 @@
 			</div>
 		</section>
 		<div id="container">
-			<div class="ext-datos">
-				<article class="seccion-datos">
+			<div class="ext-datos ">
+				<article class="seccion-datos  wow fadeInUp">
 					<p class="text">¡Gracias a <b>TU participación y voto</b>, seguimos mejorando los barrios de Vicente López!
 					</p>
-					<div class="card-deck">
+					<div class="card-deck" >
 						<div class="card">
 							<p>Total invertido:<br>
 								<b>$250.000 millones</b></p>
@@ -86,13 +87,14 @@
 						</div>
 					</div>
 				</article>
-
+				<br/>
 				<article class="seccion-datos">
-              <h3>¡CADA VEZ SOMOS MÁS VECINOS PARTICIPANDO!</h3>
+              <h3 class="  wow fadeInLeft">¡CADA VEZ SOMOS MÁS VECINOS PARTICIPANDO!</h3>
               <figure class="graph-box">
-                <div class="graph-img">
-                  En tan solo 6 años pasamos a ser más de <strong> 69.000</strong> vecinos participando, comprometidos con la mejora continua de nuestros
-                  barrios.
+                <div class="graph-img ">
+                  <p class="wow slideInLeft"> En tan solo 6 años pasamos a ser más de <strong> 69.000</strong> vecinos participando, comprometidos con la mejora continua de nuestros
+                  barrios. </p>
+                  <div class="wow slideInLeft">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 682 480" style="enable-background:new 0 0 682 480;" xml:space="preserve">
                     <style type="text/css">
@@ -249,16 +251,16 @@
                       <text transform="matrix(1 0 0 1 620.7251 126.7202)" class="st9 st8 st7">198</text>
                     </g>
                   </svg>
-
+              </div>
                 </div>
               </figure>
             </article>
 			<article class="seccion-datos">
-				<h3>1 DE CADA 3 VECINOS YA PARTICIPA</h3>
+				<h3 class="wow fadeInUp">1 DE CADA 3 VECINOS YA PARTICIPA</h3>
 				<figure class="graph-box">
 					<div class="graph-img">
-						<p>¡Y todavía nos queda mucho camino por recorrer!</p>
-						<img src="mokupPeople.JPG">
+						<p class="wow slideInLeft">¡Y todavía nos queda mucho camino por recorrer!</p>
+						<img class="wow slideInLeft" src="mokupPeople.JPG">
 			
 					</div>
 			
@@ -287,32 +289,32 @@
 			<article>
 				<div class='step' data-step='mapa'>
 					<div class="sticked">
-						<h3>ACA ALGO REFERENTE A LA UBICACION DE LOS PROYECTOS</h3>
-						<p>Mirá la cantidad de proyectos ya ejecutados por barrio.
+						<h3 class="wow fadeInUp">ACA ALGO REFERENTE A LA UBICACION DE LOS PROYECTOS</h3>
+						<p class="wow fadeInUp">Mirá la cantidad de proyectos ya ejecutados por barrio.
 							Deslizá el mouse o hacé click en el barrio que más te interese.
 						</p>
 					</div>
 				</div>
 				<div class='step' data-step='barrios'>
 					<div class="sticked">
-						<h3>TODOS LOS BARRIOS DE VICENTE LÓPEZ PARTICIPAN</h3>
-						<p>Mirá la cantidad de proyectos ya ejecutados por barrio.
+						<h3 class="wow fadeInUp">TODOS LOS BARRIOS DE VICENTE LÓPEZ PARTICIPAN</h3>
+						<p class="wow fadeInUp">Mirá la cantidad de proyectos ya ejecutados por barrio.
 							Deslizá el mouse o hacé click en el barrio que más te interese.
 						</p>
 					</div>
 				</div>
 				<div class='step' data-step='temas'>
 					<div class="sticked">
-						<h3>TAMBIÉN PODÉS VER QUÉ TIPO DE PROYECTO EJECUTÓ CADA BARRIO.</h3>
-						<p>Cada color representa una categoría.
+						<h3 class="wow fadeInUp">TAMBIÉN PODÉS VER QUÉ TIPO DE PROYECTO EJECUTÓ CADA BARRIO.</h3>
+						<p class="wow fadeInUp">Cada color representa una categoría.
 						Por ejemplo el ROJO representa EDUCACIÓN.
 						¡Descubrilas haciendo click en cada color!</p>
 					</div>
 				</div>
 				<div class='step' data-step='tiempo'>
 					<div class="sticked">
-						<h3>Y A LA VEZ, VER COMO CRECIÓ CADA CATEGORÍA EN LOS ÚLTIMOS AÑOS.</h3>
-						<p>¡El crecimiento es enorme y juntos vamos por más!</p>
+						<h3 class="wow fadeInUp">Y A LA VEZ, VER COMO CRECIÓ CADA CATEGORÍA EN LOS ÚLTIMOS AÑOS.</h3>
+						<p class="wow fadeInUp">¡El crecimiento es enorme y juntos vamos por más!</p>
 					</div>
 				</div>
 
@@ -369,7 +371,10 @@
 
 		</section>
 	</main>
-	
+	<script src='wow/wow.min.js'></script>
+	<script>
+		new WOW().init();
+	</script>
 	<!-- <div class='debug'></div> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.11.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
@@ -379,7 +384,7 @@
 
 	<script src='https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js'></script>
 	<script src='stickyfill.min.js'></script>
-	<script src='scrollama.min.js'></script>
+
 	<script>
 		// using d3 for convenience
 		var main = d3.select('main')
@@ -387,7 +392,7 @@
 		var figure = scrolly.select('figure');
 		var article = scrolly.select('article');
 		var step = article.selectAll('.step');
-
+		
 		// initialize the scrollama
 		var scroller = scrollama();
 
@@ -396,10 +401,10 @@
 			// 1. update height of step elements
 
 			//********** DEFINICIONES *********************
-			  var isSmallDevice =  window.innerWidth < 840 ? true : false;
+			var isSmallDevice =  window.innerWidth < 840 ? true : false;
 
 
-			var height = isSmallDevice ? 568 : 800;
+			var height = isSmallDevice ? 568 : 900;
 			var stepH = Math.floor(height * 0.9);
 			step.style('height', stepH + 'px');
 
