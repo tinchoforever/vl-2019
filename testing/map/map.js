@@ -6,6 +6,10 @@
   
 var path = d3.geoPath();
 
+
+
+
+
 var padding = 1;
 var nodes, bubbles;
 var isSmallDevice =  window.innerWidth < 840 ? true : false;
@@ -32,12 +36,23 @@ var estadoActivo;
       "OTROS":                        [insideheight,         insidewidth * 2 / 3]
         };
       
+var centroides = {
+  "VILLA ADELINA": [insidewidth / 4 * 1, insideheight / 3 * 1],
+  "MUNRO": [insidewidth / 4 * 2, insideheight / 3 * 1],
+  "OLIVOS": [insidewidth / 4 * 3, insideheight / 3 * 1],
+  "LA LUCILA": [insidewidth, insideheight / 3 * 1],
+  "CARAPACHAY": [insidewidth / 4 * 1, insideheight / 3 * 2],
+  "FLORIDA OESTE": [insidewidth / 4 * 2, insideheight / 3 * 2],
+  "FLORIDA ESTE": [insidewidth / 4 * 3, insideheight / 3 * 2],
+  "VICENTE LÓPEZ": [insidewidth, insideheight / 3 * 2],
+  "VILLA MARTELLI": [insidewidth / 4 * 2, insideheight / 3 * 3]
+}
 
 
     // limit how far away the mouse can be from finding a voronoi site
     const voronoiRadius = width / 10;
-    
-    
+
+
 var colorScale = d3.scaleOrdinal()
   .range([
     "#8dd3c7",
@@ -58,7 +73,9 @@ var radiusForce = d3.scaleLinear()
         .range([0.3, 1]);
 
 var projection = d3.geoMercator();
-    
+
+
+
     // create custom locale formatter from the given locale options
   var localeFormatter = d3.formatLocale({
     "decimal": ",",
@@ -82,8 +99,6 @@ var svg = d3.select("#stickyViz")
             .attr("width",width);
 
 
-//********** LOADER *********************
-            svg.append("text").attr("id","cargando").text("cargando....").attr("x", height / 2).attr("y", width / 2); // LOADER TRUCHO
 
 //********** CARGA DE DATOS *********************
 
@@ -94,12 +109,6 @@ var svg = d3.select("#stickyViz")
 
   Promise.all(promises).then(function(data){
     ready(data)});
-
-  // d3.queue()
-//     .defer(d3.json, "vicentemap.topo.json")
-//     .defer(d3.csv, "lugaresVL.csv")
-//     .awaitAll(ready);
-            
 
 
 //********** INICIO *********************
@@ -120,37 +129,14 @@ function ready (results){
 
       path.projection(projection);
 
-         var centroides = {
-           "VILLA ADELINA":[ insidewidth / 4 * 1,insideheight/3*1],
-           "MUNRO": [insidewidth / 4 * 2, insideheight / 3 * 1],
-           "OLIVOS": [insidewidth / 4 * 3, insideheight / 3 * 1],
-           "LA LUCILA": [insidewidth, insideheight / 3 * 1],
-            "CARAPACHAY": [insidewidth / 4 * 1, insideheight / 3 * 2],
-            "FLORIDA OESTE": [insidewidth / 4 * 2, insideheight / 3 * 2],
-            "FLORIDA ESTE": [insidewidth / 4 * 3, insideheight / 3 * 2],
-            "VICENTE LÓPEZ": [insidewidth, insideheight / 3 * 2],
-            "VILLA MARTELLI": [insidewidth / 4 * 2, insideheight / 3 * 3]
-           }
-
+        
 
      
-      // PARA UBICAR EN LOS CENTROIDES GEOGRAFICOS
-  //         var barriosTraduccion = {
-  //   "Carapachay": "CARAPACHAY",
-  //   "Florida": "FLORIDA ESTE",
-  //   "Florida Oeste": "FLORIDA OESTE",
-  //   "La Lucila": "LA LUCILA",
-  //   "Munro": "MUNRO",
-  //   "Olivos": "OLIVOS",
-  //   "Vicente López": "VICENTE LÓPEZ",
-  //   "Villa Adelina": "VILLA ADELINA",
-  //   "Villa Martelli": "VILLA MARTELLI"
-  // }
-
-  //         mapa.features.forEach(element => {
-  //           centroides[barriosTraduccion[element.properties.name]] = path.centroid(element);
-  //         });
-
+          // // ------- PARA UBICAR EN LOS CENTROIDES GEOGRAFICOS
+          // var barriosTraduccion = {"Carapachay": "CARAPACHAY","Florida": "FLORIDA ESTE","Florida Oeste": "FLORIDA OESTE","La Lucila": "LA LUCILA","Munro": "MUNRO","Olivos": "OLIVOS","Vicente López": "VICENTE LÓPEZ","Villa Adelina": "VILLA ADELINA","Villa Martelli": "VILLA MARTELLI"};
+          // mapa.features.forEach(element => {
+          //   centroides[barriosTraduccion[element.properties.name]] = path.centroid(element);
+          // });
 
 
       svg.append("g")
@@ -175,10 +161,10 @@ function ready (results){
     return {
       nombre: d.titulo,
       barrio: d.barrio,
-      presupuesto: +d.presupuesto,//numberFormat(+d.presupuesto),
+      presupuesto: +d.presupuesto,
       radius: radiusScale(+d.presupuesto),
       descripcion: d.descripcion,
-      categoria: d.temaResumen,
+      tema: d.temaResumen,
       id: d.id,
       longlat: projection([Number(d.longlat.split(",")[1]), Number(d.longlat.split(",")[0])]),
       centroide: centroides[d.barrio],
@@ -189,25 +175,24 @@ function ready (results){
   });
 
  
-    
+    console.log(nodes);
   
   // --------- BUBBLES
      
                                  
-          simulaNodos(nodes,"longlat","mapa");
-          simulaNodos(nodes, "centroide", "barrios")
-          simulaNodos(nodes, "sextos", "temas")
+          simulaNodos(nodes,"longlat","mapa",false);
+          simulaNodos(nodes, "centroide", "barrios", true)
+          simulaNodos(nodes, "sextos", "temas", true)
 
           
-
-    
+ 
   
   // ----------------------------------------------------
   // Add in Voronoi interaction
   // ----------------------------------------------------
 
   // create a voronoi diagram based on the *ALREADY SIMULATED* data
-  const voronoiDiagram = d3.voronoi()
+ /*  const voronoiDiagram = d3.voronoi()
                             .x(d => d.x)
                             .y(d => d.y)
                             .size([width, height])(nodes);
@@ -227,7 +212,7 @@ function ready (results){
             if(site) highlight(site)
         }
 
-
+ */
         dibujaleyendas("mapa");
   
 
@@ -235,10 +220,7 @@ function ready (results){
 
  
   function dibujaBubbles(nodes, estado) {
-            // nodes.forEach(element => {
-            //   element.x = element.xPos[estado];
-            //   element.y = element.yPos[estado];
-            // });
+
             
               d3.select("#states").transition().duration(1000).style("opacity", estado == "mapa"?1:0);
             
@@ -257,11 +239,10 @@ function ready (results){
                 })
                 .attr('class', 'circulos')
                 .attr('id', (d) => d.id)
-                .attr('fill', (d) => colorScale(d.categoria))
+                .attr('fill', (d) => colorScale(d.tema))
                 .transition().duration((d) => radiusForce(d.presupuesto) * 1000).delay((d) => (1-radiusForce(d.presupuesto)) * 1000).ease(d3.easeExpInOut)
                 .attr('r', (d) => d.radius);
             }else {
-              console.log("update");
                 bubbles
                   .transition().duration((d) => 500 + radiusForce(d.presupuesto) * 2000).ease(d3.easeExpInOut)
                   .attr("transform", function (d) {
@@ -271,8 +252,95 @@ function ready (results){
                 estadoActivo = estado;
    }
 
-function simulaNodos(nodes, centro, estado) {
+function simulaNodos(nodes, centro, estado, precalcular) {
+
+
+            // nodes.forEach(element => {
+            //   element.x = element[centro][0];
+            //   element.y = element[centro][1];
+            // });
+
+
+        if (precalcular){
           
+          switch (estado) {
+            case "barrios":
+              var nest = d3.nest()
+                .key(function (d) { return d.barrio; })
+                .key(function (d) { return d.tema; })
+                .key(function (d) { return d.id; })
+                .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
+                .entries(nodes);
+              break;
+              
+            case "temas":
+              var nest = d3.nest()
+                .key(function (d) { return d.tema; })
+                .key(function (d) { return d.id; })
+                .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
+                .entries(nodes);
+              break;
+          }
+              
+              const root = d3.hierarchy({ values: nest }, function (d) { return d.values; })
+                .sum(function (d) { return d.value; })
+                .sort(function (a, b) { return b.value - a.value; });
+
+              d3.pack()
+                .radius(d => d.value)
+                .padding(1)
+                (root);
+          
+          switch (estado) {
+            case "barrios":
+              root.descendants().filter((d) => d.depth == 1)
+                .forEach((d) => {
+                  d.xPos = centroides[d.data.key][0];
+                  d.yPos = centroides[d.data.key][1];
+                });
+
+              root.descendants().filter((d) => d.depth == 2)
+                .forEach((d) => {
+                  d.xPos = d.x - d.parent.x + d.parent.xPos;
+                  d.yPos = d.y - d.parent.y + d.parent.yPos;
+                });
+             
+                root.descendants().filter((d) => d.depth == 3)
+                .forEach((d) => {
+                  d.x = d.x - d.parent.x + d.parent.xPos;
+                  d.y = d.y - d.parent.y + d.parent.yPos;
+                });
+
+              break;
+
+            case "temas":
+              root.descendants().filter((d) => d.depth == 1)
+                .forEach((d) => {
+                  d.xPos = sextos[d.data.key][0];
+                  d.yPos = sextos[d.data.key][1];
+                });
+              root.descendants().filter((d) => d.depth == 2)
+                .forEach((d) => {
+                  d.x = d.x - d.parent.x + d.parent.xPos;
+                  d.y = d.y - d.parent.y + d.parent.yPos;
+                });
+              break;
+          }
+          
+
+              var posPacked = root.leaves().map(function (p) {
+                return [+p.data.key,[p.x,p.y]];
+              }).sort(function (a, b) { return a[0] - b[0]; });
+
+
+                 nodes.forEach(element => {
+                   element.x = posPacked[element.id-1][1][0];
+                   element.y = posPacked[element.id-1][1][1];
+                  });
+
+          }
+
+           
           var simulation = d3.forceSimulation(nodes)
             .force('charge', d3.forceManyBody().strength(1))
             .force('x', d3.forceX().x(function (d) {
@@ -284,11 +352,11 @@ function simulaNodos(nodes, centro, estado) {
             .force('collision', d3.forceCollide().radius(function (d) {
               return d.radius + padding;
             }))
-            //  .on('tick', ticked);
             .stop();
 
 
           for (var i = 0; i < 270; ++i) simulation.tick(); // evalua la simulacion
+          
 
           nodes.forEach(element => {
             element.xPos[estado] = element.x;
@@ -299,6 +367,7 @@ function simulaNodos(nodes, centro, estado) {
 
 
 
+    
 
 
  // callback to highlight a point
@@ -327,14 +396,7 @@ function simulaNodos(nodes, centro, estado) {
 // ----------------------------------------------------
 
 
-  // function ticked(what) {
-  //         what.attr("transform", function(d){ 
-  //           return "translate(" + d.x + "," + d.y +")"});
-  // }
-
-
-    d3.select("#cargando").remove();    
-
+  
 
   var linearSize = d3.scaleLinear().domain([0,10]).range([10, 30]);
 

@@ -127,35 +127,30 @@
 
           
 
-            var nestedNodes = d3.nest()
-                .key(function (d) {
-                    return d.barrio;
-                })
+          var nest = d3.nest()
+                .key(function (d) { return d.barrio; })
+                .key(function (d) { return d.categoria; })
+                .key(function (d) { return d.id; })
+                .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
                 .entries(nodes);
 
-            //     console.log(nestedNodes);
-
+            console.log(nest);
+           
+           const root = d3.hierarchy({ values: nest }, function (d) { return d.values; })
+                    .sum(function (d) { return d.value; })
+                    .sort(function (a, b) { return b.value - a.value; });
                 
-            var vLayout = d3.pack().size([width, height])
-                .radius(d => d.data.radius)
-                .padding(2);
-
-
-            // hago el primer circle pack
-            var vRoot = d3.hierarchy(nestedNodes)
-                .sum(function (d) { 
-                    console.log(d)
-                    return d.radius; })
-                .sort(function (a, b) {
-                   return b.data.radius - a.data.radius; });
-
-            vLayout(vRoot); 
-              
+            var cpack = d3.pack()
+                    //.size([width - 2, height - 2])
+                    .radius(d => d.value)
+                    .padding(3)
+                    (root);
            
 
-            var node = svg.append("g")//.attr("transform", "translate(300,300)")
+
+            var node = svg.append("g").attr("transform", "translate(300,300)")
                 .selectAll('circle')
-                .data(vRoot)
+                .data(root.descendants())
                 .enter()
                 .append('circle')
                 .attr('cx', function (d) { return d.x; })
