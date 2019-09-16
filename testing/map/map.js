@@ -121,7 +121,7 @@ function ready (results){
   radiusForce.domain(radiusScale.domain())
 
   // --------- MAPA
-  var centroides={};
+
   var mapa = topojson.feature(mapTopoJson, mapTopoJson.objects.collection);  
   var projection = d3.geoTransverseMercator()
                     .rotate([74 + 30 / 60, -38 - 50 / 60])
@@ -157,6 +157,7 @@ function ready (results){
     nodes = respuestas.map(function (d, i) {
 
     if (!d.longlat) d.longlat = "-34.554032,-58.481300"; // para los que tienen longlat vacios
+      console.log(centroides[d.barrio]);
 
     return {
       nombre: d.titulo,
@@ -255,10 +256,10 @@ function ready (results){
 function simulaNodos(nodes, centro, estado, precalcular) {
 
 
-            // nodes.forEach(element => {
-            //   element.x = element[centro][0];
-            //   element.y = element[centro][1];
-            // });
+            nodes.forEach(element => {
+              element.x = element[centro][0];
+              element.y = element[centro][1];
+            });
 
 
         if (precalcular){
@@ -341,21 +342,21 @@ function simulaNodos(nodes, centro, estado, precalcular) {
           }
 
            
-          var simulation = d3.forceSimulation(nodes)
-            .force('charge', d3.forceManyBody().strength(1))
-            .force('x', d3.forceX().x(function (d) {
-              return d[centro][0]
-            }).strength(1))
-            .force('y', d3.forceY().y(function (d) {
-              return d[centro][1];
-            }).strength(1))
-            .force('collision', d3.forceCollide().radius(function (d) {
-              return d.radius + padding;
-            }))
-            .stop();
+          // var simulation = d3.forceSimulation(nodes)
+          //   .force('charge', d3.forceManyBody().strength(1))
+          //   .force('x', d3.forceX().x(function (d) {
+          //     return d[centro][0]
+          //   }).strength(1))
+          //   .force('y', d3.forceY().y(function (d) {
+          //     return d[centro][1];
+          //   }).strength(1))
+          //   .force('collision', d3.forceCollide().radius(function (d) {
+          //     return d.radius + padding;
+          //   }))
+          //   .stop();
 
 
-          for (var i = 0; i < 270; ++i) simulation.tick(); // evalua la simulacion
+          // for (var i = 0; i < 270; ++i) simulation.tick(); // evalua la simulacion
           
 
           nodes.forEach(element => {
