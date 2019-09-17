@@ -271,8 +271,95 @@ function ready (results){
                 estadoActivo = estado;
    }
 
-function simulaNodos(nodes, centro, estado) {
+function simulaNodos(nodes, centro, estado, precalcular) {
+
+
+            // nodes.forEach(element => {
+            //   element.x = element[centro][0];
+            //   element.y = element[centro][1];
+            // });
+
+
+        if (precalcular){
           
+          switch (estado) {
+            case "barrios":
+              var nest = d3.nest()
+                .key(function (d) { return d.barrio; })
+                .key(function (d) { return d.tema; })
+                .key(function (d) { return d.id; })
+                .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
+                .entries(nodes);
+              break;
+              
+            case "temas":
+              var nest = d3.nest()
+                .key(function (d) { return d.tema; })
+                .key(function (d) { return d.id; })
+                .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
+                .entries(nodes);
+              break;
+          }
+              
+              const root = d3.hierarchy({ values: nest }, function (d) { return d.values; })
+                .sum(function (d) { return d.value; })
+                .sort(function (a, b) { return b.value - a.value; });
+
+              d3.pack()
+                .radius(d => d.value)
+                .padding(1)
+                (root);
+          
+          switch (estado) {
+            case "barrios":
+              root.descendants().filter((d) => d.depth == 1)
+                .forEach((d) => {
+                  d.xPos = centroides[d.data.key][0];
+                  d.yPos = centroides[d.data.key][1];
+                });
+
+              root.descendants().filter((d) => d.depth == 2)
+                .forEach((d) => {
+                  d.xPos = d.x - d.parent.x + d.parent.xPos;
+                  d.yPos = d.y - d.parent.y + d.parent.yPos;
+                });
+             
+                root.descendants().filter((d) => d.depth == 3)
+                .forEach((d) => {
+                  d.x = d.x - d.parent.x + d.parent.xPos;
+                  d.y = d.y - d.parent.y + d.parent.yPos;
+                });
+
+              break;
+
+            case "temas":
+              root.descendants().filter((d) => d.depth == 1)
+                .forEach((d) => {
+                  d.xPos = sextos[d.data.key][0];
+                  d.yPos = sextos[d.data.key][1];
+                });
+              root.descendants().filter((d) => d.depth == 2)
+                .forEach((d) => {
+                  d.x = d.x - d.parent.x + d.parent.xPos;
+                  d.y = d.y - d.parent.y + d.parent.yPos;
+                });
+              break;
+          }
+          
+
+              var posPacked = root.leaves().map(function (p) {
+                return [+p.data.key,[p.x,p.y]];
+              }).sort(function (a, b) { return a[0] - b[0]; });
+
+
+                 nodes.forEach(element => {
+                   element.x = posPacked[element.id-1][1][0];
+                   element.y = posPacked[element.id-1][1][1];
+                  });
+
+          }
+
+           
           var simulation = d3.forceSimulation(nodes)
             .force('charge', d3.forceManyBody().strength(1))
             .force('x', d3.forceX().x(function (d) {
@@ -284,12 +371,12 @@ function simulaNodos(nodes, centro, estado) {
             .force('collision', d3.forceCollide().radius(function (d) {
               return d.radius + padding;
             }))
-            //  .on('tick', ticked);
             .stop();
 
 
           for (var i = 0; i < 270; ++i) simulation.tick(); // evalua la simulacion
-
+          
+      
           nodes.forEach(element => {
             element.xPos[estado] = element.x;
             element.yPos[estado] = element.y;;
