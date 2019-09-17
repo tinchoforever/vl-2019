@@ -38,14 +38,14 @@ svg text {
             if(isSmallDevice) radiusScale.range([2,12]);
 
     var colorScale = d3.scaleOrdinal().range(["#8dd3c7",
-                                                    "#e9df30",
-                                                    "#bebada",
-                                                    "#ff6250",
-                                                    "#5fb3dd",
-                                                    "#fda362",
-                                                    "#b3de69",
-                                                    "#f9aad7",
-                                                    "#ffdb92"]);
+            "#e9df30",
+            "#bebada",
+            "#ff6250",
+            "#5fb3dd",
+            "#fda362",
+            "#b3de69",
+            "#f9aad7",
+            "#ffdb92"]);
 
     
         
@@ -86,6 +86,8 @@ svg text {
 
 
             // hago el primer circle pack
+
+                console.log(prepareData(nodes, "comuna"));
             var vRoot = d3.hierarchy(prepareData(nodes, "tipo"))
             .sum(function (d) { return d.value; });
 

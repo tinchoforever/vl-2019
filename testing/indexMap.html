@@ -7,7 +7,7 @@
   <meta http-equiv="Expires" content="0">
 
   <link href="map/mapStyles.css" rel="stylesheet" type="text/css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.11.0/d3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.11.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
@@ -27,15 +27,15 @@
 <script>
     //**************** BETA TESTING AREA
     setTimeout(function () {
-      dibujaBubbles(nodes, "mapa", false)
+      dibujaBubbles(nodes, "mapa")
     }, 5000)
 
     setTimeout(function () {
-      dibujaBubbles(nodes, "barrios", true)
+      dibujaBubbles(nodes, "barrios")
     }, 8600)
 
     setTimeout(function () {
-      dibujaBubbles(nodes, "temas", true)
+      dibujaBubbles(nodes, "temas")
     }, 12700)
 </script>
 </body>
