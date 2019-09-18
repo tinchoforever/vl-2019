@@ -65,12 +65,12 @@
 				</article>
 				<br/>
 				<article class="seccion-datos">
-              <h3 class="  wow fadeInUp " data-wow-offset="200">¡CADA VEZ SOMOS MÁS VECINOS PARTICIPANDO!</h3>
+              <h3 class="  wow fadeInUp " >¡CADA VEZ SOMOS MÁS VECINOS PARTICIPANDO!</h3>
               <figure class="graph-box">
                 <div class="graph-img ">
-                  <p class="wow fadeInUp"  data-wow-offset="200"> En tan solo 6 años pasamos a ser más de <strong> 69.000</strong> vecinos participando, comprometidos con la mejora continua de nuestros
+                  <p class="wow fadeInUp"  > En tan solo 6 años pasamos a ser más de <strong> 69.000</strong> vecinos participando, comprometidos con la mejora continua de nuestros
                   barrios. </p>
-                  <div class="wow fadeInUp"  data-wow-offset="200">
+                  <div class="wow fadeInUp"  >
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 682 480" style="enable-background:new 0 0 682 480;" xml:space="preserve">
                     <style type="text/css">
@@ -251,24 +251,24 @@
 			<article>
 				<div class='step' data-step='mapa'>
 					<div class="sticked">
-						<h3 class="wow fadeInUp">ACA ALGO REFERENTE A LA UBICACION DE LOS PROYECTOS</h3>
-						<p class="wow fadeInUp">Mirá la cantidad de proyectos ya ejecutados por barrio.
+						<h3>ACA ALGO REFERENTE A LA UBICACION DE LOS PROYECTOS</h3>
+						<p>Mirá la cantidad de proyectos ya ejecutados por barrio.
 							Deslizá el mouse o hacé click en el barrio que más te interese.
 						</p>
 					</div>
 				</div>
 				<div class='step' data-step='barrios'>
 					<div class="sticked">
-						<h3 class="wow fadeInUp">TODOS LOS BARRIOS DE VICENTE LÓPEZ PARTICIPAN</h3>
-						<p class="wow fadeInUp">Mirá la cantidad de proyectos ya ejecutados por barrio.
+						<h3>TODOS LOS BARRIOS DE VICENTE LÓPEZ PARTICIPAN</h3>
+						<p>Mirá la cantidad de proyectos ya ejecutados por barrio.
 							Deslizá el mouse o hacé click en el barrio que más te interese.
 						</p>
 					</div>
 				</div>
 				<div class='step' data-step='temas'>
 					<div class="sticked">
-						<h3 class="wow fadeInUp">TAMBIÉN PODÉS VER QUÉ TIPO DE PROYECTO EJECUTÓ CADA BARRIO.</h3>
-						<p class="wow fadeInUp">Cada color representa una categoría.
+						<h3>TAMBIÉN PODÉS VER QUÉ TIPO DE PROYECTO EJECUTÓ CADA BARRIO.</h3>
+						<p>Cada color representa una categoría.
 						Por ejemplo el ROJO representa EDUCACIÓN.
 						¡Descubrilas haciendo click en cada color!</p>
 					</div>
@@ -307,37 +307,19 @@
 			</figure>
 		</article>
 			</div>
-
-
 		</section>
 	</main>
-	<script src='wow/wow.min.js'></script>
-	<script>
-		var wow = new WOW(
-				{
-					boxClass: 'wow',      // animated element css class (default is wow)
-					animateClass: 'animated', // animation css class (default is animated)
-					offset: 100,          // distance to the element when triggering the animation (default is 0)
-					mobile: true,       // trigger animations on mobile devices (default is true)
-					live: true,       // act on asynchronously loaded content (default is true)
-					callback: function (box) {
-						console.log(d3.select(box).attr("id") == "personitas");
-						if(d3.select(box).attr("id")=="personitas") personitasStart();
-					},
-					scrollContainer: null // optional scroll container selector, otherwise use window
-				}
-			);
-			wow.init();
 
-	</script>
+	<script src='wow/wow.min.js'></script>
+	
 	<!-- <div class='debug'></div> -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.11.0/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="d3-iconarray.min.js"></script>
-<script src="people/personita.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.11.0/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src="d3-iconarray.min.js"></script>
+	<script src="people/personita.js"></script>
 
 <script src="map/map.js"></script>
 
@@ -346,7 +328,32 @@
 	<script src='stickyfill.min.js'></script>
 	<script src='scrollama.min.js'></script>
 	<script>
-		// using d3 for convenience
+
+
+		//--------- WOW --------------
+		var wow = new WOW(
+				{
+					boxClass: 'wow',      // animated element css class (default is wow)
+					animateClass: 'animated', // animation css class (default is animated)
+					offset: 0,          // distance to the element when triggering the animation (default is 0)
+					mobile: true,       // trigger animations on mobile devices (default is true)
+					live: true,       // act on asynchronously loaded content (default is true)
+					callback: function (box) {
+						console.log(d3.select(box).attr("id") == "personitas");
+						if (d3.select(box).attr("id") == "personitas") personitasStart();
+					},
+					scrollContainer: null // optional scroll container selector, otherwise use window
+				}
+			);
+			wow.init();
+
+			// $(".wow").each(function () {
+			// 	var wowHeight = $(this).height();
+			// 	$(this).attr("data-wow-offset", wowHeight);
+			// });
+
+
+		//--------- SCROLLAMA -------------- using d3 for convenience
 		var main = d3.select('main')
 		var scrolly = main.select('#scrolly');
 		var figure = scrolly.select('figure');
