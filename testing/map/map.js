@@ -10,7 +10,7 @@ var padding = 1;
 var nodes, bubbles;
 var isSmallDevice =  window.innerWidth < 840 ? true : false;
 var height = isSmallDevice ? 568 : 800;
-var width= isSmallDevice ?  window.innerWidth * 1.25 : 800 ;
+var width= isSmallDevice ?  window.innerWidth * 1.25 : 850 ;
 
 var insideheight = height * 0.7; insidewidth = width * 0.7;
 var distanceLimit = 70;
@@ -197,6 +197,7 @@ function ready (results){
           simulaNodos(nodes,"longlat","mapa");
           simulaNodos(nodes, "centroide", "barrios")
           simulaNodos(nodes, "sextos", "temas")
+         // simulaNodos(nodes, "tiempos", "lineadetiempo")
 
           
 
@@ -206,7 +207,7 @@ function ready (results){
   // Add in Voronoi interaction
   // ----------------------------------------------------
 
-  // create a voronoi diagram based on the *ALREADY SIMULATED* data
+ /*  // create a voronoi diagram based on the *ALREADY SIMULATED* data
   const voronoiDiagram = d3.voronoi()
                             .x(d => d.x)
                             .y(d => d.y)
@@ -214,7 +215,7 @@ function ready (results){
 
 
 
-      svg.on('mousemove', mouseMoveHandler);
+      // svg.on('mousemove', mouseMoveHandler);
 
         // callback for when the mouse moves across the overlay
         function mouseMoveHandler() {
@@ -225,21 +226,16 @@ function ready (results){
             // the mouse, limited by max distance defined by voronoiRadius
             const site = voronoiDiagram.find(mx, my, voronoiRadius);
             if(site) highlight(site)
-        }
+        } */
 
-
-        dibujaleyendas("mapa");
+  if (!isSmallDevice) dibujaleyendas("mapa");
   
 
  }  // fin de Ready;
 
  
   function dibujaBubbles(nodes, estado) {
-            // nodes.forEach(element => {
-            //   element.x = element.xPos[estado];
-            //   element.y = element.yPos[estado];
-            // });
-            
+
               d3.select("#states").transition().duration(1000).style("opacity", estado == "mapa"?1:0);
             
 
@@ -273,11 +269,6 @@ function ready (results){
 
 function simulaNodos(nodes, centro, estado, precalcular) {
 
-
-            // nodes.forEach(element => {
-            //   element.x = element[centro][0];
-            //   element.y = element[centro][1];
-            // });
 
 
         if (precalcular){

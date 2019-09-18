@@ -116,3 +116,8 @@ body {
 {
 	padding-top: 7em;
 }
+
+.graph-img p{
+	text-align: center;
+	margin-bottom: 30px;
+}
