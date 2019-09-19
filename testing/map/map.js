@@ -6,11 +6,11 @@
   
 var path = d3.geoPath();
 
-var padding = 1;
+var padding = isSmallDevice ? 0.5 : 1;
 var nodes, bubbles;
 var isSmallDevice =  window.innerWidth < 840 ? true : false;
 var height = isSmallDevice ? 568 : 800;
-var width= isSmallDevice ?  window.innerWidth * 1.25 : 850 ;
+var width= isSmallDevice ?  window.innerWidth * 0.75 : 850 ;
 
 var insideheight = height * 0.7; insidewidth = width * 0.7;
 var distanceLimit = 70;
@@ -35,7 +35,7 @@ var estadoActivo;
 
 
     // limit how far away the mouse can be from finding a voronoi site
-    const voronoiRadius = width / 10;
+    const voronoiRadius = isSmallDevice ? width/40 : width / 10;
     
     
 var colorScale = d3.scaleOrdinal()
@@ -51,8 +51,12 @@ var colorScale = d3.scaleOrdinal()
     "#ffdb92"])
     .domain(tipos);
     
+    var topRadScale = isSmallDevice ? 1 : 3;
+    var lowRadScale = isSmallDevice ? 10 : 25;
+
 var radiusScale = d3.scalePow()
-    .range([3,25]);
+    .range([topRadScale,lowRadScale]);
+
 
 var radiusForce = d3.scaleLinear()
         .range([0.3, 1]);

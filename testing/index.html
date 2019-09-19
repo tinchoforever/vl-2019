@@ -235,6 +235,18 @@
 		
 		<section id='scrolly'>
 
+			<figure>
+				
+				<div class="sticked">
+					
+				<svg id="stickyViz"></svg>
+				<div id="tooltip">
+					<h3><span id="title"></span></h3>
+					<h5 id="info"></h5>
+					<h4 id="descripcion"></h4>
+				
+				</div></div>
+			</figure>
 
 			<article>
 				<div class='step' data-step='mapa'>
@@ -354,7 +366,6 @@
 		// generic window resize listener event
 		function handleResize() {
 			// 1. update height of step elements
-
 			//********** DEFINICIONES *********************
 			var isSmallDevice =  window.innerWidth < 840 ? true : false;
 
