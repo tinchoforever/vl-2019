@@ -1,4 +1,4 @@
-
+function personitasStart() {
 var layout = d3_iconarray
                 .layout()
                 .width(6);
@@ -12,7 +12,7 @@ var cantidades=[156,31,20,11,8,5,3];
 
 var grid = layout(data);
 var dotRadius = 8;
-var width = 600, 
+    var width = isSmallDevice? 300 : 600, 
 	height = 700, 
 	margin = {top:20, bottom:20, left:20, right:20 };
 
@@ -84,7 +84,7 @@ var columna = svg.selectAll('g')
             //      personitasStart();
             //  }, 1000)
 
-   function personitasStart() {
+   
        
    
                 d3.selectAll(".personita").transition() // transicion personitas grises
