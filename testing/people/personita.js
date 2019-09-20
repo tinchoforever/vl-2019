@@ -12,21 +12,21 @@ var cantidades=[156,31,20,11,8,5,3];
 
 var grid = layout(data);
 var dotRadius = 8;
-    var width = isSmallDevice? 300 : 600, 
-	height = 700, 
-	margin = {top:20, bottom:20, left:20, right:20 };
+    var width = isSmallDevice ? window.innerWidth  : 600, 
+        height = width*1.1, 
+        margin = { top: 20, bottom: 20, left: width / 30, right: width / 30 };
 
 var anchocolumna = (width - margin.left - margin.right)/7;
 
 
 var arrayScalex = d3_iconarray.scale()
 	.domain([0, layout.maxDimension(data.length) ])
-	.range([0, 300])
+    .range([0, width / 2])
     ;
 
     var arrayScaley = d3_iconarray.scale()
         .domain([0, layout.maxDimension(data.length)])
-        .range([0, 550])
+        .range([0, width *0.9])
         ;
 
 var svg = d3.select('#personitas')

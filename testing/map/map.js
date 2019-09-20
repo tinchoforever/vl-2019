@@ -10,7 +10,7 @@ var padding = isSmallDevice ? 0.5 : 1;
 var nodes, bubbles;
 var isSmallDevice =  window.innerWidth < 840 ? true : false;
 var height = isSmallDevice ? 568 : 800;
-var width= isSmallDevice ?  window.innerWidth * 0.75 : 850 ;
+var width= isSmallDevice ?  window.innerWidth  : 850 ;
 
 var insideheight = height * 0.7; insidewidth = width * 0.7;
 var distanceLimit = 70;
@@ -23,15 +23,36 @@ var estadoActivo;
     "SEGURIDAD Y TRÁNSITO",
       "OTROS"]
 
-  var sextos = {
-      "AMBIENTE":                     [insideheight * 1 / 3, insidewidth * 1 / 3],
-      "EDUCACIÓN":                    [insideheight * 2 / 3, insidewidth * 1 / 3],
-      "INFRAESTRUCTURA COMUNITARIA":  [insideheight,         insidewidth * 1 / 3],
-      "INFRAESTRUCTURA URBANA":       [insideheight * 1 / 3, insidewidth * 2 / 3],
-      "SEGURIDAD Y TRÁNSITO":         [insideheight * 2 / 3, insidewidth * 2 / 3],
-      "OTROS":                        [insideheight,         insidewidth * 2 / 3]
-        };
       
+  var sextos = {
+      "INFRAESTRUCTURA COMUNITARIA": [insidewidth * 1 / 3, insideheight * 1 / 3],
+      "SEGURIDAD Y TRÁNSITO": [insidewidth * 2 / 3, insideheight * 1 / 3],
+      "INFRAESTRUCTURA URBANA": [insidewidth,         insideheight * 1 / 3],
+      "AMBIENTE": [insidewidth * 1 / 3, insideheight * 2 / 3],
+      "EDUCACIÓN": [insidewidth * 2 / 3, insideheight * 2 / 3],
+      "OTROS": [insidewidth,         insideheight * 2 / 3]
+        };
+
+
+
+
+
+
+
+
+
+        var centroides = {
+  "VILLA ADELINA": [insidewidth / 4 * 1, insideheight / 3 * 1],
+  "MUNRO": [insidewidth / 4 * 2, insideheight / 3 * 1],
+  "OLIVOS": [insidewidth / 4 * 3, insideheight / 3 * 1],
+  "LA LUCILA": [insidewidth, insideheight / 3 * 1],
+  "CARAPACHAY": [insidewidth / 4 * 1, insideheight / 3 * 2],
+  "FLORIDA OESTE": [insidewidth / 4 * 2, insideheight / 3 * 2],
+  "FLORIDA ESTE": [insidewidth / 4 * 3, insideheight / 3 * 2],
+  "VICENTE LÓPEZ": [insidewidth, insideheight / 3 * 2],
+  "VILLA MARTELLI": [insidewidth / 4 * 2, insideheight / 3 * 3]
+}
+
 
 
     // limit how far away the mouse can be from finding a voronoi site
@@ -76,6 +97,7 @@ var projection = d3.geoMercator();
 
 // Define the div for the tooltip
 let tooltip = d3.select("#tooltip")
+                .style("display","none")
                 .style("opacity",0)
                 .style("left", width*0.75 + "px")
                 .style("top", height * 0.75 + "px")
@@ -99,11 +121,6 @@ var svg = d3.select("#stickyViz")
   Promise.all(promises).then(function(data){
     ready(data)});
 
-  // d3.queue()
-//     .defer(d3.json, "vicentemap.topo.json")
-//     .defer(d3.csv, "lugaresVL.csv")
-//     .awaitAll(ready);
-            
 
 
 //********** INICIO *********************
@@ -116,7 +133,6 @@ function ready (results){
   radiusForce.domain(radiusScale.domain())
 
   // --------- MAPA
-  var centroides={};
   var mapa = topojson.feature(mapTopoJson, mapTopoJson.objects.collection);  
   var projection = d3.geoTransverseMercator()
                     .rotate([74 + 30 / 60, -38 - 50 / 60])
@@ -124,38 +140,7 @@ function ready (results){
 
       path.projection(projection);
 
-         var centroides = {
-           "VILLA ADELINA":[ insidewidth / 4 * 1,insideheight/3*1],
-           "MUNRO": [insidewidth / 4 * 2, insideheight / 3 * 1],
-           "OLIVOS": [insidewidth / 4 * 3, insideheight / 3 * 1],
-           "LA LUCILA": [insidewidth, insideheight / 3 * 1],
-            "CARAPACHAY": [insidewidth / 4 * 1, insideheight / 3 * 2],
-            "FLORIDA OESTE": [insidewidth / 4 * 2, insideheight / 3 * 2],
-            "FLORIDA ESTE": [insidewidth / 4 * 3, insideheight / 3 * 2],
-            "VICENTE LÓPEZ": [insidewidth, insideheight / 3 * 2],
-            "VILLA MARTELLI": [insidewidth / 4 * 2, insideheight / 3 * 3]
-           }
-
-
-     
-      // PARA UBICAR EN LOS CENTROIDES GEOGRAFICOS
-  //         var barriosTraduccion = {
-  //   "Carapachay": "CARAPACHAY",
-  //   "Florida": "FLORIDA ESTE",
-  //   "Florida Oeste": "FLORIDA OESTE",
-  //   "La Lucila": "LA LUCILA",
-  //   "Munro": "MUNRO",
-  //   "Olivos": "OLIVOS",
-  //   "Vicente López": "VICENTE LÓPEZ",
-  //   "Villa Adelina": "VILLA ADELINA",
-  //   "Villa Martelli": "VILLA MARTELLI"
-  // }
-
-  //         mapa.features.forEach(element => {
-  //           centroides[barriosTraduccion[element.properties.name]] = path.centroid(element);
-  //         });
-
-
+        
 
       svg.append("g")
           .attr("class", "states")
@@ -182,7 +167,7 @@ function ready (results){
       presupuesto: +d.presupuesto,//numberFormat(+d.presupuesto),
       radius: radiusScale(+d.presupuesto),
       descripcion: d.descripcion,
-      categoria: d.temaResumen,
+      tema: d.temaResumen,
       id: d.id,
       longlat: projection([Number(d.longlat.split(",")[1]), Number(d.longlat.split(",")[0])]),
       centroide: centroides[d.barrio],
@@ -198,9 +183,9 @@ function ready (results){
   // --------- BUBBLES
      
                                  
-          simulaNodos(nodes,"longlat","mapa");
-          simulaNodos(nodes, "centroide", "barrios")
-          simulaNodos(nodes, "sextos", "temas")
+          simulaNodos(nodes,"longlat","mapa",false);
+          simulaNodos(nodes, "centroide", "barrios",true)
+          simulaNodos(nodes, "sextos", "temas",true)
          // simulaNodos(nodes, "tiempos", "lineadetiempo")
 
           
@@ -257,7 +242,7 @@ function ready (results){
                 })
                 .attr('class', 'circulos')
                 .attr('id', (d) => d.id)
-                .attr('fill', (d) => colorScale(d.categoria))
+                .attr('fill', (d) => colorScale(d.tema))
                 .transition().duration((d) => radiusForce(d.presupuesto) * 1000).delay((d) => (1-radiusForce(d.presupuesto)) * 1000).ease(d3.easeExpInOut)
                 .attr('r', (d) => d.radius);
             }else {
@@ -292,7 +277,11 @@ function simulaNodos(nodes, centro, estado, precalcular) {
                 .key(function (d) { return d.tema; })
                 .key(function (d) { return d.id; })
                 .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
-                .entries(nodes);
+                .entries(nodes).sort(function (a, b) { 
+                  return d3.sum(b.values, d => d.value) - d3.sum(a.values, d => d.value);})
+
+              console.log(nest);
+
               break;
           }
               
@@ -333,6 +322,7 @@ function simulaNodos(nodes, centro, estado, precalcular) {
                   d.xPos = sextos[d.data.key][0];
                   d.yPos = sextos[d.data.key][1];
                 });
+                
               root.descendants().filter((d) => d.depth == 2)
                 .forEach((d) => {
                   d.x = d.x - d.parent.x + d.parent.xPos;
@@ -355,21 +345,21 @@ function simulaNodos(nodes, centro, estado, precalcular) {
           }
 
            
-          var simulation = d3.forceSimulation(nodes)
-            .force('charge', d3.forceManyBody().strength(1))
-            .force('x', d3.forceX().x(function (d) {
-              return d[centro][0]
-            }).strength(1))
-            .force('y', d3.forceY().y(function (d) {
-              return d[centro][1];
-            }).strength(1))
-            .force('collision', d3.forceCollide().radius(function (d) {
-              return d.radius + padding;
-            }))
-            .stop();
+          // var simulation = d3.forceSimulation(nodes)
+          //   .force('charge', d3.forceManyBody().strength(1))
+          //   .force('x', d3.forceX().x(function (d) {
+          //     return d[centro][0]
+          //   }).strength(1))
+          //   .force('y', d3.forceY().y(function (d) {
+          //     return d[centro][1];
+          //   }).strength(1))
+          //   .force('collision', d3.forceCollide().radius(function (d) {
+          //     return d.radius + padding;
+          //   }))
+          //   .stop();
 
 
-          for (var i = 0; i < 270; ++i) simulation.tick(); // evalua la simulacion
+          // for (var i = 0; i < 1; ++i) simulation.tick(); // evalua la simulacion
           
       
           nodes.forEach(element => {
