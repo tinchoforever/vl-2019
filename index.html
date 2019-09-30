@@ -1,137 +1,82 @@
-<!DOCTYPE html5>
-<html lang="es">
+ <!DOCTYPE html>
+<html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Presupuesto Participativo</title>
-   <meta charset="UTF-8">    
+	 <meta charset="UTF-8">    
     <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-  <link rel="stylesheet" href="./Presupuesto Participativo_files/site.css">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/animate.css">
+	<link rel="stylesheet" href="styles/site.css">
+	<link rel='stylesheet' href='styles/style.css'>
+	<link rel='stylesheet' href='styles/mapStyles.css'>
 <style>
-.seccion-datos {margin-bottom: 160px !important}
-.card{    padding: 10px;
-    text-align: center;
-    min-width: 200px;
-    border: none;
-    background-color: #f1fee3;
-    border-radius: 5px;
 
-}
-.card p{
-  font-weight:400;
-  margin:0;
-}
+	</style>
 
-.card svg{
-  display:block;
-  width: 36px;
-  height:36px;
-  margin:auto;
-}
-.card svg path{
-  fill:dimgrey;
-}
-</style>
+</head>
 
-<body class=" hasGoogleVoiceExt">
-
-  <div id="root">
-    <div data-reactroot="" id="outer-layout">
-      <nav class="navbar navbar-fixed-top navbar-vilo"
-        style="color: rgb(74, 73, 73); background-color: rgb(255, 255, 255);">
-        <a class="navbar-brand" href="https://presupuestoparticipativo.vicentelopez.gob.ar/">
-          <img src="./Presupuesto Participativo_files/logo.png" class="d-inline-block align-top"></a>
-        <ul class="nav navbar-nav">
-          <div class="header-item">
-            <a class="header-link" href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/acerca-de">Acerca de</a>
-          </div>
-          <div class="header-item"><a class="header-link "
-              href="https://presupuestoparticipativo.vicentelopez.gob.ar/propuestas">Propuestas</a></div>
-          <div class="header-item"><a
-              href="https://presupuestoparticipativo.vicentelopez.gob.ar/proyectos?stage=seguimiento"
-              class="header-link ">Proyectos</a></div>
-          <div class="header-item"><a class="header-link"
-              href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/datos"
-              style="color: rgb(140, 30, 129);">Datos</a></div>
-          <div class="header-item"><a class="header-link"
-              href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/herramientas">Herramientas</a></div>
-          <div class="header-item"><a class="header-link anon-user"
-              href="https://presupuestoparticipativo.vicentelopez.gob.ar/signin?ref=%2Fs%2Fdatos">Ingresar</a></div>
-        </ul>
-      </nav>
-      <div>
-        <section class="banner-static">
-          <div class="banner"></div>
-          <div class="contenedor">
-            <div class="fondo-titulo">
-              <h1>¡400 proyectos ya ejecutados!</h1>
-            </div>
-          </div>
-        </section>
-        <div id="container">
-          <div class="ext-datos">
-            
-            <article class="seccion-datos">
-              <p class="text">¡Gracias a <b>TU participación y voto</b>, seguimos mejorando los barrios de Vicente López!
-              </p>
-              <div class="card-deck">
-                <div class="card">
-                  <p>Total invertido:<br>
-                    <b>$250.000 millones</b></p>
-                  <svg  viewBox="0 0 24 24">
-                    <path 
-                    d="M11.97,19.88C10.93,20.26 9.78,19.72 9.4,18.69C9,17.65 9.55,16.5 10.59,16.13C11.63,15.75 12.78,16.28 13.16,17.31C13.54,18.35 13,19.5 11.97,19.88M9.9,14.25C7.83,15 6.76,17.3 7.5,19.38C8.28,21.45 10.58,22.5 12.66,21.75C14.73,21 15.79,18.7 15.04,16.63C14.28,14.55 11.97,13.5 9.9,14.25M15.94,4.58L9.37,7L10.75,10.74L17.32,8.33M20.32,13.62L15.54,15.37C15.71,15.66 15.85,15.96 15.97,16.28C16.09,16.6 16.17,16.93 16.22,17.25L21,15.5M19.54,8.58L11.09,11.68L11.58,13C12.83,13.09 14,13.64 14.89,14.55L20.92,12.34M2,2V4H5.09L8.66,13.75C8.94,13.57 9.24,13.43 9.56,13.31C9.88,13.19 10.21,13.11 10.53,13.06L6.5,2" />
-                  </svg>
-                </div>
-                <div class="card">
-                  <p>Total ejecutado:<br>
-                    <b>400 proyectos</b></p>
-                  <svg viewBox="0 0 24 24">
-                    <path 
-                    d="M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z" />
-                  </svg>
-                </div>
-                <div class="card">
-                  <p>Total participantes:<br>
-                    <b>177.214 personas</b></p>
-                  <svg viewBox="0 0 24 24" >
-                    <path 
-                    d="M1.5,4V5.5C1.5,9.65 3.71,13.28 7,15.3V20H22V18C22,15.34 16.67,14 14,14C14,14 13.83,14 13.75,14C9,14 5,10 5,5.5V4M14,4A4,4 0 0,0 10,8A4,4 0 0,0 14,12A4,4 0 0,0 18,8A4,4 0 0,0 14,4Z" />
-                  </svg>
-                </div>
-              </div>
-
-
-              
-             
-            </article>
-            <article class="seccion-datos">
-              <h3>¡CADA VEZ SOMOS MÁS VECINOS PARTICIPANDO!</h3>
+<body>
+	
+	<main>
+	
+	
+		<section class="banner-static wow fadeInUp">
+			<div class="banner"></div>
+			<div class="contenedor">
+				<div class="fondo-titulo">
+					<h1>¡400 proyectos ya ejecutados!</h1>
+				</div>
+			</div>
+		</section>
+		<div id="container">
+			<div class="ext-datos">
+				<article class="seccion-datos">
+					<p class="text">¡Gracias a <b>TU participación y voto</b>, seguimos mejorando los barrios de Vicente López!
+					</p>
+					<div class="card-deck" >
+						<div class="card wow fadeInUp"  data-wow-delay="1s">
+							<p>Total invertido:<br>
+								<b>$250.000 millones</b></p>
+							<svg viewBox="0 0 24 24">
+								<path
+									d="M11.97,19.88C10.93,20.26 9.78,19.72 9.4,18.69C9,17.65 9.55,16.5 10.59,16.13C11.63,15.75 12.78,16.28 13.16,17.31C13.54,18.35 13,19.5 11.97,19.88M9.9,14.25C7.83,15 6.76,17.3 7.5,19.38C8.28,21.45 10.58,22.5 12.66,21.75C14.73,21 15.79,18.7 15.04,16.63C14.28,14.55 11.97,13.5 9.9,14.25M15.94,4.58L9.37,7L10.75,10.74L17.32,8.33M20.32,13.62L15.54,15.37C15.71,15.66 15.85,15.96 15.97,16.28C16.09,16.6 16.17,16.93 16.22,17.25L21,15.5M19.54,8.58L11.09,11.68L11.58,13C12.83,13.09 14,13.64 14.89,14.55L20.92,12.34M2,2V4H5.09L8.66,13.75C8.94,13.57 9.24,13.43 9.56,13.31C9.88,13.19 10.21,13.11 10.53,13.06L6.5,2" />
+							</svg>
+						</div>
+						<div class="card wow fadeInUp"  data-wow-delay="2s">
+							<p>Total ejecutado:<br>
+								<b>400 proyectos</b></p>
+							<svg viewBox="0 0 24 24">
+								<path
+									d="M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z" />
+							</svg>
+						</div>
+						<div class="card wow fadeInUp"  data-wow-delay="3s">
+							<p>Total participantes:<br>
+								<b>177.214 personas</b></p>
+							<svg viewBox="0 0 24 24">
+								<path
+									d="M1.5,4V5.5C1.5,9.65 3.71,13.28 7,15.3V20H22V18C22,15.34 16.67,14 14,14C14,14 13.83,14 13.75,14C9,14 5,10 5,5.5V4M14,4A4,4 0 0,0 10,8A4,4 0 0,0 14,12A4,4 0 0,0 18,8A4,4 0 0,0 14,4Z" />
+							</svg>
+						</div>
+					</div>
+				</article>
+				<br/>
+				<article class="seccion-datos">
+              <h3 class="  wow fadeInUp " >¡CADA VEZ SOMOS MÁS VECINOS PARTICIPANDO!</h3>
               <figure class="graph-box">
-                <div class="graph-img">
-                  En tan solo 6 años pasamos a ser más de <strong> 69.000</strong> vecinos participando, comprometidos con la mejora continua de nuestros
-                  barrios.
+                <div class="graph-img ">
+                  <p class="wow fadeInUp"  > En tan solo 6 años pasamos a ser más de <strong> 69.000</strong> vecinos participando, comprometidos con la mejora continua de nuestros
+                  barrios. </p>
+                  <div class="wow fadeInUp"  >
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 682 480" style="enable-background:new 0 0 682 480;" xml:space="preserve">
                     <style type="text/css">
-                      .st0 {
-                        fill: #F7F7F7;
-                      }
-                  
-                      .st1 {
-                        fill: none;
-                      }
-                  
-                      .st2 {
-                        fill: #81D4E6;
-                      }
+                      .st0 { fill: #F7F7F7; }
+                                      
+                      .st2 { fill: #81D4E6; }
                   
                       .st3 {
                         fill: none;
@@ -149,34 +94,18 @@
                       }
            
                   
-                      .st7 {
-                        font-size: 14px;
-                      }
+                      .st7 { font-size: 14px; }
                   
-                      .st8 {
-                        font-weight: 800;
-                      }
+                      .st8 { font-weight: 800; }
                   
-                      .st9 {
-                        fill: #00A9CE;
-                      }
+                      .st9 { fill: #00A9CE; }
                   
-                      .st10 {
-                        stroke: #F7F7F7;
-                        stroke-width: 6;
-                        stroke-miterlimit: 10;
+                      .st10 { stroke: #F7F7F7;  stroke-width: 6; stroke-miterlimit: 10;
                       }
                     </style>
                     <path class="st0" d="M662.5,17h-640c-2.485,0-4.5,2.015-4.5,4.5v378.076c0,2.485,2.015,4.5,4.5,4.5h640c2.485,0,4.5-2.015,4.5-4.5
                   	V21.5C667,19.015,664.985,17,662.5,17z" />
-                    <path class="st1" d="M85,402.72H23v-119c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <path class="st1" d="M181,402.72h-62v-193c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <path class="st1" d="M277,402.72h-62v-284c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <path class="st1" d="M374,402.72h-62v-283c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <path class="st1" d="M470,402.72h-62v-275c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <path class="st1" d="M566,402.72h-62v-269c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <path class="st1" d="M662,402.72h-62v-369c0-1.105,0.895-2,2-2h58c1.105,0,2,0.895,2,2V402.72z" />
-                    <g>
+                   <g id="barras">
                       <path class="st2"
                         d="M79,404.076H29v-83.375c0-2.926,2.372-5.299,5.299-5.299h39.402c2.926,0,5.299,2.372,5.299,5.299V404.076z" />
                       <path class="st2"
@@ -274,2638 +203,239 @@
                       <text transform="matrix(1 0 0 1 620.7251 126.7202)" class="st9 st8 st7">198</text>
                     </g>
                   </svg>
-
+              </div>
                 </div>
-                
               </figure>
             </article>
+			<article class="seccion-datos">
+				<h3 class="wow fadeInUp">1 DE CADA 3 VECINOS YA PARTICIPA</h3>
+				<figure class="graph-box">
+					<div class="graph-img">
+						<p class="wow fadeInUp">¡Y todavía nos queda mucho camino por recorrer!</p>
+						
+			
+					</div>
+			
+				</figure>
+				<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+					<symbol id="participante" viewBox="0 0 24 24">
+						<path
+							d="M5,1C5,3.7 6.56,6.16 9,7.32V22H11V15H13V22H15V7.31C17.44,6.16 19,3.7 19,1H17A5,5 0 0,1 12,6A5,5 0 0,1 7,1M12,1C10.89,1 10,1.89 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3C14,1.89 13.11,1 12,1Z" />
+					</symbol>
+					<symbol id="persona" viewBox="0 0 24 24">
+						<path
+							d="M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M10.5,7H13.5A2,2 0 0,1 15.5,9V14.5H14V22H10V14.5H8.5V9A2,2 0 0,1 10.5,7Z" />
+					</symbol>
+				</svg>
+				<div id="personitas" class="wow fadeInUp"></div>
+			</article>
 
-          <article class="seccion-datos">
-            <h3>1 DE CADA 3 VECINOS YA PARTICIPA</h3>
-            <figure class="graph-box">
-              <div class="graph-img">
-                <p>¡Y todavía nos queda mucho camino por recorrer!</p>
-                <img src="images/mokupPeople.JPG">
+			</div>
+		</div>
 
-              </div>
+		
+		<section id='scrolly'>
 
-            </figure>
-          </article>
+			<figure>
+				
+				<div class="sticked">
+					
+				<svg id="stickyViz"></svg>
+				<div id="tooltip">
+					<h3><span id="title"></span></h3>
+					<h5 id="info"></h5>
+					<h4 id="descripcion"></h4>
+				
+				</div>
+			</figure>
 
-    <article class="seccion-datos">
-      <h3>TODOS LOS BARRIOS DE VICENTE LÓPEZ PARTICIPAN</h3>
-      <figure class="graph-box">
-        <div class="graph-img">
-          <p>Mirá la cantidad de proyectos ya ejecutados por barrio.
-          Deslizá el mouse o hacé click en el barrio que más te interese.
-</p>
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-    y="0px" viewBox="0 0 625 471" MAPstyle="enable-background:new 0 0 625 471;" xml:space="preserve">
-    <style type="text/css">
-      .MAPst0 {
-        fill: #D2F3FC;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst1 {
-        fill: #7FC2DF;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst2 {
-        fill: #4AA7CF;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst3 {
-        fill: none;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst4 {
-        fill: #A1D5EB;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst5 {
-        fill: #A5D7ED;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst6 {
-        fill: #95CEE7;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst7 {
-        fill: #64B4D6;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      .MAPst8 {
-        fill: #6DB8D9;
-        stroke: #FFFFFF;
-        stroke-miterlimit: 10;
-      }
-  
-      
-      .MAPst10 {
-        font-size: 12px;
-      }
-  
-      .MAPst11 {
-        fill: #D2F3FC;
-      }
-  
-      .MAPst12 {
-        fill: #A5DAED;
-      }
-  
-      .MAPst13 {
-        fill: #77C0DE;
-      }
-  
-      .MAPst14 {
-        fill: #4AA7CF;
-      }
+			<article>
+				<div class='step' data-step='mapa'>
+					<div class="sticked">
+						<h3>ACA ALGO REFERENTE A LA UBICACION DE LOS PROYECTOS</h3>
+						<p>Mirá la cantidad de proyectos ya ejecutados por barrio.
+							Deslizá el mouse o hacé click en el barrio que más te interese.
+						</p>
+					</div>
+				</div>
+				<div class='step' data-step='barrios'>
+					<div class="sticked">
+						<h3>TODOS LOS BARRIOS DE VICENTE LÓPEZ PARTICIPAN</h3>
+						<p>Mirá la cantidad de proyectos ya ejecutados por barrio.
+							Deslizá el mouse o hacé click en el barrio que más te interese.
+						</p>
+					</div>
+				</div>
+				<div class='step' data-step='temas'>
+					<div class="sticked">
+						<h3>TAMBIÉN PODÉS VER QUÉ TIPO DE PROYECTO EJECUTÓ CADA BARRIO.</h3>
+						<p>Cada color representa una categoría.
+						Por ejemplo el ROJO representa EDUCACIÓN.
+						¡Descubrilas haciendo click en cada color!</p>
+					</div>
+				</div>
+				<div class='step' data-step='tiempo'>
+					<div class="sticked">
+						<div>
+						<div>
+							<h3>Y A LA VEZ, VER COMO CRECIÓ CADA CATEGORÍA EN LOS ÚLTIMOS AÑOS.</h3>
+							<p >¡El crecimiento es enorme y juntos vamos por más!</p>  
+						</div>
+						</div>
+						
+					</div>
+				</div>
+
+				
+				
+
+			</article>
+
+			
+		</section>
+
+		<section id='outro'>
+<div class="ext-datos">
+		<article class="seccion-datos">
+			<h3 class="wow fadeInUp">CIERRE / CALL TO ACTION</h3>
+			<figure class="graph-box">
+				<div class="graph-img">
+					<p class="wow fadeInUp">Texto de cierre Texto de cierre Texto de cierre Texto de cierre Texto de cierre Texto de cierre Texto de cierre</p>
+					
+		
+				</div>
+		
+			</figure>
+		</article>
+			</div>
+		</section>
+	</main>
+
+	<script src='js/wow.min.js'></script>
+	
+	<!-- <div class='debug'></div> -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+	<script src="js/d3.min.js"></script>
+	<script src="js/d3-legend.min.js"></script>
+	<script src="js/topojson.v2.min.js"></script>
+	<script src="js/d3-iconarray.min.js"></script>
+	<script src="js/personita.js"></script>
+
+	<script src="js/map.js"></script>
 
   
-      .MAPst16 {
-        font-size: 11px;
-      }
-    </style>
-    <polygon class="MAPst0" points="272.103,289.502 62.667,289.502 72,195.019 272.103,210 " />
-    <polygon class="MAPst1"
-      points="152,36.472 152,101.5 72,195.019 272.103,210 272.103,108.468 272.103,108.468 272.103,28 " />
-    <polygon class="MAPst2" points="272.103,327.433 234.172,327.433 56.241,445.364 62.667,289.502 272.103,289.502 " />
-    <path class="MAPst3" d="M234.172,312.261" />
-    <polygon class="MAPst4" points="607.675,45.856 445.207,38 445.207,125.958 567.761,135.695 " />
-    <polygon class="MAPst1"
-      points="445.207,125.958 445.207,38 272.103,28 272.103,210 422,221.406 536,230 567.761,135.695 " />
-    <polygon class="MAPst5" points="536,230 422,221.406 396.667,356.667 526.123,372.312 " />
-    <polygon class="MAPst6" points="422,221.406 272.103,210 272.103,327.433 396.667,356.667 " />
-    <polygon class="MAPst7" points="152,101.5 25.897,115.958 25.897,160 92.91,170.575 152,101.5 " />
-    <polygon class="MAPst8" points="152,36.472 25.897,43.333 25.897,115.958 152,101.5 " />
-    <text transform="matrix(1 0 0 1 72.9142 72.0138)">
-      <tspan x="0" y="0" class="MAPst9 MAPst10">VILLA</tspan>
-      <tspan x="-9.434" y="14.4" class="MAPst9 MAPst10">ADELINA</tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 485.9244 90.2137)" class="MAPst9 MAPst10">LA LUCILA</text>
-    <text transform="matrix(1 0 0 1 32.9442 142.5134)" class="MAPst9 MAPst10">CARAPACHAY</text>
-    <text transform="matrix(1 0 0 1 151.5803 142.5135)" class="MAPst9 MAPst10">MUNRO</text>
-    <text transform="matrix(1 0 0 1 375.107 142.5134)" class="MAPst9 MAPst10">OLIVOS</text>
-    <text transform="matrix(1 0 0 1 315.089 274.4762)">
-      <tspan x="0" y="0" class="MAPst9 MAPst10">FLORIDA</tspan>
-      <tspan x="11.813" y="14.4" class="MAPst9 MAPst10">ESTE</tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 149.6236 246.251)">
-      <tspan x="0" y="0" class="MAPst9 MAPst10">FLORIDA</tspan>
-      <tspan x="7.09" y="14.4" class="MAPst9 MAPst10">OESTE</tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 158.7935 318.9462)">
-      <tspan x="0" y="0" class="MAPst9 MAPst10">VILLA</tspan>
-      <tspan x="-12.384" y="14.4" class="MAPst9 MAPst10">MARTELLI</tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 444.3418 289.5015)">
-      <tspan x="0" y="0" class="MAPst9 MAPst10">VICENTE</tspan>
-      <tspan x="5.692" y="14.4" class="MAPst9 MAPst10">LOPEZ</tspan>
-    </text>
-    <rect x="332.333" y="413.667" class="MAPst11" width="18" height="18" />
-    <rect x="358.667" y="413.667" class="MAPst12" width="18" height="18" />
-    <rect x="385" y="413.667" class="MAPst13" width="18" height="18" />
-    <rect x="411.333" y="413.667" class="MAPst14" width="18" height="18" />
-    <text transform="matrix(1 0 0 1 323.0161 404.0006)" class="MAPst15 MAPst16">Cantidad de proyectos</text>
-    <text transform="matrix(1 0 0 1 335.0438 445.3641)" class="MAPst15 MAPst16">27</text>
-    <text transform="matrix(1 0 0 1 413.6431 445.3641)" class="MAPst15 MAPst16">58</text>
-  </svg>
-    
-        </div>
-    
-      </figure>
-    </article>
-                
-    
-      <article class="seccion-datos">
-            <figure class="graph-box">
-              <div class="graph-img">
-              <?xml version="1.0" encoding="utf-8"?>
-              <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                y="0px" viewBox="0 0 749 656.44" style="enable-background:new 0 0 749 656.44;" xml:space="preserve">
-                <style type="text/css">
-                  .BARRst0 {
-                    fill: #F05F52;
-                    stroke: #DDDDDD;
-                    stroke-width: 0.7586;
-                    stroke-opacity: 0;
-                  }
-              
-                  .BARRst1 {
-                    fill: #B6E35C;
-                    stroke: #DDDDDD;
-                    stroke-width: 0.7586;
-                    stroke-opacity: 0;
-                  }
-              
-                  .BARRst2 {
-                    fill: #74B1DF;
-                    stroke: #DDDDDD;
-                    stroke-width: 0.7586;
-                    stroke-opacity: 0;
-                  }
-              
-                  .BARRst3 {
-                    enable-background: new;
-                  }
-              
-                  .BARRst5 {
-                    font-size: 14px;
-                  }
-              
-                  .BARRst6 {
-                    fill: #69BFBF;
-                    stroke: #DDDDDD;
-                    stroke-width: 0.7586;
-                    stroke-opacity: 0;
-                  }
-              
-                  .BARRst7 {
-                    fill: #99D4C6;
-                    stroke: #DDDDDD;
-                    stroke-width: 0.7586;
-                    stroke-opacity: 0;
-                  }
-              
-                  .BARRst8 {
-                    fill: #E4E400;
-                    stroke: #DDDDDD;
-                    stroke-width: 0.7586;
-                    stroke-opacity: 0;
-                  }
-                </style>
-                <g>
-                  <circle class="BARRst0" cx="211.795" cy="388.029" r="26.878" />
-                  <circle class="BARRst0" cx="265.089" cy="388.029" r="23.139" />
-                  <circle class="BARRst0" cx="242.034" cy="431.625" r="22.901" />
-                  <circle class="BARRst0" cx="241.888" cy="346.871" r="20.83" />
-                  <circle class="BARRst1" cx="198.339" cy="339.678" r="20.032" />
-                  <circle class="BARRst0" cx="196.497" cy="435.274" r="19.504" />
-                  <circle class="BARRst0" cx="284.828" cy="347.31" r="18.835" />
-                  <circle class="BARRst0" cx="283.161" cy="425.707" r="15.372" />
-                  <circle class="BARRst0" cx="172.466" cy="367.103" r="14.394" />
-                  <circle class="BARRst1" cx="172.583" cy="407.703" r="13.715" />
-                  <circle class="BARRst0" cx="301.201" cy="400.99" r="11.951" />
-                  <circle class="BARRst0" cx="305.471" cy="374.263" r="11.838" />
-                  <circle class="BARRst0" cx="223.831" cy="316.938" r="10.851" />
-                  <circle class="BARRst0" cx="218.781" cy="459.921" r="10.446" />
-                  <circle class="BARRst0" cx="265.153" cy="321.947" r="9.988" />
-                  <circle class="BARRst0" cx="271.574" cy="450.935" r="9.113" />
-                  <circle class="BARRst0" cx="157.592" cy="387.868" r="7.871" />
-                  <circle class="BARRst0" cx="245.579" cy="314.174" r="7.795" />
-                  <circle class="BARRst1" cx="306.699" cy="420.855" r="5.384" />
-                  <circle class="BARRst0" cx="170.43" cy="344.508" r="5.015" />
-                  <circle class="BARRst2" cx="169.869" cy="429.08" r="4.556" />
-                  <circle class="BARRst0" cx="256.636" cy="458.376" r="4.298" />
-                  <circle class="BARRst1" cx="236.635" cy="461.522" r="4.202" />
-                  <circle class="BARRst0" cx="309.177" cy="355.831" r="3.685" />
-                  <circle class="BARRst2" cx="285.474" cy="446.445" r="2.218" />
-                  <text transform="matrix(1 0 0 1 206.297 484.6712)" class="BARRst3">
-                    <tspan x="0" y="0" class="BARRst4 BARRst5">FLORIDA</tspan>
-                    <tspan x="6.61" y="16.8" class="BARRst4 st5">OESTE</tspan>
-                  </text>
-                </g>
-                <g>
-                  <circle class="BARRst0" cx="90.297" cy="260.677" r="29.741" />
-                  <circle class="BARRst2" cx="146.884" cy="260.677" r="23.569" />
-                  <circle class="BARRst0" cx="124.299" cy="304.444" r="22.405" />
-                  <circle class="BARRst0" cx="124.189" cy="218.105" r="21.397" />
-                  <circle class="BARRst0" cx="80.614" cy="208.634" r="19.917" />
-                  <circle class="BARRst0" cx="82.945" cy="309.069" r="15.93" />
-                  <circle class="BARRst1" cx="164.3" cy="221.945" r="15.62" />
-                  <circle class="BARRst0" cx="163.381" cy="297.97" r="13.932" />
-                  <circle class="BARRst0" cx="57.727" cy="291.264" r="11.663" />
-                  <circle class="BARRst1" cx="55.833" cy="232.716" r="11.361" />
-                  <circle class="BARRst1" cx="181.409" cy="276.241" r="11.024" />
-                  <circle class="BARRst1" cx="180.833" cy="245.875" r="10.188" />
-                  <circle class="BARRst0" cx="101.342" cy="331.225" r="9.591" />
-                  <circle class="BARRst0" cx="106.499" cy="189.362" r="9.076" />
-                  <circle class="BARRst0" cx="150.375" cy="199.754" r="7.301" />
-                  <circle class="BARRst0" cx="153.137" cy="319.996" r="7.082" />
-                  <circle class="BARRst2" cx="51.694" cy="270.391" r="6.788" />
-                  <circle class="BARRst1" cx="51.73" cy="253.212" r="6.264" />
-                  <circle class="BARRst6" cx="194.113" cy="260.261" r="6.113" />
-                  <circle class="BARRst7" cx="39.241" cy="261.314" r="5.346" />
-                  <circle class="BARRst6" cx="58.716" cy="311.305" r="5.125" />
-                  <circle class="BARRst7" cx="137.203" cy="191.436" r="5" />
-                  <circle class="BARRst1" cx="123.743" cy="188.523" r="4.911" />
-                  <circle class="BARRst1" cx="118.287" cy="333.784" r="4.267" />
-                  <circle class="BARRst2" cx="54.16" cy="214.296" r="3.859" />
-                  <circle class="BARRst0" cx="141.651" cy="328.287" r="3.807" />
-                  <circle class="BARRst6" cx="183.982" cy="294.109" r="3.75" />
-                  <circle class="BARRst0" cx="185.386" cy="229.522" r="3.509" />
-                  <circle class="BARRst8" cx="43.373" cy="280.48" r="3.013" />
-                  <circle class="BARRst1" cx="42.849" cy="244.502" r="2.897" />
-                  <circle class="BARRst1" cx="86.165" cy="330.367" r="2.333" />
-                  <circle class="BARRst2" cx="165.552" cy="317.385" r="2.327" />
-                  <circle class="BARRst1" cx="132.083" cy="182.216" r="2.268" />
-                  <circle class="BARRst0" cx="162.266" cy="201.682" r="1.468" />
-                  <circle class="BARRst7" cx="133.556" cy="329.592" r="1.116" />
-                  <circle class="BARRst2" cx="94.002" cy="189.516" r="0.144" />
-                  <circle class="BARRst2" cx="124.882" cy="330.12" r="0" />
-                  <circle class="BARRst6" cx="128.147" cy="329.836" r="0" />
-                  <circle class="BARRst2" cx="130.182" cy="332.406" r="0" />
-                  <text transform="matrix(1 0 0 1 68.4177 178.8475)" class="BARRst4 BARRst5">CARAPACHAY</text>
-                </g>
-                <g>
-                  <circle class="BARRst2" cx="327.215" cy="528.756" r="22.744" />
-                  <circle class="BARRst0" cx="375.725" cy="528.756" r="22.487" />
-                  <circle class="BARRst0" cx="351.726" cy="570.567" r="22.444" />
-                  <circle class="BARRst0" cx="351.69" cy="495.049" r="15.633" />
-                  <circle class="BARRst0" cx="317.891" cy="488.221" r="15.572" />
-                  <circle class="BARRst0" cx="385.408" cy="488.757" r="15.389" />
-                  <circle class="BARRst2" cx="311.857" cy="566.139" r="14.393" />
-                  <circle class="BARRst0" cx="391.247" cy="565.499" r="14.123" />
-                  <circle class="BARRst0" cx="294.838" cy="508.765" r="12.03" />
-                  <circle class="BARRst1" cx="406.121" cy="509.154" r="10.404" />
-                  <circle class="BARRst1" cx="294.525" cy="544.328" r="10.188" />
-                  <circle class="BARRst0" cx="407.405" cy="544.083" r="9.428" />
-                  <circle class="BARRst1" cx="339.173" cy="469.693" r="9.367" />
-                  <circle class="BARRst1" cx="364.666" cy="470.013" r="9.289" />
-                  <circle class="BARRst0" cx="323.387" cy="589.439" r="8.326" />
-                  <circle class="BARRst0" cx="380.401" cy="588.686" r="8.198" />
-                  <circle class="BARRst0" cx="418.957" cy="526.765" r="8.112" />
-                  <circle class="BARRst0" cx="281.16" cy="527.585" r="7.957" />
-                  <circle class="BARRst6" cx="352.162" cy="455.279" r="6.758" />
-                  <circle class="BARRst6" cx="410.424" cy="489.577" r="6.363" />
-                  <circle class="BARRst0" cx="292.946" cy="487.433" r="6.108" />
-                  <circle class="BARRst8" cx="414.141" cy="561.384" r="5.861" />
-                  <circle class="BARRst0" cx="288.773" cy="562.593" r="5.683" />
-                  <circle class="BARRst2" cx="382.097" cy="464.643" r="5.673" />
-                  <circle class="BARRst0" cx="321.948" cy="464.312" r="5.401" />
-                  <circle class="BARRst0" cx="366.353" cy="598.037" r="5.4" />
-                  <circle class="BARRst2" cx="337.767" cy="598.195" r="5.232" />
-                  <circle class="BARRst0" cx="396.96" cy="587.305" r="5.141" />
-                  <circle class="BARRst1" cx="306.84" cy="588.234" r="4.987" />
-                  <circle class="BARRst1" cx="423.659" cy="541.209" r="3.801" />
-                  <circle class="BARRst1" cx="423.243" cy="512.274" r="3.722" />
-                  <circle class="BARRst7" cx="354.12" cy="599.886" r="3.695" />
-                  <circle class="BARRst0" cx="346.193" cy="607.019" r="3.691" />
-                  <circle class="BARRst6" cx="277.699" cy="541.937" r="3.529" />
-                  <circle class="BARRst0" cx="404.664" cy="477.757" r="3.509" />
-                  <circle class="BARRst7" cx="410.551" cy="573.495" r="3.494" />
-                  <circle class="BARRst2" cx="310.427" cy="467.416" r="3.254" />
-                  <circle class="BARRst8" cx="393.388" cy="468.598" r="3.013" />
-                  <circle class="BARRst2" cx="277.504" cy="514.027" r="2.807" />
-                  <circle class="BARRst0" cx="299.527" cy="477.848" r="2.241" />
-                  <circle class="BARRst7" cx="420.174" cy="551.779" r="2.204" />
-                  <circle class="BARRst0" cx="417.485" cy="498.607" r="1.823" />
-                  <text transform="matrix(1 0 0 1 296.4456 629.9846)" class="BARRst4 BARRst5">VILLA MARTELLI</text>
-                </g>
-                <g>
-                  <circle class="BARRst2" cx="296.01" cy="222.197" r="23.121" />
-                  <circle class="BARRst0" cx="345.122" cy="222.197" r="22.713" />
-                  <circle class="BARRst0" cx="320.961" cy="262.932" r="21.371" />
-                  <circle class="BARRst0" cx="320.96" cy="181.586" r="21.264" />
-                  <circle class="BARRst0" cx="279.591" cy="182.205" r="16.832" />
-                  <circle class="BARRst1" cx="281.979" cy="260.516" r="14.408" />
-                  <circle class="BARRst1" cx="358.3" cy="185.499" r="13.002" />
-                  <circle class="BARRst0" cx="357.654" cy="258.403" r="12.323" />
-                  <circle class="BARRst0" cx="377.63" cy="240.42" r="11.277" />
-                  <circle class="BARRst0" cx="377.174" cy="204.6" r="10.574" />
-                  <circle class="BARRst0" cx="263.624" cy="239.416" r="10.28" />
-                  <circle class="BARRst1" cx="262.645" cy="207.275" r="10.151" />
-                  <circle class="BARRst0" cx="349.269" cy="282.104" r="9.54" />
-                  <circle class="BARRst0" cx="348.502" cy="161.786" r="9.378" />
-                  <circle class="BARRst0" cx="294.88" cy="283.09" r="8.314" />
-                  <circle class="BARRst0" cx="296.67" cy="159.61" r="8.214" />
-                  <circle class="BARRst1" cx="390.148" cy="221.917" r="7.786" />
-                  <circle class="BARRst1" cx="250.343" cy="223.653" r="7.054" />
-                  <circle class="BARRst1" cx="379.773" cy="261.617" r="6.751" />
-                  <circle class="BARRst0" cx="380.651" cy="184.976" r="6.078" />
-                  <circle class="BARRst0" cx="259.156" cy="257.743" r="5.306" />
-                  <circle class="BARRst8" cx="256.132" cy="190.337" r="4.719" />
-                  <circle class="BARRst8" cx="333.467" cy="289.322" r="4.554" />
-                  <circle class="BARRst2" cx="332.728" cy="155.029" r="4.505" />
-                  <circle class="BARRst7" cx="309.089" cy="288.628" r="3.658" />
-                  <circle class="BARRst7" cx="311.065" cy="155.315" r="3.531" />
-                  <circle class="BARRst0" cx="364.318" cy="276.158" r="3.364" />
-                  <circle class="BARRst1" cx="363.533" cy="166.759" r="3.177" />
-                  <circle class="BARRst6" cx="280.597" cy="280.999" r="2.844" />
-                  <circle class="BARRst1" cx="282.685" cy="159.814" r="2.495" />
-                  <circle class="BARRst0" cx="318.423" cy="289.954" r="2.492" />
-                  <circle class="BARRst2" cx="322.656" cy="154.805" r="2.292" />
-                  <circle class="BARRst2" cx="325.966" cy="287.067" r="0" />
-                  <circle class="BARRst1" cx="317.584" cy="157.277" r="0" />
-                  <text transform="matrix(1 0 0 1 296.2147 140.2739)" class="BARRst4 BARRst5">MUNRO</text>
-                </g>
-                <g>
-                  <circle class="BARRst2" cx="461.5" cy="224.338" r="29.167" />
-                  <circle class="BARRst0" cx="512.425" cy="224.338" r="18.48" />
-                  <circle class="BARRst0" cx="496.353" cy="260.315" r="17.646" />
-                  <circle class="BARRst1" cx="496.097" cy="189.82" r="16.427" />
-                  <circle class="BARRst0" cx="464.248" cy="177.545" r="14.428" />
-                  <circle class="BARRst0" cx="462.771" cy="271.118" r="14.353" />
-                  <circle class="BARRst0" cx="529.674" cy="192.991" r="14.022" />
-                  <circle class="BARRst0" cx="530.735" cy="254.911" r="13.88" />
-                  <circle class="BARRst0" cx="434.16" cy="186.999" r="13.833" />
-                  <circle class="BARRst1" cx="433.596" cy="260.663" r="13.361" />
-                  <circle class="BARRst1" cx="486.759" cy="161.976" r="9.664" />
-                  <circle class="BARRst0" cx="483.735" cy="287.253" r="8.823" />
-                  <circle class="BARRst0" cx="541.613" cy="215.979" r="8.604" />
-                  <circle class="BARRst6" cx="547.552" cy="235.502" r="8.524" />
-                  <circle class="BARRst0" cx="423.62" cy="209.895" r="8.095" />
-                  <circle class="BARRst6" cx="424.329" cy="238.54" r="7.347" />
-                  <circle class="BARRst1" cx="516.533" cy="172.29" r="7.22" />
-                  <circle class="BARRst0" cx="519.299" cy="276.122" r="6.94" />
-                  <circle class="BARRst0" cx="414.682" cy="224.894" r="6.087" />
-                  <circle class="BARRst0" cx="505.472" cy="160.253" r="5.851" />
-                  <circle class="BARRst1" cx="443.971" cy="167.037" r="5.133" />
-                  <circle class="BARRst7" cx="442.425" cy="279.903" r="4.531" />
-                  <circle class="BARRst2" cx="500.172" cy="285.391" r="4.441" />
-                  <circle class="BARRst7" cx="511.701" cy="288.359" r="4.186" />
-                  <circle class="BARRst8" cx="470.552" cy="156.653" r="4.117" />
-                  <circle class="BARRst7" cx="468.399" cy="291.936" r="3.934" />
-                  <circle class="BARRst0" cx="548.713" cy="202.026" r="3.774" />
-                  <circle class="BARRst2" cx="416.2" cy="250.254" r="3.634" />
-                  <circle class="BARRst1" cx="416.053" cy="197.003" r="3.576" />
-                  <circle class="BARRst2" cx="530.588" cy="172.152" r="3.559" />
-                  <circle class="BARRst2" cx="532.69" cy="275.181" r="3.206" />
-                  <circle class="BARRst1" cx="549.924" cy="249.807" r="2.699" />
-                  <circle class="BARRst2" cx="452.729" cy="161.834" r="1.776" />
-                  <circle class="BARRst0" cx="449.907" cy="284.718" r="1.089" />
-                  <text transform="matrix(1 0 0 1 461.6745 140.6673)" class="BARRst4 BARRst5">OLIVOS</text>
-                </g>
-                <g>
-                  <circle class="BARRst2" cx="429.467" cy="400.08" r="29.632" />
-                  <circle class="BARRst0" cx="485.47" cy="400.08" r="23.094" />
-                  <circle class="BARRst0" cx="463.139" cy="439.497" r="18.932" />
-                  <circle class="BARRst0" cx="462.989" cy="362.236" r="17.646" />
-                  <circle class="BARRst0" cx="430.382" cy="354.619" r="12.561" />
-                  <circle class="BARRst0" cx="429.714" cy="444.591" r="11.602" />
-                  <circle class="BARRst0" cx="495.191" cy="363.674" r="11.31" />
-                  <circle class="BARRst1" cx="496.326" cy="436.008" r="11.161" />
-                  <circle class="BARRst0" cx="404.886" cy="363.501" r="11.161" />
-                  <circle class="BARRst1" cx="405.779" cy="436.372" r="10.428" />
-                  <circle class="BARRst1" cx="447.568" cy="336.07" r="9.448" />
-                  <circle class="BARRst0" cx="443.738" cy="463.172" r="8.4" />
-                  <circle class="BARRst0" cx="512.654" cy="378.513" r="8.329" />
-                  <circle class="BARRst1" cx="513.168" cy="420.827" r="8.236" />
-                  <circle class="BARRst0" cx="485.081" cy="343.235" r="8.216" />
-                  <circle class="BARRst0" cx="487.425" cy="455.181" r="6.701" />
-                  <circle class="BARRst0" cx="394.911" cy="419.225" r="6.595" />
-                  <circle class="BARRst1" cx="394.681" cy="381.705" r="6.431" />
-                  <circle class="BARRst6" cx="517.909" cy="395.697" r="6.363" />
-                  <circle class="BARRst0" cx="526.14" cy="409.025" r="6.024" />
-                  <circle class="BARRst6" cx="391.2" cy="404.224" r="5.58" />
-                  <circle class="BARRst2" cx="383.964" cy="392.125" r="5.24" />
-                  <circle class="BARRst2" cx="465.179" cy="336.515" r="4.89" />
-                  <circle class="BARRst7" cx="412.371" cy="453.441" r="4.592" />
-                  <circle class="BARRst1" cx="412.358" cy="346.896" r="3.77" />
-                  <circle class="BARRst2" cx="458.493" cy="464.405" r="3.129" />
-                  <circle class="BARRst1" cx="475.349" cy="333.094" r="2.562" />
-                  <circle class="BARRst7" cx="476.458" cy="459.469" r="1.797" />
-                  <circle class="BARRst1" cx="431.112" cy="460.615" r="1.205" />
-                  <circle class="BARRst6" cx="435.335" cy="339.574" r="0" />
-                  <text transform="matrix(1 0 0 1 405.9374 328.9894)" class="BARRst4 BARRst5">FLORIDA ESTE</text>
-                </g>
-                <g>
-                  <circle class="BARRst0" cx="169.766" cy="105.294" r="26.705" />
-                  <circle class="BARRst0" cx="222.694" cy="105.294" r="22.945" />
-                  <circle class="BARRst2" cx="199.779" cy="147.563" r="21.859" />
-                  <circle class="BARRst0" cx="199.561" cy="66.687" r="18.784" />
-                  <circle class="BARRst1" cx="160.755" cy="58.593" r="17.58" />
-                  <circle class="BARRst0" cx="160.634" cy="148.334" r="14.016" />
-                  <circle class="BARRst1" cx="233.515" cy="68.686" r="11.951" />
-                  <circle class="BARRst1" cx="233.739" cy="139.538" r="9.759" />
-                  <circle class="BARRst2" cx="139.093" cy="80.132" r="9.691" />
-                  <circle class="BARRst0" cx="141.214" cy="131.225" r="8.588" />
-                  <circle class="BARRst0" cx="250.756" cy="84.922" r="8.454" />
-                  <circle class="BARRst1" cx="248.541" cy="126.097" r="6.957" />
-                  <circle class="BARRst0" cx="183.456" cy="42.604" r="6.91" />
-                  <circle class="BARRst0" cx="222.702" cy="49.609" r="6.699" />
-                  <circle class="BARRst1" cx="175.045" cy="167.197" r="6.444" />
-                  <circle class="BARRst1" cx="229.118" cy="158.014" r="6.008" />
-                  <circle class="BARRst0" cx="135.581" cy="114.799" r="5.5" />
-                  <circle class="BARRst1" cx="135.496" cy="97.829" r="5.091" />
-                  <circle class="BARRst0" cx="253.092" cy="111.718" r="4.848" />
-                  <circle class="BARRst2" cx="258.074" cy="99.769" r="4.821" />
-                  <circle class="BARRst1" cx="125.961" cy="106.054" r="4.224" />
-                  <circle class="BARRst1" cx="250.897" cy="140.274" r="4.137" />
-                  <circle class="BARRst1" cx="210.442" cy="43.124" r="3.893" />
-                  <circle class="BARRst2" cx="197.364" cy="40.895" r="3.824" />
-                  <circle class="BARRst6" cx="139.886" cy="146.562" r="3.529" />
-                  <circle class="BARRst2" cx="252.179" cy="69.788" r="3.469" />
-                  <circle class="BARRst7" cx="220.412" cy="166.402" r="2.804" />
-                  <circle class="BARRst2" cx="137.933" cy="64.492" r="2.715" />
-                  <circle class="BARRst2" cx="259.832" cy="120.036" r="2.58" />
-                  <circle class="BARRst0" cx="240.068" cy="153.707" r="2.481" />
-                  <circle class="BARRst1" cx="234.644" cy="51.396" r="2.098" />
-                  <circle class="BARRst2" cx="185.793" cy="170.141" r="1.423" />
-                  <circle class="BARRst7" cx="130.387" cy="123.556" r="1.403" />
-                  <circle class="BARRst2" cx="203.517" cy="44.983" r="0" />
-                  <text transform="matrix(1 0 0 1 143.1205 31.7252)" class="BARRst4 BARRst5">VILLA ADELINA</text>
-                </g>
-                <g>
-                  <circle class="BARRst0" cx="577.745" cy="408.82" r="29.775" />
-                  <circle class="BARRst0" cx="638.147" cy="408.82" r="27.35" />
-                  <circle class="BARRst2" cx="610.034" cy="451.116" r="20.16" />
-                  <circle class="BARRst0" cx="610.032" cy="366.572" r="20.12" />
-                  <circle class="BARRst1" cx="572.989" cy="362.094" r="13.915" />
-                  <circle class="BARRst0" cx="574.093" cy="454.376" r="12.65" />
-                  <circle class="BARRst1" cx="645.458" cy="366.794" r="12.029" />
-                  <circle class="BARRst0" cx="645.08" cy="450.489" r="11.615" />
-                  <circle class="BARRst1" cx="552.504" cy="442.248" r="8.835" />
-                  <circle class="BARRst7" cx="552.681" cy="376.603" r="7.766" />
-                  <circle class="BARRst1" cx="663.651" cy="437.514" r="7.763" />
-                  <circle class="BARRst7" cx="663.033" cy="380.567" r="7.023" />
-                  <circle class="BARRst6" cx="588.449" cy="469.373" r="4.833" />
-                  <circle class="BARRst7" cx="589.347" cy="348.162" r="4.294" />
-                  <circle class="BARRst1" cx="633.365" cy="464.834" r="3.628" />
-                  <circle class="BARRst1" cx="633.073" cy="352.524" r="3.588" />
-                  <circle class="BARRst2" cx="548.136" cy="428.375" r="2.431" />
-                  <circle class="BARRst7" cx="548.256" cy="389.239" r="2.345" />
-                  <circle class="BARRst7" cx="666.039" cy="392.285" r="1.797" />
-                  <circle class="BARRst1" cx="663.167" cy="426.484" r="0" />
-                  <text transform="matrix(1 0 0 1 548.9822 337.8113)" class="BARRst4 BARRst5">VICENTE LÓPEZ</text>
-                </g>
-                <g>
-                  <circle class="BARRst0" cx="604.691" cy="179.954" r="23.824" />
-                  <circle class="BARRst0" cx="653.357" cy="179.954" r="21.564" />
-                  <circle class="BARRst0" cx="631.142" cy="218.496" r="19.644" />
-                  <circle class="BARRst2" cx="631.122" cy="141.917" r="19.217" />
-                  <circle class="BARRst1" cx="589.988" cy="136.227" r="19.031" />
-                  <circle class="BARRst1" cx="593.098" cy="220.617" r="15.182" />
-                  <circle class="BARRst1" cx="665.88" cy="144.891" r="12.39" />
-                  <circle class="BARRst0" cx="665.019" cy="214.099" r="11.24" />
-                  <circle class="BARRst1" cx="572.258" cy="199.86" r="10.954" />
-                  <circle class="BARRst2" cx="575.235" cy="162.005" r="7.392" />
-                  <circle class="BARRst0" cx="679.719" cy="198.137" r="7.182" />
-                  <circle class="BARRst1" cx="679.723" cy="162.535" r="6.758" />
-                  <circle class="BARRst7" cx="656.388" cy="232.837" r="6.113" />
-                  <circle class="BARRst0" cx="654.927" cy="126.09" r="6.091" />
-                  <circle class="BARRst1" cx="610.048" cy="237.66" r="5.578" />
-                  <circle class="BARRst1" cx="612.971" cy="120.697" r="5.429" />
-                  <circle class="BARRst2" cx="683.187" cy="182.931" r="5.136" />
-                  <circle class="BARRst1" cx="691.378" cy="172.187" r="5.098" />
-                  <circle class="BARRst2" cx="572.75" cy="180.784" r="4.851" />
-                  <circle class="BARRst2" cx="564.029" cy="171.929" r="4.299" />
-                  <circle class="BARRst7" cx="683.266" cy="212" r="3.849" />
-                  <circle class="BARRst0" cx="684.522" cy="149.77" r="3.601" />
-                  <circle class="BARRst2" cx="645.932" cy="240.426" r="3.529" />
-                  <circle class="BARRst7" cx="643.971" cy="119.287" r="3.528" />
-                  <circle class="BARRst0" cx="621.206" cy="242.988" r="3.509" />
-                  <circle class="BARRst1" cx="691.679" cy="191.138" r="3.397" />
-                  <circle class="BARRst7" cx="569.157" cy="150.084" r="2.711" />
-                  <circle class="BARRst2" cx="623.391" cy="118.795" r="1.885" />
-                  <circle class="BARRst2" cx="573.52" cy="215.754" r="1.713" />
-                  <text transform="matrix(1 0 0 1 595.1763 106.0535)" class="BARRst4 BARRst5">LA LUCILA</text>
-                </g>
-              </svg>
+	<script src='js/intersection-observer.js'></script>
+	<script src='js/stickyfill.min.js'></script>
+	<script src='js/scrollama.min.js'></script>
+	<script>
 
 
-              </div>
+		//--------- WOW --------------
+		var wow = new WOW(
+				{
+					boxClass: 'wow',      // animated element css class (default is wow)
+					animateClass: 'animated', // animation css class (default is animated)
+					offset: 0,          // distance to the element when triggering the animation (default is 0)
+					mobile: true,       // trigger animations on mobile devices (default is true)
+					live: true,       // act on asynchronously loaded content (default is true)
+					callback: function (box) {
+						console.log(d3.select(box).attr("id") == "personitas");
+						if (d3.select(box).attr("id") == "personitas") personitasStart();
+					},
+					scrollContainer: null // optional scroll container selector, otherwise use window
+				}
+			);
+			wow.init();
 
-            </figure>
-          </article>
-
-
-
-            <article class="seccion-datos">
-              <figure class="graph-box">
-                <svg id="fechas" width="100%" height="900px">
-                  <g>
-                    <g class="axis axis--y" transform="translate(693,0)" fill="none" font-size="10" font-family="sans-serif"
-                      text-anchor="start">
-                      <g class="tick" opacity="1" transform="translate(0,50.5)"><text fill="#000" x="9" dy="0.32em">2013</text></g>
-                      <g class="tick" opacity="1" transform="translate(0,175.16666666666669)"><text fill="#000" x="9"
-                          dy="0.32em">2014</text></g>
-                      <g class="tick" opacity="1" transform="translate(0,299.83333333333337)"><text fill="#000" x="9"
-                          dy="0.32em">2015</text></g>
-                      <g class="tick" opacity="1" transform="translate(0,424.5)"><text fill="#000" x="9" dy="0.32em">2016</text></g>
-                      <g class="tick" opacity="1" transform="translate(0,549.1666666666667)"><text fill="#000" x="9"
-                          dy="0.32em">2017</text></g>
-                      <g class="tick" opacity="1" transform="translate(0,673.8333333333334)"><text fill="#000" x="9"
-                          dy="0.32em">2018</text></g>
-                      <g class="tick" opacity="1" transform="translate(0,798.5)"><text fill="#000" x="9" dy="0.32em">2019</text></g>
-                    </g>
-                    <g class="cells">
-                      <g>
-                        <circle r="8.945195875835633" cx="480.3327069728451" cy="75.41799288269883" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Domingo F. Sarmiento ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.082942405941409" cx="410.06428201329305" cy="31.795674920408736" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Limpieza, poda y mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.640908389730207" cx="391.8249107995496" cy="54.28950693712166" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAP Paul Harris (Munro),INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.2805829785468" cx="593.2119036914197" cy="61.536794379056154" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.2805829785468" cx="386.10798529476347" cy="41.13694565230633" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Cultural Municipal de Carapachay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.4714375143301" cx="446.08727419783526" cy="81.11079873254003" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Rampas en esquinas,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.341182629828754" cx="601.9168399091716" cy="49.856318251816944" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.91521583539433" cx="408.05154023462825" cy="56.65777169548124" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Libertad ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.3949453731070225" cx="449.8181477148186" cy="44.95149670017609" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.206762813876894" cx="418.9407586716673" cy="26.595324412664688" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Libertad,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.85734728310027" cx="412.4941266311518" cy="42.39404520881919" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Octavio Ortiz,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.951820531515879" cx="591.3974060335912" cy="38.73737808962696" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.3436752696076395" cx="557.0535821042515" cy="40.39341530491008" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="10.21314227160127" cx="500.9262543129458" cy="42.04832178144276" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza La Paz,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.089850769200407" cx="486.9227551456859" cy="51.54805942587285" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Paseo del Sol,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.2805829785468" cx="569.1399196900327" cy="54.255481262204356" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.7263402797674265" cx="450.73100051446596" cy="69.03714776463816" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza "Paseo de las Artes",INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.726169328811451" cx="433.79151374647074" cy="25.402220248088117" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Reparación de veredas rotas por raíces de árboles,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.5618475312613915" cx="557.863767303806" cy="57.75614957973221" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.656176069455573" cx="430.1767728969689" cy="40.57277012110239" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Poda, limpieza en general y mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="9.46362800112539" cx="373.8857445106185" cy="52.444064902790814" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Cultural Municipal de Munro,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.29372015728717" cx="423.5441999627455" cy="66.3947527812039" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Güemes,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.279601215630178" cx="516.336897959563" cy="50.21305098177639" style="fill: rgb(253, 163, 98);">
-                        </circle>
-                        <title>Plaza Alem y Plaza Güemes&nbsp;,Otros</title>
-                      </g>
-                      <g>
-                        <circle r="4.5618475312613915" cx="567.732735668391" cy="42.484834047624304" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.192631316411323" cx="451.2393976354412" cy="31.753536704247054" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.752561097422136" cx="440.911706594977" cy="39.38623774880075" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza de los Inmigrantes,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.259759029632132" cx="452.4237609832573" cy="56.072118813516" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.2802470544102595" cx="475.99818707348953" cy="51.5843247461004" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza "Vicente López y Planes",INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.5618475312613915" cx="581.9671924347232" cy="57.80942250387357" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.237538223254274" cx="495.61501669415446" cy="63.809647143369865" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.7502002793930047" cx="552.1058215155006" cy="49.19363950481125" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.5618475312613915" cx="590.0766707835174" cy="50.17119757992441" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.801882077455565" cx="491.25073611829004" cy="26.83308714504733" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>PISTA BMX ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.581610537931848" cx="466.9377361685401" cy="25.894047984515336" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>PISTA BMX ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.434808281994064" cx="399.60095632664064" cy="41.40030647580069" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Cultural Municipal de Villa Adelina,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="560.6729409795255" cy="48.78485635990665" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Instalación de un Destacamento Policial,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.08276981312806" cx="437.7849088966987" cy="54.59749444221245" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza José Ingenieros,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.062488218609692" cx="422.31171775377715" cy="50.03495945899689" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Circuito para realización de actividades aeróbicas,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.2805829785468" cx="578.8595824209801" cy="46.40178637294538" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.4632281695975635" cx="460.72362521252285" cy="77.29822638650556" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.488764387648706" cx="431.8149346791295" cy="79.79629093886875" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.8797603532766995" cx="573.5741775465704" cy="65.5392224854765" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.054938884516705" cx="448.18468833781446" cy="18.871304054325925" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Estación Villa Adelina,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="7.732554176297647" cx="464.1373642992165" cy="44.058769125234456" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza de las Americas,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.313241611319409" cx="466.230877805969" cy="62.54062173937725" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Almafuerte,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.9637067365622864" cx="420.98429612695867" cy="36.21520951631524" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Almafuerte,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.00352358707527" cx="480.41833475088106" cy="60.62084493267806" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza de las Americas,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.951820531515879" cx="580.3639219473912" cy="34.26223857310218" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.829527424913175" cx="480.70565240927516" cy="38.2348792746393" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.831397648965399" cx="438.41510542399186" cy="69.393254765752" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="18.844444444444445" cx="378.99851943365536" cy="175.25658164663236" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Sociedad de Fomento Drysdale ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.430006937995419" cx="540.193469493249" cy="173.07801387920009" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.313790351126219" cx="458.1615326376848" cy="200.1485046349562" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Corte de raíces y reparación de veredas,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.764130039823657" cx="474.47639613222685" cy="190.4061153691626" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación y construcción de dársena ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.312634063308905" cx="245.70162793379365" cy="173.043995558262" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="3.427450332911631" cx="262.16042148413226" cy="178.04454814696436" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Reposición de árboles ,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="597.6124126752645" cy="180.46469513979517" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Mejoramiento de la señalización,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="585.3527347300823" cy="166.87926983013102" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Ordenamiento de la circulación ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.262217978976361" cx="460.09138322508113" cy="149.06915248337884" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Paseo Cultural Federico Garcia Lorca,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.2688514671609425" cx="397.24563995082923" cy="192.56246570829123" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Hospital Municipal Bernardo&nbsp;Houssay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.837509502265378" cx="508.9706349994558" cy="188.47201023383062" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Obra hidráulica: conductos y sumideros,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.726970966191999" cx="277.6015937834952" cy="184.3539891033154" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="6.430006937995419" cx="598.8605355208525" cy="191.44708706246146" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.7944248079272263" cx="255.66855188536593" cy="171.53985968300682"
-                          style="fill: rgb(141, 211, 199);"></circle>
-                        <title>Colocación y/o reposición de árboles ,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="5.150254612331052" cx="424.8869558147868" cy="164.77784355804292" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.511740819632509" cx="563.5724829622669" cy="165.57152981695376" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="13.615529571820352" cx="426.9964657311399" cy="195.31013257244098" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Obras complementarias al retén de Plaza La Paz ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="7.014079103012891" cx="570.4991359756465" cy="154.08069970491957" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="9.499717482009368" cx="457.13350930603764" cy="180.1235012602224" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Bombas depresoras con cajas antivandalismo,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.726970966191999" cx="274.0563810173819" cy="164.023747409823" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="3.8420069748834687" cx="581.4543209444914" cy="173.67852935652064" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de semáforo,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.785746570129977" cx="592.294006525114" cy="172.99299375867835" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.439413488963282" cx="605.8644689020518" cy="158.85732804424163" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de semáforo ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.479703546879171" cx="618.9189387189585" cy="177.8544671898651" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.466412754591628" cx="490.76242149001547" cy="195.8886231754615" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Reserva Ecológica,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="10.586631399647992" cx="491.09244586022385" cy="176.91224291677574" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Realización de obras para paliar el efecto de posibles inundaciones,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.095577381449571" cx="613.4441846031781" cy="168.760133943928" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.728285568067525" cx="252.69035235326106" cy="181.6008568657081" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="4.537910445534964" cx="446.38122529633574" cy="191.81824018862872" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación y cámara de seguridad,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.170283888445353" cx="441.77356007067004" cy="182.3552466623435" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.252794541105187" cx="584.895065344282" cy="193.78137955445473" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de semáforo y mejoramiento de iluminación,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.462415110678116" cx="411.573292494875" cy="165.88316403659306" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Construcción de sendero asfáltico,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.368336473910555" cx="519.6250036576671" cy="175.12491209565343" style="fill: rgb(253, 163, 98);">
-                        </circle>
-                        <title>Coro Municipal de Niños,Otros</title>
-                      </g>
-                      <g>
-                        <circle r="5.965665922207125" cx="549.0959841397699" cy="184.38059565646347" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.081320380269024" cx="292.6376647695463" cy="171.32451083428936" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="8.031538280606155" cx="500.1231406699604" cy="158.37616587617862" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de la accesibilidad ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.700788320929563" cx="432.7257612532403" cy="174.67679819960574" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.138995781634958" cx="443.84181832512843" cy="172.16304562087288" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.21870018304535" cx="559.6571840812209" cy="176.40226224691696" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.1797295077550745" cx="571.0332595966773" cy="176.8118856506826" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.8991993500422586" cx="602.4692424600642" cy="169.7577307296866" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.783190528403628" cx="581.8282889825346" cy="159.95704568146954" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad&nbsp;,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.302625227989039" cx="586.6670600802703" cy="152.26233108206782" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.85021789672825" cx="451.70911806763223" cy="164.98073035216234" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de Iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.147006774934152" cx="472.8684144182999" cy="173.58181057206897" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de Iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.759240664461363" cx="420.78974160073" cy="175.75140724654946" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Jardin de Infantes Nº 901,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.114844185517267" cx="288.05717252918134" cy="181.55627923750907" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="4.089897403869305" cx="266.9538680602611" cy="186.18381033780187" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Centro Comercial de Vicente López ,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="3.7944248079272263" cx="264.97224058926133" cy="169.3223242338344" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Plantar árboles,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="10.321045198032424" cx="479.9425401633937" cy="156.36823785442095" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Paseo de La Costa,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.441383300152106" cx="593.1593399001143" cy="160.82259407382833" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.6245617407223065" cx="463.4343071063852" cy="163.40548757943077" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.933154140442115" cx="418.5319501022541" cy="153.40161591335277" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.819780729312704" cx="607.8845593697267" cy="180.4176633392016" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="12.294612325779173" cx="438.65784211869794" cy="151.3753261592362" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Eduardo Ader,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.101673408608093" cx="507.7387868128595" cy="171.42321849527144" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.3367526135823535" cx="258.28857792502004" cy="161.7462257130667" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="3.5823772775489466" cx="270.99716976722317" cy="176.45109422975173"
-                          style="fill: rgb(141, 211, 199);"></circle>
-                        <title>Plan de reforestación,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="3.3325544741820625" cx="546.4507534537638" cy="158.67094642890865" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.2887560515291465" cx="574.2385412178166" cy="166.84293901663025" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Plaza Eduardo Ader&nbsp;,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.0254633202329675" cx="556.7421075730196" cy="156.27859878276539" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de semáforo ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.886407482377299" cx="552.0849418705507" cy="167.2423213160561" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de semáforo,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.431028818996475" cx="579.2956421397133" cy="183.43334718658593" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.313790351126219" cx="407.10440097484326" cy="182.06863840282207" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Corte de raíces y reparación de veredas ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="10.578475270436584" cx="565.460335167846" cy="193.14482626015194" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reparación y bacheo,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.816639987301174" cx="280.9058113792504" cy="173.29540437321577" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="4.025323780439717" cx="589.5282995038581" cy="183.38109728072183" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.091866885886166" cx="399.4454265252117" cy="156.1981736383018" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Barrio Habana&nbsp;,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.604381418332705" cx="538.0126182280816" cy="296.36991011696017" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.7166602020048165" cx="343.0602506782712" cy="305.39184392871846" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAP Burman y UAP 25 de Mayo.,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.124939759213342" cx="480.1149832833897" cy="289.5489674434131" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.387133640155171" cx="475.32605234510476" cy="299.95801088196583" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.449594232278319" cx="521.2614846791861" cy="299.35317245298256" style="fill: rgb(253, 163, 98);">
-                        </circle>
-                        <title>Plaza DF Sarmiento "Vida Saludable en la Plaza" ,Otros</title>
-                      </g>
-                      <g>
-                        <circle r="7.714754625133752" cx="368.6268252246111" cy="276.06877457401714" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Plaza José Ingenieros,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.04838680000813" cx="442.9449286615835" cy="314.94212649795395" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoraramiento de iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.7127989178847147" cx="598.8764554533958" cy="282.9879740740662" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.7127989178847147" cx="592.1839538647077" cy="300.78093682605214" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.706437038259816" cx="536.0268298692774" cy="313.579453134529" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.4532567905310496" cx="575.4650706731119" cy="296.5090583397122" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.4532567905310496" cx="545.5057738591569" cy="310.36213567010844" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.378493313853346" cx="381.14798532747346" cy="285.8205858175324" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 3,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.071315694842631" cx="395.98862533849274" cy="307.14144498528594" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 911,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="11.959129778456857" cx="620.4999057927381" cy="300.99516591874703" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.527424261926969" cx="441.95712344088724" cy="295.8371137339295" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 17,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.141426556035324" cx="381.2265532906225" cy="299.7681706381786" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAPs Bermúdez,Blanca Acosta y URI R Carrillo,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="17.302693167290258" cx="417.3130008834673" cy="293.4918572861578" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Sociedad de Fomento Hipólito Yrigoyen,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.263228810241014" cx="357.3127724861448" cy="312.3162617070291" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Barrio Las Flores ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.81145874263543" cx="338.90321533442636" cy="294.6856057649719" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 14,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.107012208788859" cx="351.69313248327154" cy="295.9366827285045" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Barrio El Ceibo,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.147232176377788" cx="405.93494805839197" cy="318.2215979739833" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 16 “Marcelino Ugarte”,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.716562765518375" cx="559.1435553854109" cy="303.62658954675646" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.7166602020048165" cx="365.9891484332555" cy="325.71215842902234" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAP El Ceibo y la UAP Arcuri,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.899841128802973" cx="269.9365648271473" cy="299.10514884655987" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Plantación de especies autóctonas en el barrio,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="5.572082530254239" cx="467.49548076378113" cy="290.97568708996096" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.286695318461498" cx="258.7631417865449" cy="299.4712993020412" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campañas de comunicación y difusión para fortalecer la conciencia ambiental,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="4.727462068446362" cx="544.2084903851836" cy="321.57148310620045" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Demarcación y señalización prohibición de estacionar en esquinas donde doblan colectivos,SEGURIDAD Y
-                          TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.4782265036982727" cx="568.0493429202655" cy="291.8012767053242" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="11.12278758477787" cx="383.273419508333" cy="321.25100931272226" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 15 "San Juan Macías",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.580087616962977" cx="394.7314481961133" cy="281.0655459811814" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 19 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.234443503834731" cx="606.1483729485319" cy="317.9634784170902" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.100231495849067" cx="404.3778233611749" cy="271.5984260724496" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAPS: Paul Harris - Padre Barbero - Marzano - Sgto Cabral- Negrete- Barreiro Aguirre ,INFRAESTRUCTURA
-                          COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="551.5563975332799" cy="315.6237431125912" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Mejorar seguridad vial ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.358154244479359" cx="316.9341034528548" cy="300.2152191488632" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña de concientización&nbsp;y primeros auxilios,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="4.537910445534964" cx="398.6997701150576" cy="329.7449510560825" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Polideportivo de Munro,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.754339873071183" cx="580.9381635780398" cy="278.8733817177433" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.533523785644066" cx="486.13546734847665" cy="300.1910760353678" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.546897707287828" cx="562.1472627677088" cy="323.7337380947662" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.780791580073745" cx="467.92933397624313" cy="314.24054631472904" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Escuela Secundaria Nº 6,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.715736007523663" cx="453.7839583982301" cy="298.849961996044" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="10.480863957922963" cx="555.7855512409948" cy="281.65543664150783" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.985058109960575" cx="431.17437945479645" cy="316.79415580731063" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 28,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.832088084466022" cx="392.1570223194316" cy="294.1142075524213" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela de Educación Técnica Nº 1 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.163093911903009" cx="436.8201749528199" cy="306.20329573089157" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAP Scalise,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.263228810241014" cx="452.6349567982844" cy="283.03520243779593" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Centro Comercial de Paraná,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.216458802573899" cx="604.839229125266" cy="290.74686304337513" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforo de giro ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.427297026633987" cx="455.9920741950722" cy="311.94874883684383" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de Iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.6950895863766977" cx="446.5667605058658" cy="306.05496652855635" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de Iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.727462068446362" cx="326.50319426100754" cy="294.61596556932267" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña de concientización sobre convivencia responsable con animales de compañía,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="4.92329368260663" cx="464.5459178871605" cy="303.0603184344258" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Torre Ader,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.422951873348962" cx="612.7353065591711" cy="282.40578235965415" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforo ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.592901789463097" cx="584.8743240022283" cy="296.36253924633206" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.592901789463097" cx="596.0589168185872" cy="308.8310087298749" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.703728876600021" cx="367.3294884057473" cy="293.5780758403125" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Barrio Habana&nbsp;,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.814581226620328" cx="372.46260669882173" cy="307.13331826683327" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 20 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.376190059777525" cx="384.9146784889529" cy="272.7689799970381" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 918 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.901591409927997" cx="580.091644665348" cy="312.17411145415355" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.2507629121637684" cx="418.9926110298438" cy="316.96703177503" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 7,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.7166602020048165" cx="356.6531499784872" cy="284.00433363731855" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAP Llobera y la UAP Ravazzoli,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.873885967312088" cx="478.9576771800292" cy="310.56468814237144" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.7481114248943674" cx="594.7720316782518" cy="291.6851405908224" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.449594232278319" cx="510.36230124846463" cy="299.3431783765283" style="fill: rgb(253, 163, 98);">
-                        </circle>
-                        <title>Organizar actividades deportivas en las Plazas del Barrio,Otros</title>
-                      </g>
-                      <g>
-                        <circle r="4.579113437759247" cx="602.0156394612246" cy="300.9175559465213" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Señalizar estacionamiento para discapacitados en el Centro Comercial del barrio,SEGURIDAD Y TRÁNSITO
-                        </title>
-                      </g>
-                      <g>
-                        <circle r="4.013459345128197" cx="280.83537899206675" cy="299.4959453388629" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Plantar árboles ,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="4.727462068446362" cx="331.7623139010678" cy="304.7920512235855" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña de concientización sobre convivencia responsable con animales de compañía,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="4.033833877247768" cx="345.9728049848051" cy="285.2302616318631" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Compra de jaulas trampa para el área de zoonosis,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="14.350574853521104" cx="390.2623621516658" cy="458.5091297347151" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 7 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.992419877365187" cx="333.9679751832511" cy="438.4003141228114" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 18 y Escuela Secundaria Nº 3 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.321055979713899" cx="580.4166494598722" cy="408.99521680008695" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.899357944050207" cx="448.8090561654984" cy="451.91430538943285" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Cultural Municipal de Carapachay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="309.1097923568466" cy="427.7751629037712" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña sobre RCP y primeros auxilios,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="9.075110542176654" cx="365.0508053239157" cy="455.32374736172466" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 3 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.793714951689987" cx="556.8861866667513" cy="427.1323251055351" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.409395130597211" cx="257.13667490681826" cy="424.36479990926756" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="308.9380192248339" cy="420.1450742271074" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña sobre RCP y primeros auxilios,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="5.460486035207252" cx="564.9658793898443" cy="411.8942027109754" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Vallas de contención ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.122836319580003" cx="408.66428336288664" cy="407.15040568688437" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ZOONOSIS,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.832088084466022" cx="316.81812907847393" cy="435.1251470533886" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña de promoción de la lectura,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="5.648894469663639" cx="613.9705796124339" cy="433.5786848163284" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de un semáforo,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.475911896606631" cx="450.14106399584875" cy="428.7120519052382" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Paseo Cultural "García Lorca",INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.443144519247806" cx="459.72620979999334" cy="439.9130845858192" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Camino seguro al Hospital,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.900662264265057" cx="345.34592044892946" cy="458.998076967439" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 8 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.578867551047805" cx="430.5547938497016" cy="454.1610980465221" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 5,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="14.045114858654516" cx="439.5741998182226" cy="393.33358733202954" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Barrio Las Flores,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.021045993952194" cx="593.8576809250402" cy="403.9658946533749" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforo peatonal ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="9.978353057471672" cx="346.92305170924095" cy="423.4616082307659" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 16 "Marcelino Ugarte",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.830805497650844" cx="458.96248632643284" cy="403.08578910318744" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="10.024108209155639" cx="479.2803673756109" cy="410.3855876336489" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Parque Paseo Enamour ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.808012597641525" cx="593.8149794301395" cy="436.4225750323298" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforos para peatones ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.640205618256779" cx="603.8210040884003" cy="429.07567106617074" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.574260443151056" cx="425.45803516592156" cy="433.7892789319938" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 15 "San Juan Macías",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.916310763431163" cx="395.0377946513008" cy="388.96017868180473" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 19 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.250527210757317" cx="350.84693614300056" cy="442.10357698899264" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Municipal Nº 3 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.877366555392506" cx="447.72334454039304" cy="415.89494724985724" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 14 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.946106170264638" cx="487.59321350886296" cy="429.66813989728394" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="4.796689266473835" cx="268.28581317834295" cy="423.3409651434679" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Capacitación en reciclaje,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="6.230647528303109" cx="470.639475980812" cy="427.2683066348276" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.640205618256779" cx="596.0902238206007" cy="424.24994594215207" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.168871406765165" cx="359.9853848749047" cy="417.0485864767049" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>UAP Negrete,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.019920698546594" cx="476.5701615014965" cy="443.8490259466941" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Cestos Papeleros ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="7.578655171115907" cx="413.705363325602" cy="393.9675292550711" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 16,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.378731163769137" cx="392.821741486199" cy="411.048514867611" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 912,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.56436063707816" cx="377.95612975833" cy="382.18355263822724" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 2,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.0689950048950685" cx="411.9558722615212" cy="453.1707025585605" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela de Educación Especial Nº 502,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.124999100546981" cx="575.1112134120076" cy="439.19954178949837" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.043844898274616" cx="507.96603991097487" cy="424.7247142183694" style="fill: rgb(253, 163, 98);">
-                        </circle>
-                        <title>Campaña de información sobre el sistema de salud municipal,Otros</title>
-                      </g>
-                      <g>
-                        <circle r="4.78365530970792" cx="572.6250997686951" cy="421.94928045023454" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Demarcación horizontal y vertical ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="12.308514830884558" cx="342.94692686732196" cy="399.4780588008532" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Instituto Superior de Formación Docente Nº 39,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.729505495050571" cx="432.8588452801874" cy="419.6447514584403" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.862502719572174" cx="537.3494297159434" cy="420.66455526055523" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.580731533920622" cx="410.7741989800281" cy="422.01864837685946" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro de Adultos Mayores Activos,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.139084076208404" cx="280.18264345836496" cy="424.3043515352824" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campañas de concientización sobre reciclado y compostaje,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="7.194017285650771" cx="497.85346666832265" cy="414.76537394932046" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="9.683156512747447" cx="394.8273563184796" cy="433.23128339236" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 28,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.943315754853192" cx="370.3789681818367" cy="432.00099048559076" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Polideportivo Municipal,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.788737806992659" cx="410.68891462564255" cy="439.54782449878087" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Municipal Nº 7 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.647809790795014" cx="422.1764093537583" cy="408.51536594681517" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela de Educación Técnica Nº 1 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.692232623635883" cx="608.0974921832035" cy="416.4124409773972" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.453689054914408" cx="594.1069054977357" cy="414.32187913539826" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.9565345865275745" cx="458.32734219827034" cy="426.03891465618057" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Cestos Papeleros ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="7.311040108848809" cx="442.4812471309469" cy="438.06362073132595" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Fundación Camino ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.98317957646107" cx="520.8895852531034" cy="424.2491775301794" style="fill: rgb(253, 163, 98);">
-                        </circle>
-                        <title>Centro de Formación Laboral de Villa Martelli,Otros</title>
-                      </g>
-                      <g>
-                        <circle r="12.61527700989611" cx="369.7763912163211" cy="401.7183890665309" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ZOONOSIS,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="11.246153305183599" cx="324.69897460644745" cy="417.78282148159644" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Barrio Habana ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.644730740010784" cx="584.8263892914737" cy="424.3142595794099" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.512444158901584" cx="463.03516198868584" cy="415.5807168285235" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Rampas en Esquinas ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.953171769465845" cx="434.0915124709802" cy="579.8388816234116" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.730417957548841" cx="576.8381932429223" cy="566.1259034326274" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="9.107915942633648" cx="423.29639996341285" cy="567.9809876081391" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria Nº 3,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="3.6171172586521583" cx="428.9348032908789" cy="537.7267886000326" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Hospital Municipal Bernardo&nbsp;Houssay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.984858742591523" cx="458.362375827178" cy="522.5693960324048" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 18,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.519419154661257" cx="279.95927629269994" cy="545.7527294696536" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Reposición de árboles en el barrio,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="5.586640789937555" cx="315.8149985958492" cy="562.6745757378936" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña de concientización sobre convivencia responsable con animales de compañía,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="5.292565642752813" cx="267.4449910539226" cy="544.3726685951842" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="6.482260780578484" cx="627.6990327705539" cy="549.6976813186066" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforos peatonales ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.846494708238391" cx="289.7180316231389" cy="564.5139409254662" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campañas de prevención sobre adicciones y enfermedades de transmisión sexual.,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="482.7058650964357" cy="537.9463324852703" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="11.23902321345066" cx="486.58393800845465" cy="561.7831351131359" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Rediseño de la Plazoleta de la Madre,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.3614136527782" cx="445.12715232648543" cy="568.861544458827" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Hospital Municipal Bernardo&nbsp;Houssay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.350726105994779" cx="420.2890260964963" cy="585.862039432274" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Soc. de Fomento Aristóbulo del Valle,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.181812767092727" cx="325.8395134617029" cy="538.736790273878" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Hospital Municipal Bernardo&nbsp;Houssay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="13.022749478190539" cx="346.9241333978596" cy="591.3188649654879" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria Nº 7,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.424300093874704" cx="606.910750250524" cy="547.8800696434845" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.251391480623969" cx="392.23617680432574" cy="547.3244313646952" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro de Jubilados Amigos de la Estación Florida,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.917986901553723" cx="416.85187704619335" cy="507.3535645723917" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 13,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.733787528198437" cx="385.0001992251147" cy="536.4567177228818" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ZOONOSIS,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.253374309308101" cx="302.7954945181723" cy="563.2015932328891" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña sobre el uso responsable del agua en escuelas públicas del barrio.,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="15.160741873075635" cx="380.79860455645814" cy="568.9017743878688" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Municipal "Manuel Dorrego",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.844970522725166" cx="393.9349589435116" cy="501.4072129297885" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 912,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.205928848010767" cx="408.07405542673666" cy="490.74611541738307" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Instituto de Formación Docente y Técnica Nº 77,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.970501945009856" cx="440.1670082501201" cy="506.05338646386576" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 3,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.452614339515414" cx="404.49381039200347" cy="559.4201491255604" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title> Jardín Maternal Municipal Nº 8,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.02480041533215" cx="345.43483973627656" cy="545.4269225134434" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Barrial Infantil Las Flores,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.065802656370137" cx="476.4894247195443" cy="527.8037955581282" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria Básica Nº 8,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="13.479767155568993" cx="445.7910718690196" cy="544.5826597421653" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 16 "Marcelino Ugarte",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.766347426486818" cx="440.1548021172569" cy="525.3816772871397" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Barrial Infantil El Ceibo,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="13.406433085593097" cx="371.24420958284617" cy="504.9820992929218" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Hospital Municipal Bernardo Houssay,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.419389050415452" cx="594.8941673223492" cy="567.3387263181013" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.5926342261449635" cx="587.6576173755188" cy="553.1530263964104" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Estacionamiento para personas con discapacidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="3.7549803208676362" cx="577.3776045287347" cy="548.870750167583" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.899968250835908" cx="315.7105013719101" cy="578.6829760851639" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria N° 5,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.363416458010578" cx="425.030472219682" cy="524.9914554437315" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria N° 19,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.89848485121906" cx="555.6870848566053" cy="561.5423818524932" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.216101652468408" cx="378.54798124391584" cy="524.2047371992212" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 15 "San Juan Macías",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="14.466613766138654" cx="398.48495435649073" cy="595.6127365307159" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Municipal Nº 3,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.626039228414639" cx="499.9809161819176" cy="544.1767754095869" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Rampas en Esquinas ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="483.73719695848547" cy="545.6242193390975" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.7549803208676362" cx="570.7625166356115" cy="554.5048144648981" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.82184587489891" cx="347.57195196930184" cy="509.5393331302206" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela de Educación Especial Nº 502,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.597375393033058" cx="310.31148948880747" cy="545.424994347694" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 31,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.859273855182093" cx="347.6139401387004" cy="524.9828898135355" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 12,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.557044449759847" cx="463.75178398457496" cy="568.0865940383151" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria Municipal "Paula Albarracín de Sarmiento",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="11.886344901423755" cx="584.8993513599987" cy="533.4380533880982" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.266790013893763" cx="275.65291531382945" cy="557.6628800305518" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña de higiene urbana y reciclado en el barrio,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="6.783487826493027" cx="292.0663858429023" cy="538.8053795823081" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña sobre promoción de la lectura,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="4.945435477931323" cx="263.5536015781898" cy="556.0186813615124" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña de arbolado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="7.186482535214244" cx="317.7674212571331" cy="527.1127943476454" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Barrial Infantil La Loma,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.683293975068606" cx="567.0690785716807" cy="528.2123992766395" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="9.911025734732192" cx="330.4938330024338" cy="555.0465484106569" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Instituto Superior de Formación Docente Nº 39,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.677006011231203" cx="415.41095302860646" cy="542.9144559059673" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.080378330834511" cx="537.1708084253576" cy="557.6216027200421" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="9.639867091793421" cx="470.8071055993976" cy="545.5839252689477" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 8,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.184394171041953" cx="371.8348638581542" cy="594.6074888456966" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Instituto Superior de Formación Docente Nº 39,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.1008141226684405" cx="436.2575025054168" cy="562.0837645774831" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Instituto Superior de Formación Docente Nº 39,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.429437963558754" cx="293.8495247728098" cy="552.8447003843642" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campañas de convivencia responsable con animales de compañía,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="7.009136486867597" cx="253.30491798735096" cy="546.5481331455996" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña de concientización sobre higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="459.01417360680693" cy="554.0156455735229" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación&nbsp;,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="489.8370909626893" cy="536.0063250233269" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="3.7549803208676362" cx="552.4280127758326" cy="545.2909247511657" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Reducidores de velocidad,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="13.80091403558577" cx="366.7983513029837" cy="541.8083696903649" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela de Educación Técnica Nº 1 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.699658767986662" cx="409.6760644916364" cy="574.9334601706464" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Municipal Nº 7,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.380020629967522" cx="331.5993652071364" cy="518.0370067381887" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 907,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.560098857107445" cx="565.410272067301" cy="542.3712101673316" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Colocación de semáforo ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.26823508417503" cx="540.5184030377008" cy="543.6919811796645" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="460.6921214376574" cy="535.2092646196884" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="13.8700207676981" cx="399.5451084856401" cy="523.9839795025681" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>AVAPEA - Plaza Ader,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="11.862644968339781" cx="352.16701117042567" cy="565.1556903321899" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Fundación Camino,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.734811160073705" cx="359.04101152730016" cy="521.8174107506117" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 918,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.953171769465845" cx="427.3951690464947" cy="553.9133203148428" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.321039540086314" cx="551.4429093736431" cy="531.207635162638" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.768239904034633" cx="337.2523166066956" cy="533.1629168487354" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ZOONOSIS,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.24197749519022" cx="333.0443456215581" cy="574.083901590825" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Barrial Infantil Habana,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.298328067726935" cx="450.33450732463274" cy="586.4127098288093" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 7,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.253374309308101" cx="302.4568546109898" cy="528.0643632451863" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña sobre promoción de la lectura,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="3.8082331914187195" cx="397.18765134948245" cy="575.6121414172544" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro de la Tercera Edad Barrio Parque,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="489.9327940580043" cy="546.2730311023563" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Mejoramiento de iluminación,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="10.816039346454534" cx="300.38822908319617" cy="697.8652596756273" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="14.893349447153666" cx="393.7425543873992" cy="658.7704098525298" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ESCUELA SECUNDARIA Nº 3,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.41752371410235" cx="602.2170884270696" cy="665.4963822689916" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="10.816039346454534" cx="365.4173713918254" cy="620.6167530099758" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 18,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.876825264304067" cx="374.19450175018903" cy="662.3311803020922" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Ctro de Jubilación "Unión Fraternal de Carapachay",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="2.8266666666666667" cx="579.6348162395526" cy="670.9895489157933" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforos Peatonales ,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.118940877342398" cx="287.10884898840146" cy="666.1904599165459" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campañas sobre buenos hábitos alimenticios,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="10.330195452138307" cx="445.3530705466399" cy="633.5319918501841" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Junta Vecinal Manuel Belgrano,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.330643675565145" cx="387.8679474370102" cy="698.2319938560784" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="15.264415991851093" cx="333.38770233107925" cy="635.6184337013453" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Soc. de Fomento Aristóbulo del Valle ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.591647081967702" cx="387.4007939791267" cy="617.7517182951353" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Cruz Roja Argentina ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.118940877342398" cx="586.9084854672091" cy="663.025081162625" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="5.602956050018227" cx="355.2847963228574" cy="633.8639562698684" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ZOONOSIS,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="15.288599855490013" cx="307.0726159594276" cy="654.3574275757254" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela de Educación Técnica Nº 4,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.41121508801813" cx="363.13059461887474" cy="696.8030842197542" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 912,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.202128261214305" cx="364.70900237960353" cy="727.4717310027357" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Biblioteca Popular Nora Bombelli,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="11.39709014865523" cx="455.0253877738824" cy="714.3849216437291" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 8 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.670641443941934" cx="321.1759480423762" cy="702.9720585360752" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Biblioteca Social Mariano Moreno (Soc. Fom Florida Sud),INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.734499290426934" cx="329.01544379644076" cy="665.7177104300079" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Ctro. de Jubilados "Amor y Amistad",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.880225052517748" cx="380.6414682408686" cy="636.6389522226543" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="13.607240786668914" cx="469.96003561992086" cy="647.7857156308729" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 16 “Marcelino Ugarte”,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.6245617407223065" cx="607.6658470060626" cy="679.519626503358" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.70664903315733" cx="491.73026399950373" cy="651.1418544505657" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Parque Paseo Enamour ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="13.076178960025084" cx="497.31297887155563" cy="689.420416321538" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Rampas en Esquinas ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="14.336554409197028" cx="420.20334865546545" cy="641.8451838117417" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Biblioteca Tecnológica Pública,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.759587807201932" cx="408.67905638067765" cy="620.7593054222381" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 19 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.072994696572803" cx="552.796603374192" cy="671.2395261718906" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="7.304643724984288" cx="370.95828088205576" cy="651.0427053705976" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Asociación Civil Peldaños,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.047117374348762" cx="354.201895617042" cy="647.9016129263256" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 15 "San Juan Macías",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.964900228201186" cx="397.3529045613819" cy="634.3929265245006" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Club Social y Deportivo Industrial de Munro,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.588449139700132" cx="438.0437054843984" cy="677.0524985872839" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Municipal Nº 3,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="4.638248674143201" cx="365.11858874640114" cy="638.618378819181" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Ctro de Formación Profesional Nº 402 e ISFT Nº 220,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.330643675565145" cx="419.82514547298814" cy="670.1010920691175" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.779519506526238" cx="347.15176529628195" cy="679.2692009806394" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria Nº 2 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.302054607489653" cx="342.70314772391885" cy="703.5277856557008" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 9,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.460606780384886" cx="475.6500752266097" cy="711.2282668931618" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Asociación Civil Hospice San Camilo&nbsp;,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.276778412869197" cx="386.1319860778293" cy="722.8126398084862" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Grupo Scout Ntra Sra de la Paz,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.467226979223991" cx="500.0975309903844" cy="666.027085597509" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Escuela de Educación Especial Nº 502,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="7.41752371410235" cx="283.19931420029485" cy="682.1169140319415" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña sobre animales abandonados en la vía pública,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="3.4130961916095854" cx="452.167934674954" cy="645.8658051767319" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Grupo de la Tercera Edad Asunción de la Virgen,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="15.5397532050213" cx="467.0099503259669" cy="688.1294500105313" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.656159600755181" cx="373.64207589754744" cy="677.6730571975484" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Instituto Superior de Formación Docente Nº 39,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="13.662867692919924" cx="411.7524260264418" cy="723.3573295504871" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria Nº 6 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.146630458727994" cx="570.7033183799629" cy="661.8437473266487" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.382729244574137" cx="262.47930994265215" cy="673.6560135493107" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Campaña educativa en higiene urbana y reciclado,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="5.2805829785468" cx="431.07900244412207" cy="623.4114943219047" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro de Adultos Mayores Activos,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="12.041114248943677" cx="413.79212294873105" cy="695.5994500639225" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>AVAPEA - Plaza Ader,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.354760280018059" cx="426.899758007101" cy="709.6720338774825" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Municipal Nº 7,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.437522917168653" cx="459.69454698586816" cy="665.635704137732" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Polideportivo de Villa Adelina ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.8556985929908425" cx="570.8009557617064" cy="679.8348898374354" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="6.297028395856116" cx="513.6974349803951" cy="675.8283342602072" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Plaza Eduardo Ader ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="6.5482150152893475" cx="371.6926646531017" cy="710.9991075124084" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Biblioteca Infantil Semilla de Cuentos ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="10.502758512455511" cx="315.93388446315026" cy="680.7189611356399" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Bomberos Voluntarios de Vicente López,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.466412754591628" cx="297.74478266210014" cy="676.1455371863201" style="fill: rgb(233, 223, 48);">
-                        </circle>
-                        <title>Campaña de concientización sobre el bullying,EDUCACIÓN</title>
-                      </g>
-                      <g>
-                        <circle r="10.855894338666726" cx="441.3241105060901" cy="657.7213716364147" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Fundación Camino,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="11.213300383501572" cx="439.21368630966606" cy="695.7937712845452" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Secundaria Nº 2,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.11626024062865" cx="399.62418968574406" cy="681.1801424917986" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Biblioteca Municipal "Froilán González",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="9.723874188491713" cx="590.35188350687" cy="680.5428268142897" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Cámaras de vigilancia urbana conectadas al Centro de Monitoreo Municipal,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="8.770515991298705" cx="345.122676683559" cy="724.3426932911881" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>ZOONOSIS,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.374252325299423" cx="342.76310298698695" cy="658.4791064733951" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín de Infantes Nº 918 ,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.735277015596762" cx="330.96819241701417" cy="690.9023815754599" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Jardín Maternal Municipal Nº 1,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.595691320201368" cx="436.5563168591263" cy="718.2606344373153" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria nº 20,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.11224726448766" cx="480.8431407906617" cy="667.6815033320449" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Escuela Primaria nº 7,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="7.243975044956084" cx="360.56631093862063" cy="662.2404995203073" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Ctro de la Tercera Edad&nbsp;Unidos en Armonía,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.881767837144112" cx="557.6871721539131" cy="688.526019185577" style="fill: rgb(179, 222, 105);">
-                        </circle>
-                        <title>Semáforo,SEGURIDAD Y TRÁNSITO</title>
-                      </g>
-                      <g>
-                        <circle r="4.70835811221195" cx="275.19451718089863" cy="670.5416768942829" style="fill: rgb(141, 211, 199);">
-                        </circle>
-                        <title>Reposición de árboles ,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="5.88750800583336" cx="449.4133032482878" cy="674.6280269780365" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Asociación de Artistas Plásticos,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.2002438411499385" cx="447.7727772627371" cy="797.9986680408723" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Cestos Papeleros ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="8.837509502265378" cx="369.71040513658687" cy="796.7027872232508" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Seguir Creciendo Hogar y Taller,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.694991573560193" cx="385.05194353452026" cy="805.1681437549239" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro Barrial Infantil Barrio El Ceibo,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.118940877342398" cx="269.5" cy="798" style="fill: rgb(141, 211, 199);"></circle>
-                        <title>La Ecología comienza por casa ,AMBIENTE</title>
-                      </g>
-                      <g>
-                        <circle r="5.750845436391627" cx="461.72386624772076" cy="798.0015251095135" style="fill: rgb(95, 179, 221);">
-                        </circle>
-                        <title>Cestos Papeleros ,INFRAESTRUCTURA URBANA</title>
-                      </g>
-                      <g>
-                        <circle r="5.684188729626925" cx="417.54955916722963" cy="792.9921411294775" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Centro de Jubilados "Gracias a la Vida",INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="8.258641979753595" cx="401.61173217790775" cy="792.7206066495621" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Polideportivo de Munro,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.977728362767127" cx="411.78889883160656" cy="805.3784506239738" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Club Social Sarmiento,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="6.105194369660014" cx="385.42154592244884" cy="790.3740428119764" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>GRUPO SCOUT H BOUCHARD,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                      <g>
-                        <circle r="5.330647488630768" cx="398.7533030288157" cy="808.0591347143941" style="fill: rgb(255, 98, 80);">
-                        </circle>
-                        <title>Ctro de la Tercera Edad&nbsp;Unidos en Armonía,INFRAESTRUCTURA COMUNITARIA</title>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-                
-            
-              </figure>
-            </article>
+			// $(".wow").each(function () {
+			// 	var wowHeight = $(this).height();
+			// 	$(this).attr("data-wow-offset", wowHeight);
+			// });
 
 
+		//--------- SCROLLAMA -------------- using d3 for convenience
+		var main = d3.select('main')
+		var scrolly = main.select('#scrolly');
+		var figure = scrolly.select('figure');
+		var article = scrolly.select('article');
+		var step = article.selectAll('.step');
+		
+		// initialize the scrollama
+		var scroller = scrollama();
 
-            
-            <div class="descargas">
-              <h4>ARCHIVOS</h4>
-              <div class="btns-descargas btns-historial"><a
-                  href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/documentos"><button
-                    class="boton-azul">Visualizador de archivos</button></a></div>
-              <h4>DESCARGAS</h4>
-              <div class="btns-descargas"><a
-                  href="https://forosvecinales.blob.core.windows.net/informes/proyectos-2013-2019_tipo-cantidad-inversion.xlsx"
-                  class="boton-azul">Proyectos 2013-2019 por tipo (cantidad e inversión)</a><a
-                  href="https://forosvecinales.blob.core.windows.net/informes/informacion_participacion.xlsx"
-                  class="boton-azul">Información sobre participación 2018</a><a
-                  href="https://forosvecinales.blob.core.windows.net/informes/resultados-escrutinio-2017.xlsx"
-                  class="boton-azul">Resultados de la votación 2017</a><a
-                  href="https://forosvecinales.blob.core.windows.net/informes/resultados-escrutinio-2018.xlsx"
-                  class="boton-azul">Resultados de la votación 2018</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="jump-container"></div>
-        <footer class="footer-static">
-          <div class="container">
-            <div class="contacto-detalles">
-              <h3>CONTACTO</h3>
-              <p><span>Subsecretaría de Participación Ciudadana</span><span>Secretaría de Gobierno y Legal y
-                  Técnica</span><span>D. de Acassuso 1750</span><span>CP1636, Olivos.</span><span>(54.11) 4851-2000 Int.
-                  203/207/208/209</span></p>
-            </div>
-            <div class="mapa-box">
-              <div><iframe class="mapa" src="./Presupuesto Participativo_files/embed.html" frameborder="0"
-                  allowfullscreen=""></iframe></div>
-            </div>
-            <div class="social-icon"><a class="social-facebook" href="https://www.facebook.com/VivamosVL/"
-                target="_blank"></a><a class="social-instagram"
-                href="https://www.instagram.com/presupuestoparticipativo_vl/" target="_blank"></a><a class="social-mail"
-                href="mailto:participacion.ciudadana@vicentelopez.gov.ar" target="_blank"></a></div>
-            <div class="logo"><a href="http://www.vicentelopez.gov.ar/"></a></div>
-            <div class="terminos"><a
-                href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/terminos-y-condiciones"> Términos y
-                condiciones</a><a href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/reglamento">
-                Reglamento</a></div>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </div>
-  <link href="./Presupuesto Participativo_files/css" rel="stylesheet" type="text/css">
+		// generic window resize listener event
+		function handleResize() {
+			// 1. update height of step elements
+			//********** DEFINICIONES *********************
+			var isSmallDevice =  window.innerWidth < 840 ? true : false;
+
+
+			var height = isSmallDevice ? 568 : 900;
+			var stepH = Math.floor(height * 0.9);
+			step.style('height', stepH + 'px');
+
+			var figureHeight = height;
+			var figureMarginTop = (window.innerHeight - height) / 2  
+
+			figure
+				.style('height', figureHeight + 'px')
+				.style('top', figureMarginTop + 'px');
+
+
+			// 3. tell scrollama to update new element dimensions
+			scroller.resize();
+		}
+
+		// scrollama event handlers
+		function handleStepEnter(response) {
+			// response = { element, direction, index }
+
+			// add color to current step only
+			step.classed('is-active', function (d, i) {
+				return i === response.index;
+			})
+
+			// update graphic based on step
+			dibujaBubbles(nodes,response.element.dataset.step);
+
+			//figure.select('.sticked').text(response.index + 1);
+		}
+
+		function setupStickyfill() {
+			d3.selectAll('.sticky').each(function () {
+				Stickyfill.add(this);
+			});
+		}
+
+		function init() {
+			setupStickyfill();
+
+			// 1. force a resize on load to ensure proper dimensions are sent to scrollama
+			handleResize();
+
+			// 2. setup the scroller passing options
+			// 		this will also initialize trigger observations
+			// 3. bind scrollama event handlers (this can be chained like below)
+			scroller.setup({
+				step: '#scrolly article .step',
+				offset: 0.8,
+				debug: false,
+			})
+				.onStepEnter(handleStepEnter)
+
+
+			// setup resize event
+			window.addEventListener('resize', handleResize);
+		}
+
+		// kick things off
+		init();
+
+
+	</script>
+
+
 </body>
 
 </html>
