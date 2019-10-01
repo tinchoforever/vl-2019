@@ -117,7 +117,9 @@ body {
 
 
 
-
+tspan.anios, tspan.cantidades{
+	font-size: 11px;
+}
 
 .graph-img p{
 	text-align: center;
@@ -125,6 +127,11 @@ body {
 }
 
 @media only screen and (min-width: 820px) {
+
+		tspan.anios, tspan.cantidades{
+			font-size: 16px;
+		}
+
 		#stickyViz
 		{
 			padding-top: 7em;

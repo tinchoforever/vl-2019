@@ -1,47 +1,51 @@
 function personitasStart() {
-var layout = d3_iconarray
-                .layout()
-                .width(6);
 
-var data = d3.range(0,156);
-var cantidad = d3.range(0, 7);
+var cantidadColumnas = 8;
+var cantidadTipitos = 6;
 
-var selectos=[1,5,8,14,20,32,43];
-var years = d3.range(2012,2019);
-var cantidades=[156,31,20,11,8,5,3];
+    var layout = d3_iconarray
+        .layout()
+        .width(cantidadTipitos);
+
+    var data = d3.range(0, 156);
+
+var cantidad = d3.range(0, cantidadColumnas);
+
+var selectos=[1,5,8,14,20,32,43,56];
+var years = d3.range(2012,2020);
+var cantidades=[156,31,20,11,8,5,3,2];
 
 var grid = layout(data);
-var dotRadius = 8;
-    var width = isSmallDevice ? window.innerWidth  : 600, 
-        height = width*1.1, 
-        margin = { top: 20, bottom: 20, left: width / 30, right: width / 30 };
+    var width = isSmallDevice ? window.innerWidth*0.95  : 600, 
+        height = isSmallDevice ? 400 : width*1.1;
+        
+    var dotRadius = width / (cantidadColumnas * cantidadTipitos)*1.5;
 
-var anchocolumna = (width - margin.left - margin.right)/7;
+    var anchocolumna = width/cantidadColumnas;
 
 
 var arrayScalex = d3_iconarray.scale()
 	.domain([0, layout.maxDimension(data.length) ])
-    .range([0, width / 2])
+    .range([0, anchocolumna*4])
     ;
 
     var arrayScaley = d3_iconarray.scale()
         .domain([0, layout.maxDimension(data.length)])
-        .range([0, width *0.9])
+        .range([0, height *0.8])
         ;
 
 var svg = d3.select('#personitas')
 		.append('svg')
 			.attr('width',width)
             .attr('height',height)
-		.append('g')
-			.attr('transform','translate('+margin.left+','+margin.top+')');
+			;
 
 var columna = svg.selectAll('g')
     .data(cantidad)
     .enter()
     .append('g')
     .attr('transform', function (d,i) {
-        return 'translate(' + i*anchocolumna + ',0)'
+        return 'translate(' + i*anchocolumna + ',20)'
     })
     ;
 
@@ -57,7 +61,7 @@ var columna = svg.selectAll('g')
             .attr("class", "cantidades")
             .text(d => "1 de "+ cantidades[d])
             .attr("x",anchocolumna / 2)
-            .attr("dy", 20)
+            .attr("dy", isSmallDevice ? 16 : 20)
             .attr("opacity", 0);
 
     columna.selectAll('g')
@@ -71,20 +75,13 @@ var columna = svg.selectAll('g')
 	.append("use")
 
             .attr("href", "#persona")
-            .attr("width", 20)
-            .attr("height", 20)
+            .attr("width", dotRadius)
+            .attr("height", dotRadius)
             .attr("stroke-width", "0px")
             .attr("opacity",0)
             .attr("class", "personita")
             .attr("fill", "#aaa");
-    
-           //**************** BETA TESTING AREA
 
-            //  setTimeout(function () {
-            //      personitasStart();
-            //  }, 1000)
-
-   
        
    
                 d3.selectAll(".personita").transition() // transicion personitas grises
