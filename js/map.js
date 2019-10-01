@@ -7,12 +7,17 @@
 var path = d3.geoPath();
 
 var padding = isSmallDevice ? 0.5 : 1;
-var nodes, bubbles;
+var nodes, bubbles, bubblesStage,labels;
 var isSmallDevice =  window.innerWidth < 840 ? true : false;
 var height = isSmallDevice ? 568 : 800;
 var width= isSmallDevice ?  window.innerWidth  : 850 ;
 
-var insideheight = height * 0.7; insidewidth = width * 0.7;
+var insideheight = height * 0.7; 
+insidewidth = isSmallDevice ? window.innerWidth : width * 0.7;
+
+var anchomapa = isSmallDevice ? window.innerWidth : width - 200,
+  altomapa = isSmallDevice ? window.innerHeight*0.6 : height - 40;
+
 var distanceLimit = 70;
 var estadoActivo;
   var tipos = [
@@ -24,16 +29,25 @@ var estadoActivo;
       "OTROS"]
 
       
-  var sextos = {
-      "INFRAESTRUCTURA COMUNITARIA": [insidewidth * 1 / 3, insideheight * 1 / 3],
-      "SEGURIDAD Y TRÁNSITO": [insidewidth * 2 / 3, insideheight * 1 / 3],
-      "INFRAESTRUCTURA URBANA": [insidewidth,         insideheight * 1 / 3],
-      "AMBIENTE": [insidewidth * 1 / 3, insideheight * 2 / 3],
-      "EDUCACIÓN": [insidewidth * 2 / 3, insideheight * 2 / 3],
-      "OTROS": [insidewidth,         insideheight * 2 / 3]
-        };
+  // var sextos = {
+  //     "INFRAESTRUCTURA COMUNITARIA": [insidewidth * 1 / 4, insideheight * 1 / 3],
+  //     "SEGURIDAD Y TRÁNSITO": [insidewidth * 2 / 4, insideheight * 1 / 3],
+  //   "INFRAESTRUCTURA URBANA": [insidewidth * 3 / 4,  insideheight * 1 / 3],
+  //     "AMBIENTE": [insidewidth * 1 / 4, insideheight * 2 / 3],
+  //     "EDUCACIÓN": [insidewidth * 2 / 4, insideheight * 2 / 3],
+  //   "OTROS": [insidewidth * 3 / 4,         insideheight * 2 / 3]
+  //       };
 
 
+
+var  sextos = {
+    "INFRAESTRUCTURA COMUNITARIA": [insidewidth / 2, insideheight * 1 / 3],
+    "SEGURIDAD Y TRÁNSITO": [insidewidth * 1 / 3, insideheight * 2.2 / 3],
+    "INFRAESTRUCTURA URBANA": [insidewidth * 2 / 3, insideheight * 2.2 / 3],
+    "AMBIENTE": [insidewidth * 1 / 4, insideheight * 3 / 3],
+    "EDUCACIÓN": [insidewidth * 2 / 4, insideheight * 3 / 3],
+    "OTROS": [insidewidth * 3 / 4, insideheight * 3 / 3]
+  };
 
 
 
@@ -42,15 +56,15 @@ var estadoActivo;
 
 
         var centroides = {
-  "VILLA ADELINA": [insidewidth / 4 * 1, insideheight / 3 * 1],
-  "MUNRO": [insidewidth / 4 * 2, insideheight / 3 * 1],
-  "OLIVOS": [insidewidth / 4 * 3, insideheight / 3 * 1],
-  "LA LUCILA": [insidewidth, insideheight / 3 * 1],
-  "CARAPACHAY": [insidewidth / 4 * 1, insideheight / 3 * 2],
-  "FLORIDA OESTE": [insidewidth / 4 * 2, insideheight / 3 * 2],
-  "FLORIDA ESTE": [insidewidth / 4 * 3, insideheight / 3 * 2],
-  "VICENTE LÓPEZ": [insidewidth, insideheight / 3 * 2],
-  "VILLA MARTELLI": [insidewidth / 4 * 2, insideheight / 3 * 3]
+          "VILLA ADELINA": [insidewidth * 1/5, insideheight / 3 * 1],
+          "MUNRO": [insidewidth * 2/5, insideheight / 3 * 1],
+          "OLIVOS": [insidewidth * 3/5, insideheight / 3 * 1],
+          "LA LUCILA": [insidewidth * 4/5, insideheight / 3 * 1],
+          "CARAPACHAY": [insidewidth * 1 / 5, insideheight / 3 * 2],
+          "FLORIDA OESTE": [insidewidth * 2 / 5, insideheight / 3 * 2],
+          "FLORIDA ESTE": [insidewidth * 3 / 5, insideheight / 3 * 2],
+          "VICENTE LÓPEZ": [insidewidth * 4 / 5, insideheight / 3 * 2],
+          "VILLA MARTELLI": [insidewidth * 2 / 5, insideheight / 3 * 3]
 }
 
 
@@ -72,8 +86,8 @@ var colorScale = d3.scaleOrdinal()
     "#ffdb92"])
     .domain(tipos);
     
-    var topRadScale = isSmallDevice ? 1 : 3;
-    var lowRadScale = isSmallDevice ? 10 : 25;
+    var topRadScale = isSmallDevice ? 2 : 3;
+    var lowRadScale = isSmallDevice ? 16 : 25;
 
 var radiusScale = d3.scalePow()
     .range([topRadScale,lowRadScale]);
@@ -136,7 +150,7 @@ function ready (results){
   var mapa = topojson.feature(mapTopoJson, mapTopoJson.objects.collection);  
   var projection = d3.geoTransverseMercator()
                     .rotate([74 + 30 / 60, -38 - 50 / 60])
-                    .fitExtent([[20, 20], [width-200, height-50]], mapa)
+                    .fitExtent([[20, 0], [anchomapa-20, altomapa]], mapa)
 
       path.projection(projection);
 
@@ -183,9 +197,9 @@ function ready (results){
   // --------- BUBBLES
      
                                  
-          simulaNodos(nodes,"longlat","mapa",false);
-          simulaNodos(nodes, "centroide", "barrios",true)
-          simulaNodos(nodes, "sextos", "temas",true)
+          simulaNodos(nodes,"longlat","mapa");
+          simulaNodos(nodes, "centroide", "barrios")
+          simulaNodos(nodes, "sextos", "temas")
          // simulaNodos(nodes, "tiempos", "lineadetiempo")
 
           
@@ -218,7 +232,7 @@ function ready (results){
         } */
 
   if (!isSmallDevice) dibujaleyendas("mapa");
-  
+  dibujaLabels();
 
  }  // fin de Ready;
 
@@ -229,9 +243,10 @@ function ready (results){
             
 
             if(!estadoActivo){
-              bubbles = svg.append('g')
-                .attr("id", "bubbles")
-                .selectAll('circle')
+              bubblesStage = svg.append('g')
+                .attr("id", "bubbles");
+              
+              bubbles = bubblesStage.selectAll('circle')
                 .data(nodes)
                 .enter()
                 .append('circle');
@@ -245,8 +260,20 @@ function ready (results){
                 .attr('fill', (d) => colorScale(d.tema))
                 .transition().duration((d) => radiusForce(d.presupuesto) * 1000).delay((d) => (1-radiusForce(d.presupuesto)) * 1000).ease(d3.easeExpInOut)
                 .attr('r', (d) => d.radius);
+
+
+           
+
             }else {
-              console.log("update");
+
+              if(estadoActivo != "mapa"){
+              d3.select("#labels").select("#" + estadoActivo).transition().duration(500).ease(d3.easeExpInOut)
+                .style("opacity", 0);
+              }
+
+              d3.select("#labels").select("#" + estado).transition().delay(500).duration(500).ease(d3.easeExpInOut)
+              .style("opacity",1);
+              
                 bubbles
                   .transition().duration((d) => 500 + radiusForce(d.presupuesto) * 2000).ease(d3.easeExpInOut)
                   .attr("transform", function (d) {
@@ -256,12 +283,51 @@ function ready (results){
                 estadoActivo = estado;
    }
 
-function simulaNodos(nodes, centro, estado, precalcular) {
+function dibujaLabels() {
+
+  labels = svg.append("g").attr("id","labels");
+  
+  
+  labels.append("g").attr("id", "barrios")
+    .style("opacity",0)
+    .selectAll('text')
+    .data(Object.keys(centroides))
+    .enter()
+    .append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", 0)
+    .attr("x",d=>centroides[d][0])
+    .attr("y", d => centroides[d][1]+(isSmallDevice?45:65))
+    .attr("class", "titulosBubbles")
+    .text(function (d) { return d }).call(wrap, 10)
+    ;
+
+  labels.append("g").attr("id", "temas")
+    .style("opacity", 0)
+    .selectAll('text')
+    .data(Object.keys(sextos))
+    .enter()
+    .append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", 0)
+    .attr("x", d => sextos[d][0])
+    .attr("y", function(d,i){ 
+      if (i == 0) return sextos[d][1] + (isSmallDevice ? 85 : 120); // ajuste para el mas grande bubble
+      return sextos[d][1] + (isSmallDevice ? 45 : 60)})
+    .attr("class", "titulosBubbles")
+    .text(function (d) { return d }).call(wrap, 10)
+    ;
+}
 
 
 
-        if (precalcular){
-          
+function simulaNodos(nodes, centro, estado) {
+
+var iteraciones = 270;
+
+ 
+          if(estado != "mapa"){
+
           switch (estado) {
             case "barrios":
               var nest = d3.nest()
@@ -273,16 +339,14 @@ function simulaNodos(nodes, centro, estado, precalcular) {
               break;
               
             case "temas":
+              iteraciones = 0;
               var nest = d3.nest()
                 .key(function (d) { return d.tema; })
                 .key(function (d) { return d.id; })
                 .rollup(function (d) { return d3.sum(d, function (d) { return d.radius; }); })
                 .entries(nodes).sort(function (a, b) { 
                   return d3.sum(b.values, d => d.value) - d3.sum(a.values, d => d.value);})
-
-              console.log(nest);
-
-              break;
+              break;              
           }
               
               const root = d3.hierarchy({ values: nest }, function (d) { return d.values; })
@@ -313,7 +377,6 @@ function simulaNodos(nodes, centro, estado, precalcular) {
                   d.x = d.x - d.parent.x + d.parent.xPos;
                   d.y = d.y - d.parent.y + d.parent.yPos;
                 });
-
               break;
 
             case "temas":
@@ -321,8 +384,7 @@ function simulaNodos(nodes, centro, estado, precalcular) {
                 .forEach((d) => {
                   d.xPos = sextos[d.data.key][0];
                   d.yPos = sextos[d.data.key][1];
-                });
-                
+                });          
               root.descendants().filter((d) => d.depth == 2)
                 .forEach((d) => {
                   d.x = d.x - d.parent.x + d.parent.xPos;
@@ -330,8 +392,7 @@ function simulaNodos(nodes, centro, estado, precalcular) {
                 });
               break;
           }
-          
-
+        
               var posPacked = root.leaves().map(function (p) {
                 return [+p.data.key,[p.x,p.y]];
               }).sort(function (a, b) { return a[0] - b[0]; });
@@ -341,25 +402,23 @@ function simulaNodos(nodes, centro, estado, precalcular) {
                    element.x = posPacked[element.id-1][1][0];
                    element.y = posPacked[element.id-1][1][1];
                   });
-
           }
+                     
+          var simulation = d3.forceSimulation(nodes)
+            .force('charge', d3.forceManyBody().strength(1))
+            .force('x', d3.forceX().x(function (d) {
+              return d[centro][0]
+            }).strength(1))
+            .force('y', d3.forceY().y(function (d) {
+              return d[centro][1];
+            }).strength(1))
+            .force('collision', d3.forceCollide().radius(function (d) {
+              return d.radius + padding;
+            }))
+            .stop();
 
-           
-          // var simulation = d3.forceSimulation(nodes)
-          //   .force('charge', d3.forceManyBody().strength(1))
-          //   .force('x', d3.forceX().x(function (d) {
-          //     return d[centro][0]
-          //   }).strength(1))
-          //   .force('y', d3.forceY().y(function (d) {
-          //     return d[centro][1];
-          //   }).strength(1))
-          //   .force('collision', d3.forceCollide().radius(function (d) {
-          //     return d.radius + padding;
-          //   }))
-          //   .stop();
 
-
-          // for (var i = 0; i < 1; ++i) simulation.tick(); // evalua la simulacion
+          for (var i = 0; i < iteraciones; ++i) simulation.tick(); // evalua la simulacion
           
       
           nodes.forEach(element => {
@@ -414,13 +473,11 @@ function simulaNodos(nodes, centro, estado, precalcular) {
 
   /// LEYENDAS
 function dibujaleyendas(state) {
- 
-  switch (state) {
-    case "mapa":
+
       var leyenda = svg.append("g")
         .attr("class", "leyenda")
 
-        .attr("transform", "translate(" + (width * 0.75) + ", 40)");
+        .attr("transform", "translate(" + (width * 0.72) + ", 40)");
 
       leyenda.append("g").attr("class", "legendSize");
 
@@ -451,13 +508,6 @@ function dibujaleyendas(state) {
 
       svg.select(".legendOrdinal")
         .call(legendOrdinal);
-      
-      break;
-  
-    default:
-      break;
-  }
-
 }
 
   function trimArray(arr)
@@ -483,6 +533,27 @@ function dibujaleyendas(state) {
   }
 
   
-
-
-
+function wrap(text, width) {
+  text.each(function () {
+    let text = d3.select(this),
+      words = text.text().split(/\s+/).reverse(),
+      word,
+      line = [],
+      lineNumber = 0,
+      lineHeight = 14, // ems
+      x = text.attr("x"),
+      y = text.attr("y"),
+      dy = 14,
+      tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy);
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy).text(word);
+      }
+    }
+  });
+}

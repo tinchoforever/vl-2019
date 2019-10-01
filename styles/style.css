@@ -83,14 +83,7 @@ body {
 
 		}
 
-		figure .sticked {
-			position: absolute;
-			width: 100%;
-			text-align: center;
-				padding-top: 8em;
-			padding-right: 6em;
-				}
-
+		
 
 		.step {
 			margin: 0 auto 2rem auto;
@@ -105,15 +98,31 @@ body {
 	
 		}
 
-		.step .sticked {
-			width: 70%;
-			min-width: 300px;
-			background-color: #ffffffde;
-			padding: 8px 50px;
-			margin: auto;
-			border-top: 1px solid;		
+		.sticked{
 			text-align: center;
-								}
+		}
+
+		.step .sticked {
+			width: 90%;
+    		background-color: #ffffffde;
+    		padding: 6px 10px;
+    		margin: auto;
+    		border-top: 1px solid;
+    		
+		}
+		
+		.step .sticked h3{
+			font-size: 15px;
+			margin-top: 0;
+			margin-bottom: 8px;
+		}
+
+		.step .sticked p{
+			font-weight: 400;
+			font-size: 13px;
+			line-height: 1.3;
+			margin-bottom: 2px;
+		}
 
 
 
@@ -126,7 +135,30 @@ tspan.anios, tspan.cantidades{
 	margin-bottom: 30px;
 }
 
+svg g#labels {
+			font-size: 12px;
+		}
+
+
 @media only screen and (min-width: 820px) {
+		.step .sticked {
+			width: 60%;
+			padding: 8px 120px;
+			min-width: 300px;
+		}
+		
+		.step .sticked h3{
+			font-size: 23px;
+			margin-top: 12px;
+			margin-bottom: 10px;
+		}
+
+		.step .sticked p{
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 7px;
+		}
 
 		tspan.anios, tspan.cantidades{
 			font-size: 16px;
@@ -135,5 +167,9 @@ tspan.anios, tspan.cantidades{
 		#stickyViz
 		{
 			padding-top: 7em;
+		}
+
+		svg g#labels {
+			font-size: 14px;
 		}
 }
