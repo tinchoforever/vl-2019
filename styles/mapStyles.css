@@ -1,20 +1,6 @@
 
 
-  #tooltip { 
-    position: absolute;     
-    text-align: center;     
-    width: 250px;          
-    padding: 8px 6px;
-    min-height: 130px;       
-    font: 12px sans-serif;    
-    background: white; 
-    border: 1px solid black;    
-    border-radius: 0 8px 8px 8px;     
-  -webkit-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
-  -moz-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
-  box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
-  opacity: 0;
-  }
+  
 
 .states {
   stroke: #fff;
@@ -79,50 +65,5 @@ svg text {
 .label{
   fill:gray;
   font-size: 12px;
-}
-
-div#tooltip {
-  font-family: "Roboto";
-    padding: 0px;
-}
-
-div#tooltip h3 {
-    margin-top: 0;
-    background-color: #c0c0c06b;
-    width: 100%;
-    border-radius: 0px 7px 0px 0px;
-    padding: 1px 0px;        margin-bottom: 2px;
-    height: 50px;
-      display: inline-block;
-        line-height: 50px;
-
-
-}
-
-div#tooltip #title {
-line-height: 18px;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0px 10px;
-
-
-}
-
-div#tooltip h4 {
-    margin: 5px 8px;
-    display: inline-flex;
-     font-size: 12px;
-    font-weight: 500;
-}
-
-div#tooltip #descripcion {
-    font-weight: 500;
-}
-
-
-div#tooltip #info{
-    margin: 2px 0px;
-    font-weight: 500;
-    font-size: 12px;
 }
 

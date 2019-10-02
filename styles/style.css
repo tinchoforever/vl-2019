@@ -138,8 +138,122 @@ svg g#labels {
 		}
 
 
+
+
+				#tooltip {
+					opacity: 0;
+					bottom: 60px;
+					position: relative;
+					text-align: center;
+					width: 100%;
+					min-height: 130px;
+					font: 12px sans-serif;
+					background: #f3f3f3;
+				}
+				
+
+				div#tooltip h3 {
+					margin-top: 0;
+					background-color: #c0c0c06b;
+					width: 100%;
+					display: inline-block;
+					line-height: 18px;
+					font-size: 13px;
+					padding: 4px 0px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					margin: 0;
+				}
+
+				div#tooltip h4 {
+					margin: 5px 8px;
+					display: inline-flex;
+					font-size: 12px;
+					font-weight: 500;
+				}
+
+				div#tooltip #descripcion {
+					font-weight: 500;
+				}
+
+
+				div#tooltip #info{
+					margin: 2px 0px;
+					font-weight: 500;
+					font-size: 12px;
+				}
+
+
+
 @media only screen and (min-width: 820px) {
-		.step .sticked {
+				
+				#tooltip { 
+					bottom:unset;
+					top:350px;
+					right:160px;
+					position: absolute;     
+					text-align: center;     
+					width: 250px;          
+					padding: 0px 0px;
+					min-height: 130px;       
+					font: 12px sans-serif;    
+					background: white; 
+					border: 1px solid black;    
+					border-radius: 0 8px 8px 8px;     
+					-webkit-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
+					-moz-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
+					box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
+				}
+				
+
+
+				div#tooltip h3 {
+					margin-top: 0;
+					background-color: #c0c0c06b;
+					width: 100%;
+					border-radius: 0px 7px 0px 0px;
+					padding: 1px 0px;        
+					margin-bottom: 2px;
+					height: 50px;
+					display: inline-block;
+						line-height: 50px;
+
+
+				}
+
+				div#tooltip #title {
+				line-height: 18px;
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0px 10px;
+				white-space: initial;
+				overflow: initial;
+				text-overflow: unset;
+				}
+
+				div#tooltip h4 {
+					margin: 5px 8px;
+					display: inline-flex;
+					font-size: 12px;
+					font-weight: 500;
+				}
+
+				div#tooltip #descripcion {
+					font-weight: 500;
+				}
+
+
+				div#tooltip #info{
+					margin: 2px 0px;
+					font-weight: 500;
+					font-size: 12px;
+				}
+
+
+
+
+	.step .sticked {
 			width: 60%;
 			padding: 8px 120px;
 			min-width: 300px;

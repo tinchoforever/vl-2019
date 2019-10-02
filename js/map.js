@@ -119,12 +119,9 @@ var projection = d3.geoMercator();
 
 
 // Define the div for the tooltip
-let tooltip = d3.select("#tooltip")
-                //.style("display","none")
-                .style("opacity",0)
-                .style("right", 160 + "px")
-                .style("top", 350 + "px")
-
+let tooltip = d3.select("#tooltip");
+                
+                
 
 var svg = d3.select("#stickyViz")
             .attr("height",height)
