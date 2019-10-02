@@ -33,7 +33,7 @@ body {
   height: 640px;
 }
 
-		.seccion-datos {margin-bottom: 160px !important}
+		.seccion-datos {margin-bottom: 80px !important}
 			.card{    padding: 10px;
 				text-align: center;
 				min-width: 200px;
@@ -65,10 +65,8 @@ body {
 		}
 
 		article {
-			position: relative;
-			/* padding: 0;
-			max-width: 20rem;
-			margin: 0 auto; */
+			/* position: relative; */
+
 		}
 
 		figure {
@@ -108,7 +106,7 @@ body {
     		padding: 6px 10px;
     		margin: auto;
     		border-top: 1px solid;
-    		
+    		position:relative;
 		}
 		
 		.step .sticked h3{
@@ -166,7 +164,7 @@ svg g#labels {
 
 		#stickyViz
 		{
-			padding-top: 7em;
+			padding-top: 4em;
 		}
 
 		svg g#labels {

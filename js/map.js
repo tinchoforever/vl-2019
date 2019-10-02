@@ -120,11 +120,11 @@ var projection = d3.geoMercator();
 
 // Define the div for the tooltip
 let tooltip = d3.select("#tooltip")
-                .style("display","none")
+                //.style("display","none")
                 .style("opacity",0)
-                .style("left", width*0.75 + "px")
-                .style("top", height * 0.75 + "px")
-                ;
+                .style("right", 160 + "px")
+                .style("top", 350 + "px")
+
 
 var svg = d3.select("#stickyViz")
             .attr("height",height)
@@ -210,35 +210,6 @@ function ready (results){
           simulaNodos(nodes, "sextos", "temas")
           simulaNodos(nodes, "timeline", "lineadetiempo")
 
-          
-
-    
-  
-  // ----------------------------------------------------
-  // Add in Voronoi interaction
-  // ----------------------------------------------------
-
-  // // create a voronoi diagram based on the *ALREADY SIMULATED* data
-  // const voronoiDiagram = d3.voronoi()
-  //                           .x(d => d.x)
-  //                           .y(d => d.y)
-  //                           .size([width, height])(nodes);
-
-
-
-  //     // svg.on('mousemove', mouseMoveHandler);
-
-  //       // callback for when the mouse moves across the overlay
-  //       function mouseMoveHandler() {
-  //           // get the current mouse position
-  //           const [mx, my] = d3.mouse(this);
-
-  //           // use the new diagram.find() function to find the voronoi site closest to
-  //           // the mouse, limited by max distance defined by voronoiRadius
-  //           const site = voronoiDiagram.find(mx, my, voronoiRadius);
-  //           if(site) highlight(site)
-  //       }
-
 
   svg.append("g")
     .attr("id","axis")
@@ -248,7 +219,7 @@ function ready (results){
     .call(d3.axisLeft(yTimeline))
     .select(".domain").remove();
   
-  svg.selectAll(".tick line").attr("x2", width - isSmallDevice? 60 : 310).attr("stroke", "#ddd")
+  svg.selectAll(".tick line").attr("x2", width - (isSmallDevice? 60 : 300)).attr("stroke", "#ddd")
   if (!isSmallDevice) dibujaleyendas("mapa");
 
   dibujaLabels();
@@ -259,7 +230,9 @@ function ready (results){
   function dibujaBubbles(nodes, estado) {
 
               d3.select("#states").transition().duration(1000).style("opacity", estado == "mapa"?1:0);
-            
+    
+             
+
 
             if(!estadoActivo){
               bubblesStage = svg.append('g')
@@ -308,7 +281,30 @@ function ready (results){
                   });
                 }
                 estadoActivo = estado;
+                
+                makeVoronoi(nodes,estado);
    }
+
+
+function makeVoronoi(nodes, estado) {
+      var voronoiDiagram = d3.voronoi().x(d => d.xPos[estado])
+        .y(d => d.yPos[estado])
+        .size([width, height])(nodes);
+                          
+      svg.on('mousemove', mouseMoveHandler);
+
+      function mouseMoveHandler() {
+        // get the current mouse position
+        var [mx, my] = d3.mouse(this);
+
+        // use the new diagram.find() function to find the voronoi site closest to
+        // the mouse, limited by max distance defined by voronoiRadius
+        var site = voronoiDiagram.find(mx, my, voronoiRadius);
+        if (site) highlight(site)
+      }
+  
+}
+
 
 function dibujaLabels() {
 
@@ -519,11 +515,6 @@ var iteraciones = 270;
 // ----------------------------------------------------
 
 
-  // function ticked(what) {
-  //         what.attr("transform", function(d){ 
-  //           return "translate(" + d.x + "," + d.y +")"});
-  // }
-
 
     d3.select("#cargando").remove();    
 
@@ -577,6 +568,11 @@ function dibujaleyendas() {
 
 
 }
+
+
+// callback for when the mouse moves across the overlay
+
+
 
   function trimArray(arr)
   {
