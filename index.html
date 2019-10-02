@@ -274,7 +274,7 @@
 						¡Descubrilas haciendo click en cada color!</p>
 					</div>
 				</div>
-				<div class='step' data-step='tiempo'>
+				<div class='step' data-step='lineadetiempo'>
 					<div class="sticked">
 						<div>
 						<div>
@@ -283,6 +283,17 @@
 						</div>
 						</div>
 						
+					</div>
+				</div>
+				<div class='step' data-step=''>
+					<div class="sticked">
+						<div>
+							<div>
+								<h3>ultimo texto que pasa</h3>
+								<p>¡El crecimiento es enorme y juntos vamos por más!</p>
+							</div>
+						</div>
+				
 					</div>
 				</div>
 
@@ -340,7 +351,6 @@
 					mobile: true,       // trigger animations on mobile devices (default is true)
 					live: true,       // act on asynchronously loaded content (default is true)
 					callback: function (box) {
-						console.log(d3.select(box).attr("id") == "personitas");
 						if (d3.select(box).attr("id") == "personitas") personitasStart();
 					},
 					scrollContainer: null // optional scroll container selector, otherwise use window
@@ -397,6 +407,7 @@
 			})
 
 			// update graphic based on step
+			if(response.element.dataset.step)
 			dibujaBubbles(nodes,response.element.dataset.step);
 
 			//figure.select('.sticked').text(response.index + 1);

@@ -3,7 +3,7 @@
 
 <head>
   <title>#historiascondatos - Pulso Cultural - fechas</title>
-  <script src="../../scripts/d3.v4.min.js"></script>
+  <script src="../../js/d3.min.js"></script>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -107,12 +107,18 @@
   var g = d3.select('#fechas')
     .select('g');
 
-  d3.queue()
-    .defer(d3.csv, "base400.csv")
-    .awaitAll(ready);
+  
+    var promises = [
+    d3.csv("../../data/lugaresVL.csv")
+  ]
+
+  Promise.all(promises).then(function (data) {
+    ready(data)
+  });
 
 
-  function ready(error, eventos) {
+
+  function ready(eventos) {
 
     y.domain(d3.range(2013, 2020));
 
@@ -140,10 +146,10 @@
         flattenDatos.push(
           {
             'ano': d.ano,
-            'nombre': d.proyecto,
-            'tipo': d.TemaResumen,
+            'nombre': d.titulo,
+            'tipo': d.temaResumen,
             'cantidad': +d.presupuesto,
-            'x': x(d.TemaResumen),
+            'x': x(d.temaResumen),
             'y': y(+d.ano)
           });
       })
