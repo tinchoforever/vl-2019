@@ -137,8 +137,8 @@ var svg = d3.select("#stickyViz")
 //********** CARGA DE DATOS *********************
 
  var promises = [
-    d3.json("../data/vicentemap.topo.json"),
-   d3.csv("../data/lugaresVL.csv")
+    d3.json("data/vicentemap.topo.json"),
+   d3.csv("data/lugaresVL.csv")
   ]
 
   Promise.all(promises).then(function(data){
