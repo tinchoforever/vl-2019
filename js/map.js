@@ -264,8 +264,11 @@ function ready (results){
               .style("opacity",1);
 
               
-                d3.select(".legendOrdinal").transition().duration(500)
+              d3.select(".legendOrdinal").transition().duration(500)
                   .style("opacity", estado == "temas"?0:1);
+
+              d3.select("#tooltip").transition().duration(200)
+                .style("opacity", 0);
 
               d3.select(".axis").transition().duration(500)
                 .style("opacity", estado == "lineadetiempo" ? 1 : 0);
@@ -297,7 +300,11 @@ function makeVoronoi(nodes, estado) {
         // use the new diagram.find() function to find the voronoi site closest to
         // the mouse, limited by max distance defined by voronoiRadius
         var site = voronoiDiagram.find(mx, my, voronoiRadius);
-        if (site) highlight(site)
+        if (site) {
+          highlight(site)}
+          else{
+          highlight("none")
+          }
       }
   
 }
@@ -488,8 +495,9 @@ var iteraciones = 270;
 
  // callback to highlight a point
   function highlight(d) {
-    // no point to highlight - hide the circle and clear the text
           d3.selectAll('.circulos').classed('hovered', false);
+
+          if(d!="none"){
           d3.select('[id="'+d.data.id+'"]').classed('hovered', true);
 
           tooltip.transition()
@@ -498,24 +506,17 @@ var iteraciones = 270;
           tooltip.select("#title").html(d.data.nombre);
           tooltip.select("#descripcion").html(d.data.descripcion);
           tooltip.select("#info").html(d.data.presupuesto + '/ Barrio: ' + d.data.barrio);
-
-              // HIGHLIGTS barrio -- no estan bien los barrios!
-        /*      d3.selectAll('.paisVector').filter(function (e) {
-                return e.properties.name.toLowerCase().replace(/\s/g, '') == d.data.barrio.toLowerCase().replace(/\s/g, '')? 0:1;
-              }).transition()
+          }else{
+            tooltip.transition()
               .duration(50)
-              .style("opacity", .3);
-              d3.select('[id="' + d.data.barrio.toLowerCase().replace(/\s/g, '') + '"]').style("opacity", 1); */
+              .style("opacity", 0);
+          }
   }
 
 
 // ----------------------------------------------------
 
-
-
     d3.select("#cargando").remove();    
-
-
   var linearSize = d3.scaleLinear().domain([0,10]).range([10, 30]);
 
 
