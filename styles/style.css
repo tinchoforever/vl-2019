@@ -190,8 +190,8 @@ svg g#labels {
 				
 				#tooltip { 
 					bottom:unset;
-					top:350px;
-					right:160px;
+					top:630px;
+					right:15%;
 					position: absolute;     
 					text-align: center;     
 					width: 250px;          

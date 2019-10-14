@@ -67,3 +67,8 @@ svg text {
   font-size: 12px;
 }
 
+.titulosBubblesExtra{
+font-style: italic;
+    letter-spacing: 2px;
+    fill: #868686;
+}
