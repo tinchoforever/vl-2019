@@ -7,7 +7,7 @@
 var path = d3.geoPath();
 
 var padding = isSmallDevice ? 0.5 : 1;
-var nodes, bubbles, bubblesStage,labels, labelsBarrios, labelsTemas, labelsExtra;
+var nodes, bubbles, bubblesStage, labels, labelsBarrios, labelsTemas, labelsExtra, nestedBarrios;
 var isSmallDevice =  window.innerWidth < 840 ? true : false;
 var height = isSmallDevice ? 568 : 800;
 var width= isSmallDevice ?  window.innerWidth  : 850 ;
@@ -42,7 +42,7 @@ var xTimeline = d3.scalePoint()
   .range([isSmallDevice ? 60 : 140, isSmallDevice ? insidewidth - 20 : insidewidth-140])
   .domain(tipos);
 
-  if (isSmallDevice) xTimeline.range([100, width - 100])
+  if (isSmallDevice) xTimeline.range([60, width - 60])
 
       
 
@@ -108,22 +108,6 @@ if (!isSmallDevice){
       }
 };
 
-//aca guardo los centroides geograficos
-if (!isSmallDevice) {
-  var labelsExtraContenido = {
-    "Río de la Plata": [815, 300],
-    "AV. Gral Paz": [450, 540],
-   "San Isidro": [460, 35],
-    "San Martín": [50, 368]
-  }
-} else {
-  var labelsExtraContenido = {
-    "Río de la Plata": [177, 176],
-    "C.A.B.A": [494, 400],
-    "San Isidro": [274, 368],
-    "San Martín": [702, 111]
-  }
-};
 
 
 
@@ -169,13 +153,15 @@ var projection = d3.geoMercator();
     "currency": ["$", ""],
   });
 
-  var numberFormat = localeFormatter.format("$,.0f");
+  var numberFormat = localeFormatter.format("$,.0f"),
+    numberFormatResume = localeFormatter.format("$,.2s");
+  ;
 
 
 // Define the div for the tooltip
 let tooltip = d3.select("#tooltip");
                 
-                
+var coloreaBarrios;
 
 var svg = d3.select("#stickyViz")
             .attr("height",height)
@@ -203,8 +189,9 @@ function ready (results){
   var mapTopoJson = results[0]; // acá esta el mapa
   var respuestas = results[1]; // acá las respuestas en csv
 
-  radiusScale.domain(d3.extent(respuestas, function (d) { return +d.presupuesto; }))
-  radiusForce.domain(radiusScale.domain())
+  radiusScale.domain(d3.extent(respuestas, function (d) { return +d.presupuesto; }));
+  radiusForce.domain(radiusScale.domain());
+
 
   // --------- MAPA
   var mapa = topojson.feature(mapTopoJson, mapTopoJson.objects.collection);  
@@ -219,7 +206,7 @@ function ready (results){
     centroidesGeo[barriosTraduccion[element.properties.name]] = path.centroid(element);
   }); */
 
-
+ 
 
       svg.append("g")
           .attr("class", "states")
@@ -229,7 +216,7 @@ function ready (results){
           .enter().append("path")
           .attr("class","paisVector")
           .attr("id", function (d) { return d.properties.name.toLowerCase().replace(/\s/g, '') })
-          .attr("fill","rgba(0,0,0,0.1")
+        .attr("fill","#e1e1e1")
           .attr("d", path)
             ;
         
@@ -252,11 +239,18 @@ function ready (results){
       centroideGeo: centroidesGeo[d.barrio],
       sextos: sextos[d.temaResumen],
       timeline: [xTimeline(d.temaResumen), yTimeline(+d.ano)],
+      ano: +d.ano,
       xPos: {},
       yPos: {}
     }
   });
 
+  nestedBarrios = d3.nest()
+    .key(function (d) { return d.barrio; })
+    .rollup(function (d) { return d3.sum(d, function (d) { return d.presupuesto; }); })
+    .object(nodes);
+
+  coloreaBarrios = d3.scaleLinear().domain(d3.extent(Object.values(nestedBarrios))).range(["#f1fee3","#7cbb42"]);   
 
   
   // --------- BUBBLES
@@ -313,9 +307,18 @@ function ready (results){
                 .attr('fill', (d) => colorScale(d.tema))
                 ;
                 
+              if (estado == "intro"){ 
+                d3.selectAll(".paisVector").transition().duration(500).style("fill", function (d) {
+                return coloreaBarrios(nestedBarrios[barriosTraduccion[d.properties.name]]);
+                    });
+                d3.select(".legendPresu").transition().duration(500)
+                  .style("opacity", 1);
+              }
 
    
             }else { // es update
+
+
 
               // baja la intensidad del nombre de los barrios
               labels.transition().duration(500).style("opacity", estado == "mapa" ? 0.4 : 1);
@@ -324,13 +327,26 @@ function ready (results){
               if(estado == "intro"){
                 d3.selectAll(".legendOrdinal, .legendSize, #tooltip, .axis").transition().duration(500)
                   .style("opacity", 0);
+
+                d3.select(".legendPresu").transition().duration(500)
+                  .style("opacity", 1);
+
                 bubbles
                   .transition().duration((d) => 500 + radiusForce(d.presupuesto) * 1500).ease(d3.easeExpInOut)
                   .attr('r', 0);
-              } else {
-              
+
+                d3.selectAll(".paisVector").transition().duration(500).style("fill", function (d) {
+                  return coloreaBarrios(nestedBarrios[barriosTraduccion[d.properties.name]]);
+                });
+
+              }else{
                 
-              d3.select(".legendOrdinal").transition().duration(500)
+                d3.selectAll(".paisVector").transition().duration(500).style("fill", "#e1e1e1");
+
+                d3.select(".legendPresu").transition().duration(500)
+                  .style("opacity", 0);
+
+                d3.select(".legendOrdinal").transition().duration(500)
                   .style("opacity", estado == "temas"?0:1);
 
               d3.select("#tooltip").transition().duration(200)
@@ -415,6 +431,24 @@ function makeVoronoi(nodes, estado) {
 
 
 function dibujaLabels() {
+  //aca guardo los centroides geograficos
+  if (!isSmallDevice) {
+    var labelsExtraContenido = {
+      "Río de la Plata": [815, 300],
+      "AV. Gral Paz": [450, 540],
+      "San Isidro": [460, 35],
+      "San Martín": [50, 368]
+    }
+  } else {
+    var labelsExtraContenido = {
+      //"Río de la Plata": [177, 176],
+      "C.A.B.A": [200, 270],
+      "San Isidro": [200, 20],
+      "San Martín": [40, 180]
+    }
+  };
+
+
 
   labels = svg.append("g").attr("id","labels");
   
@@ -429,7 +463,7 @@ function dibujaLabels() {
     .attr("y", 0)
     .attr("transform", d => "translate(" + labelsExtraContenido[d][0] + "," + labelsExtraContenido[d][1] + ")")
     .attr("class", "titulosBubblesExtra")
-    .text(function (d) { return d }).call(wrap,15)
+    .text(function (d) { return d }).call(wrap,isSmallDevice?6:10)
     ;
   
   labelsBarrios = labels.append("g").attr("id", "barrios")
@@ -487,7 +521,7 @@ var iteraciones = 270;
 
                     switch (estado) {     // GENERO LOS NEST DE LOS AGRUPADOS
                       case "barrios":
-                        iteraciones = 230;
+                        iteraciones = 100;
 
                         var nest = d3.nest()
                           .key(function (d) { return d.barrio; })
@@ -596,11 +630,26 @@ var iteraciones = 270;
               .alphaDecay(0.1)
               .stop();
             
-          }else{
+          } else if (estado == "barrios"){
+              var simulation = d3.forceSimulation(nodes)
+                .force('charge', d3.forceManyBody().strength(d => -d.r/2).distanceMax(150))
+                .force('x', d3.forceX().x(function (d) {
+                  return d[centro][0];
+                }).strength(0.1))
+                .force('y', d3.forceY().y(function (d) {
+                  return d[centro][1];
+                }).strength(0.1))
+                .force('collision', d3.forceCollide().radius(function (d) {
+                  return d.radius + padding;
+                }).strength(0.3))
+                .alphaDecay(0.07)
+                .stop();
+              
+            }else {
               var simulation = d3.forceSimulation(nodes)
                 .force('charge', d3.forceManyBody().strength(1))
                 .force('x', d3.forceX().x(function (d) {
-                  return d[centro][0]
+                  return d[centro][0];
                 }).strength(isSmallDevice ? 2 : 1))
                 .force('y', d3.forceY().y(function (d) {
                   return d[centro][1];
@@ -609,7 +658,8 @@ var iteraciones = 270;
                   return d.radius + padding;
                 }))
                 .stop();
-          }
+            }
+
 
           for (var i = 0; i < iteraciones; ++i) simulation.tick(); // evalua la simulacion
           
@@ -639,7 +689,7 @@ var iteraciones = 270;
                 .style("opacity", .9);
           tooltip.select("#title").html(d.data.nombre);
           tooltip.select("#descripcion").html(d.data.descripcion);
-            tooltip.select("#info").html(numberFormat(d.data.presupuesto) + ' / Barrio: ' + d.data.barrio);
+            tooltip.select("#info").html("<strong>"+ numberFormat(d.data.presupuesto) + '</strong> / Año: '+d.data.ano +' / Barrio: ' + d.data.barrio);
           }else{
             tooltip.transition()
               .duration(50)
@@ -662,8 +712,7 @@ function dibujaleyendas() {
 
       var leyenda = svg.append("g")
         .attr("class", "leyenda")
-
-        .attr("transform", "translate(" + 20 + ", 10)");
+        .attr("transform", "translate(100, 10)");
 
       leyenda.append("g").attr("class", "legendSize")
       .attr("opacity",0);
@@ -679,6 +728,24 @@ function dibujaleyendas() {
 
       svg.select(".legendSize")
         .call(legendSize);
+
+
+  leyenda.append("g").attr("class", "legendPresu")
+    .attr("opacity", 0);
+
+  var legendPresu = d3.legendColor()
+    .shapeWidth(40)
+    .shapePadding(10)
+    .orient('horizontal')
+    .title("Presupuesto Total")
+    .cells(5)
+    .labelFormat(numberFormatResume)
+    .scale(coloreaBarrios);
+
+  svg.select(".legendPresu")
+    .call(legendPresu);
+
+  
 
       leyenda.append("g")
         .attr("class", "legendOrdinal")
