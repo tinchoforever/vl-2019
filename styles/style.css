@@ -285,3 +285,39 @@ svg g#labels {
 			font-size: 14px;
 		}
 }
+
+
+@media (min-width: 576px){
+	.card-deck .card {
+		-ms-flex: 1 0 0%;
+		flex: 1 0 0%;
+		margin-right: .625rem;
+		margin-bottom: 10px;
+		margin-left: .625rem;
+	}
+}
+
+.icono{
+	width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    display: auto;
+    position: relative;
+    background-size: 186px;
+    margin: 5px auto;
+}
+
+.icono.lupa{
+	background-image: url(/images/Icono_lupa.svg);
+    background-position: center;
+}
+
+.icono.lampara{
+	background-image: url(/images/Icono_lampara.svg);
+    background-position: center;
+}
+
+.icono.participacion{
+	background-image: url(/images/Icono_participacion.svg);
+    background-position: center;
+}
