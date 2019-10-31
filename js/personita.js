@@ -15,6 +15,18 @@ var selectos=[1,5,8,14,20,32,43,56];
 var years = d3.range(2012,2020);
 var cantidades=[156,31,20,11,8,5,3,2];
 
+    // create custom locale formatter from the given locale options
+    var localeFormatter = d3.formatLocale({
+        "decimal": ",",
+        "thousands": ".",
+        "grouping": [3],
+        "currency": ["$", ""],
+    });
+
+    var numberFormat = localeFormatter.format(",.2%")
+    ;
+
+
 var grid = layout(data);
     var width = isSmallDevice ? window.innerWidth*0.95  : 600, 
         height = isSmallDevice ? 400 : width*1.1;
@@ -53,13 +65,13 @@ var columna = svg.selectAll('g')
     .attr("text-anchor","middle")
         textos.append("tspan")
             .attr("class", "anios")
-            .text(d=>years[d]+"/"+(years[d]+1-2000))
+            .text(d=>years[d])
             .attr("x",anchocolumna/2)
             .attr("opacity",0);
         
         textos.append("tspan")
             .attr("class", "cantidades")
-            .text(d => "1 de "+ cantidades[d])
+            .text(d => numberFormat(1/cantidades[d]))
             .attr("x",anchocolumna / 2)
             .attr("dy", isSmallDevice ? 16 : 20)
             .attr("opacity", 0);
