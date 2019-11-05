@@ -262,17 +262,17 @@ svg g#labels {
 }
 
 .icono.lupa{
-	background-image: url(/images/Icono_lupa.svg);
+	background-image: url(../images/Icono_lupa.svg);
     background-position: center;
 }
 
 .icono.lampara{
-	background-image: url(/images/Icono_lampara.svg);
+	background-image: url(../images/Icono_lampara.svg);
     background-position: center;
 }
 
 .icono.participacion{
-	background-image: url(/images/Icono_participacion.svg);
+	background-image: url(../images/Icono_participacion.svg);
     background-position: center;
 }
 
