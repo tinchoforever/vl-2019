@@ -240,6 +240,7 @@ function ready (results){
       sextos: sextos[d.temaResumen],
       timeline: [xTimeline(d.temaResumen), yTimeline(+d.ano)],
       ano: +d.ano,
+      votos: d.votos,
       xPos: {},
       yPos: {}
     }
@@ -688,8 +689,11 @@ var iteraciones = 270;
                 .duration(50)
                 .style("opacity", .9);
           tooltip.select("#title").html(d.data.nombre);
-          tooltip.select("#descripcion").html(d.data.descripcion);
-            tooltip.select("#info").html("<strong>"+ numberFormat(d.data.presupuesto) + '</strong> / Año: '+d.data.ano +' / Barrio: ' + d.data.barrio);
+          //tooltip.select("#prdescripcion").html(d.data.descripcion);
+            tooltip.select("#presupuesto").html(numberFormat(d.data.presupuesto));
+            tooltip.select("#votos").html(d.data.votos);
+            tooltip.select("#ano").html(d.data.ano);
+            tooltip.select("#barrio").html(d.data.barrio);
           }else{
             tooltip.transition()
               .duration(50)

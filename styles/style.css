@@ -142,7 +142,7 @@ svg g#labels {
 
 				#tooltip {
 					opacity: 0;
-					bottom: 60px;
+					bottom: 30px;
 					position: relative;
 					text-align: center;
 					width: 100%;
@@ -190,65 +190,19 @@ svg g#labels {
 				
 				#tooltip { 
 					bottom:unset;
-					top:630px;
+					bottom:230px;
 					right:15%;
 					position: absolute;     
 					text-align: center;     
 					width: 270px;          
 					padding: 0px 0px;
 					min-height: 130px;       
-					font: 12px sans-serif;    
-					background: white; 
-					border: 1px solid black;    
-					border-radius: 0 8px 8px 8px;     
 					-webkit-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
 					-moz-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
 					box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
 				}
 				
 
-
-				div#tooltip h3 {
-					margin-top: 0;
-					background-color: #c0c0c06b;
-					width: 100%;
-					border-radius: 0px 7px 0px 0px;
-					padding: 1px 0px;        
-					margin-bottom: 2px;
-					height: 50px;
-					display: inline-block;
-						line-height: 50px;
-
-
-				}
-
-				div#tooltip #title {
-				line-height: 18px;
-				display: inline-block;
-				vertical-align: middle;
-				padding: 0px 10px;
-				white-space: initial;
-				overflow: initial;
-				text-overflow: unset;
-				}
-
-				div#tooltip h4 {
-					margin: 5px 8px;
-					display: inline-flex;
-					font-size: 12px;
-					font-weight: 500;
-				}
-
-				div#tooltip #descripcion {
-					font-weight: 500;
-				}
-
-
-				div#tooltip #info{
-					margin: 2px 0px;
-					font-weight: 500;
-					font-size: 12px;
-				}
 
 
 
@@ -320,4 +274,92 @@ svg g#labels {
 .icono.participacion{
 	background-image: url(/images/Icono_participacion.svg);
     background-position: center;
+}
+
+
+/* tooltip */
+
+.topic-article-wrapper .proyecto-ganador .box-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 7px 7px;
+    background-color: #0099c3;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+
+@media only screen and (min-width: 820px){
+		div#tooltip #title {
+			line-height: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0px 10px;
+			white-space: initial;
+			overflow: initial;
+			text-overflow: unset;
+		}
+
+				#tooltip { 
+					bottom:unset;
+					bottom:4%;
+					right:7%;
+					position: absolute;     
+					text-align: center;     
+					width: 270px;          
+					padding: 0px 0px;
+					min-height: 130px;       
+					-webkit-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
+					-moz-box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
+					box-shadow: 1px 5px 6px 0px rgba(0,0,0,0.31);
+				}
+
+				.topic-status .status-active-preparacion #title{
+						white-space: inherit;
+    					overflow: inherit;
+					}
+}
+
+.topic-info {
+    width: 100%;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 15px 0;
+}
+
+
+
+.topic-year, .topic-location {
+    text-transform: uppercase;
+    color: #000;
+    display: inline-block;
+    width: 40%;
+    font-weight: 400;
+    font-size: 14px;
+}
+.topic-article-content span {
+    font-weight: inherit;
+}
+
+.topic-article-wrapper .proyecto-ganador .box-content {
+
+    padding: 0px 0;
+
+}
+
+.topic-article-wrapper .proyecto-ganador .box-content .box-content-item .box-content-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+div #title{
+	white-space: nowrap;
+    overflow: scroll;
 }
